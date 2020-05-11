@@ -148,8 +148,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hro-nT-7uV">
                                 <rect key="frame" x="0.0" y="44" width="414" height="253.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="P53-hF-NYp">
-                                        <rect key="frame" x="143.5" y="61" width="127" height="131.5"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="P53-hF-NYp">
+                                        <rect key="frame" x="143.5" y="64" width="127" height="125.5"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="P53-hF-NYp" secondAttribute="height" id="XCG-IT-q6d"/>
@@ -324,6 +324,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.up.on.square" catalog="system" width="117" height="128"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
