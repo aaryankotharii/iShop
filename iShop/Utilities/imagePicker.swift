@@ -8,10 +8,10 @@
 
 import UIKit
 
-class imagePicker <T:UIViewController> : NSObject, UIImagePickerControllerDelegate{
+class imagePicker <T:UIViewController, S: UIImageView> : NSObject, UIImagePickerControllerDelegate{
     
     
-    func imagePickerAlert(_ imageView: UIImageView, vc : T){
+    func imagePickerAlert(_ imageView: S, vc : T){
 
         //MARK: ImagePicker ActionSheet
         let alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -50,6 +50,26 @@ class imagePicker <T:UIViewController> : NSObject, UIImagePickerControllerDelega
     func handleCancel(action: UIAlertAction){
         T().dismiss(animated: true, completion: nil)
         print("cancel")
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var selectedImageFromPicker : UIImage? ///  FInal image will be assigned here
+        
+        if let editedImage =  info[.editedImage] as? UIImage{
+            selectedImageFromPicker = editedImage
+        }
+            
+        else if let originalImage = info[.originalImage] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        
+        if let selectedImage = selectedImageFromPicker {
+            S().image = selectedImage
+        }
+        
+        T().dismiss(animated: true, completion: nil ) /// Dissmiss picker
+        
     }
     
 }
