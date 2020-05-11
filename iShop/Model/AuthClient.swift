@@ -37,7 +37,7 @@ class AuthClient{
         if let errorCode = AuthErrorCode(rawValue: error._code){
             switch errorCode {
             case .emailAlreadyInUse:
-                return "already in use"
+                return "user exists! please Login"
             case .invalidEmail:
                 return "Please enter a valid email ID"
             case .userNotFound:
@@ -46,6 +46,8 @@ class AuthClient{
                 return "No internet"
             case .wrongPassword:
                 return "Password invalid"
+            case .weakPassword:
+                return "Password should have minimum 6 characters"
             default:
                 print("Error")
             }

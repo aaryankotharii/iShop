@@ -9,7 +9,7 @@
 import UIKit
 
 class SignupVC: UIViewController {
-
+    
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
@@ -19,11 +19,28 @@ class SignupVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func signupClicked(_ sender: UIButton) {
-        AuthClient.SignUp(email: "a@k.com", password: "123456", completion: handleSignup(success:error:))
+        if let error = errorCheck() { AuthAlert(error) ; return}
+        AuthClient.SignUp(email: "d@k.com", password: "123456", completion: handleSignup(success:error:))
+    }
+    
+    
+    //MARK:- Error Checking Function
+    func errorCheck() -> String? {
+        if nameTextField.text! == "" ||
+            passwordTextField.text! == "" ||
+            confirmPasswordTextField.text! == "" ||
+            nameTextField.text! == ""
+        {
+            return "Name is missing."
+        }
+        else if !(passwordTextField.text == confirmPasswordTextField.text){
+            return "Passwords do not match."
+        }
+        return nil
     }
     
     func handleSignup(success:Bool,error:String?){

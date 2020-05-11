@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Nh-NF-GjU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -51,7 +51,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3ft-gL-rlQ">
                                 <rect key="frame" x="40" y="297.5" width="334" height="301"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKF-QS-aUg">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Aaryan" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKF-QS-aUg">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vKF-QS-aUg" secondAttribute="height" multiplier="7" id="JBo-re-GUT"/>
@@ -69,7 +69,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zev-TS-glq">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@k.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zev-TS-glq">
                                         <rect key="frame" x="0.0" y="68" width="334" height="47.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="zev-TS-glq" secondAttribute="height" multiplier="7" id="3jS-zI-EUz"/>
@@ -87,7 +87,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97P-kO-nxz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97P-kO-nxz">
                                         <rect key="frame" x="0.0" y="135.5" width="334" height="47.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="97P-kO-nxz" secondAttribute="height" multiplier="7" id="Va7-F3-AlM"/>
@@ -105,7 +105,7 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaZ-rC-IxP">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaZ-rC-IxP">
                                         <rect key="frame" x="0.0" y="203" width="334" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="IaZ-rC-IxP" secondAttribute="height" multiplier="7" id="FVZ-xy-dVZ"/>
