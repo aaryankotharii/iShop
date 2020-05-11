@@ -11,11 +11,11 @@ import FirebaseAuth
 
 class AuthClient{
     
-    class func Login(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+    class func Login(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error{
-                print(AuthClient.handleError(error))
-                completion(false,error)
+                let errorDescription = AuthClient.handleError(error)
+                completion(false,errorDescription)
                 return
             }
             completion(true,nil)
@@ -41,6 +41,8 @@ class AuthClient{
                 return "Please enter a valid email ID"
             case .userNotFound:
                 return "No Account found. signup to continue"
+            case .networkError:
+                return "No internet"
             default:
                 print("Error")
             }

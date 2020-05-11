@@ -18,7 +18,18 @@ class LoginVC: UIViewController {
     }
     
 
-    @IBAction func loginClicked(_ sender: Any) {
+    @IBAction func loginClicked(_ sender: UIButton) {
+        AuthClient.Login(email: "a@k.com", password: "123456", completion: handleLogin(success:error:))
     }
+    
+    func handleLogin(success:Bool,error:String?){
+        success ? handleSuccessLogin() : AuthAlert(error ?? "Error")
+    }
+    
+    func handleSuccessLogin(){
+        print("YAY LOGGED IN")
+    }
+    
+    
 
 }

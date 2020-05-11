@@ -22,10 +22,10 @@ extension UIViewController {
     
     
     //MARK: - ALERT function for network connection
-    internal func networkErrorAlert(titlepass : String) {
+    internal func networkErrorAlert(title : String) {
         // Vibrates on errors
        // UIDevice.invalidVibrate()
-        let alert = UIAlertController(title: titlepass, message: "No internet connection available.", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: "No internet connection available.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
             let settingsUrl = NSURL(string: UIApplication.openSettingsURLString)
             if let url = settingsUrl {
