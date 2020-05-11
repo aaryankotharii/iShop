@@ -18,12 +18,14 @@ class imagePicker : NSObject{
     weak var currentViewController: UIViewController?
     var imagePickerVC = UIImagePickerController()
     var alertController = UIAlertController()
+    var imageview = UIImageView()
     
      
     func imagePickerAlert(_ imageView: UIImageView, vc : UIViewController,completion: @escaping ImageClosure){
 
         currentViewController = vc
         selectedImageCompletion = completion
+        imageview = imageView
 
         //MARK: ImagePicker ActionSheet
         alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -36,7 +38,7 @@ class imagePicker : NSObject{
     
        //MARK: Add Actions
         
-        if imageView.image != {
+        if imageview.image != #imageLiteral(resourceName: "default") {
             alertController.addAction(deleteAction)
         }
               alertController.addAction(photoLibraryAction)
@@ -49,7 +51,7 @@ class imagePicker : NSObject{
     }
     
     func handleDeletePhoto(action: UIAlertAction){
-        
+        imageview.image = #imageLiteral(resourceName: "default")
     }
     
     func handleChoosePhoto(action: UIAlertAction){

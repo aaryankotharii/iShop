@@ -19,15 +19,8 @@ class SignupVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-
-
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.image = #imageLiteral(resourceName: "default")
     }
     
     @IBAction func signupClicked(_ sender: UIButton) {
@@ -73,11 +66,8 @@ class SignupVC: UIViewController {
         
     }
     
-    
-    
     func handlePhotoTapped(image:UIImage){
         self.profileImageView.image = image
     }
-    
     
 }
