@@ -8,7 +8,7 @@
 
 import UIKit
 
-class imagePicker <T:UIViewController, S: UIImageView> : NSObject, UIImagePickerControllerDelegate{
+class imagePicker <T:UIViewController, S: UIImageView> : NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     
     func imagePickerAlert(_ imageView: S, vc : T){
@@ -40,11 +40,13 @@ class imagePicker <T:UIViewController, S: UIImageView> : NSObject, UIImagePicker
     }
     
     func handleChoosePhoto(action: UIAlertAction){
-           
+           presentImagePicker(.photoLibrary) /// Presents PhotoLibrary
+
        }
     
     func handleCameraTapped(action: UIAlertAction){
-           
+           presentImagePicker(.camera) /// Presents Camera
+
        }
     
     func handleCancel(action: UIAlertAction){
@@ -77,5 +79,12 @@ class imagePicker <T:UIViewController, S: UIImageView> : NSObject, UIImagePicker
         picker.dismiss(animated: true, completion: nil)
     }
     
+    func presentImagePicker(_ source : UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePicker.sourceType = source /// Photo Library or Camera
+        imagePicker.allowsEditing = true /// Crop photo
+        T().present(imagePicker, animated: true, completion: nil)
+    }
     
 }
