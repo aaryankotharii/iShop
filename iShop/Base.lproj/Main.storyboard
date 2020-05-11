@@ -139,6 +139,9 @@
                                                 <include reference="4LF-5X-7UO"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="signupClicked:" destination="7Nh-NF-GjU" eventType="touchUpInside" id="1OJ-Wj-5gl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
