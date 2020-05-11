@@ -32,10 +32,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="E05-MO-RI1">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="0af-dW-5oP" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="0af-dW-5oP" customClass="LoginVC" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xaC-Wv-qNC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,6 +56,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncH-VF-2H1">
                                         <rect key="frame" x="0.0" y="68" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="loginClicked:" destination="0af-dW-5oP" eventType="touchUpInside" id="Ksx-w5-GfF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -64,6 +67,10 @@
                         <viewLayoutGuide key="safeArea" id="2aq-rt-JP0"/>
                     </view>
                     <navigationItem key="navigationItem" id="oI7-30-I3N"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="bP1-kT-c5U" id="hDx-gc-2Kj"/>
+                        <outlet property="passwordTextField" destination="I3c-Tg-Bn4" id="XuS-XQ-pPj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPu-cx-hcp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
