@@ -31,7 +31,16 @@ class SignupVC: UIViewController {
     }
     
     func handleSuccessSignUp(){
-        databaseClient.shared.createUser(param: <#T##Any#>, completion: <#T##(Bool, Error?) -> ()#>)
+        let user = User(name: "Aaryan", email: "a@k.com", imageUrl: "imageUrl")
+        databaseClient.shared.createUser(user: user, completion: handleCreateNewUser(success:error:))
+    }
+    
+    func handleCreateNewUser(success:Bool,error:String?){
+        success ? goToTabbar() : AuthAlert(error!)
+    }
+    
+    func goToTabbar(){
+        
     }
     
     
