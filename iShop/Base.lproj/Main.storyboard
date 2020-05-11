@@ -191,7 +191,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c7q-Hj-gZM">
                                 <rect key="frame" x="40" y="356.5" width="334" height="183"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bP1-kT-c5U">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="a@k.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bP1-kT-c5U">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="47.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bP1-kT-c5U" secondAttribute="height" multiplier="7" id="b9b-5v-Tmy"/>
@@ -199,7 +199,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3c-Tg-Bn4">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3c-Tg-Bn4">
                                         <rect key="frame" x="0.0" y="67.5" width="334" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="I3c-Tg-Bn4" secondAttribute="height" multiplier="7" id="mue-dn-0Ui"/>

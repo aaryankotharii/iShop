@@ -44,6 +44,8 @@ class AuthClient{
                 return "No Account found. signup to continue"
             case .networkError:
                 return "No internet"
+            case .wrongPassword:
+                return "Password invalid"
             default:
                 print("Error")
             }
