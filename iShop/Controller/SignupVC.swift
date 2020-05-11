@@ -22,9 +22,25 @@ class SignupVC: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        imagePicker.sharedInstance.imagePickerAlert(profileImageView, vc: self) { (image) in
+            self.profileImageView.image =  image
+        }
+       
+        
+    }
+    
     @IBAction func signupClicked(_ sender: UIButton) {
         if let error = errorCheck() { AuthAlert(error) ; return}
         AuthClient.SignUp(email: "d@k.com", password: "123456", completion: handleSignup(success:error:))
+    }
+    
+    
+    @IBAction func photoTapped(_ sender: UITapGestureRecognizer) {
+        print("tap")
     }
     
     
@@ -57,6 +73,12 @@ class SignupVC: UIViewController {
     }
     
     func goToTabbar(){
+        
+    }
+    
+    
+    
+    func handlePhotoTapped(image:UIImage){
         
     }
     

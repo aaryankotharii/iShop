@@ -20,7 +20,6 @@ class LoginVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        imagePicker().imagePickerAlert(UIImageView(), vc: self)
     }
     
 

@@ -148,8 +148,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hro-nT-7uV">
                                 <rect key="frame" x="0.0" y="44" width="414" height="253.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P53-hF-NYp">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google.png" translatesAutoresizingMaskIntoConstraints="NO" id="P53-hF-NYp">
                                         <rect key="frame" x="143.5" y="63.5" width="127" height="126.5"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="P53-hF-NYp" secondAttribute="height" id="XCG-IT-q6d"/>
                                         </constraints>
@@ -163,6 +164,9 @@
                                                 <include reference="XCG-IT-q6d"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="TmX-En-wVs" appends="YES" id="iMB-vG-dem"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -237,6 +241,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Im-09-5cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TmX-En-wVs">
+                    <connections>
+                        <action selector="photoTapped:" destination="7Nh-NF-GjU" id="RTf-VQ-AQr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1055" y="536"/>
         </scene>
@@ -314,4 +323,7 @@
             <point key="canvasLocation" x="1030" y="-277"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="google.png" width="18" height="18"/>
+    </resources>
 </document>
