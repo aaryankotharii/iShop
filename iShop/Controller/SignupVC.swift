@@ -26,11 +26,8 @@ class SignupVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        imagePicker.sharedInstance.imagePickerAlert(profileImageView, vc: self) { (image) in
-            self.profileImageView.image =  image
-        }
-       
-        
+
+
     }
     
     @IBAction func signupClicked(_ sender: UIButton) {
@@ -40,7 +37,7 @@ class SignupVC: UIViewController {
     
     
     @IBAction func photoTapped(_ sender: UITapGestureRecognizer) {
-        print("tap")
+        imagePicker.sharedInstance.imagePickerAlert(profileImageView, vc: self, completion: handlePhotoTapped(image:))
     }
     
     
@@ -79,7 +76,7 @@ class SignupVC: UIViewController {
     
     
     func handlePhotoTapped(image:UIImage){
-        
+        self.profileImageView.image = image
     }
     
     
