@@ -12,20 +12,15 @@ import FirebaseStorage
 
 class StorageClient{
     
-   class func createProfile(_ profileImageView: UIImageView){
+    class func createProfile(_ profileImage : UIImage){
             
         print("IQAMG UPLAOD")
         let uid = getUID()
-            
-        var profileImage = UIImage()
-            
+                        
         let storageRef = Storage.storage().reference().child("profile_images").child("\(uid).jpg")
         
-    DispatchQueue.main.async {
-        profileImage = profileImageView.image!
-    }
          if let uploadData = profileImage.jpegData(compressionQuality: 0.2){
-                        
+                        print("reached here")
                     storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                         if let error = error {
                             print(error.localizedDescription)
@@ -43,7 +38,6 @@ class StorageClient{
                 }
             }
         }
-    
 }
 
 }
