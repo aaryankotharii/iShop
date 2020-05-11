@@ -6,4 +6,11 @@
 //  Copyright © 2020 Aaryan Kothari. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Firebase
+
+//MARK: -  function to get uid
+internal func getUID() -> String {
+    let uid = Auth.auth().currentUser?.uid
+    return uid ?? "notFound"
+}
