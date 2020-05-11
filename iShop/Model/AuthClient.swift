@@ -42,9 +42,9 @@ class AuthClient{
             case .userNotFound:
                 return "No Account found. signup to continue"
             default:
-                print("")
+                print("Error")
             }
         }
-        return "yo"
+        return "please try again later"
     }
 }
