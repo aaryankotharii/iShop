@@ -18,6 +18,7 @@ class imagePicker : NSObject{
     var selectedImageCompletion: ImageClosure?
     weak var currentViewController: UIViewController?
     var imagePickerVC = UIImagePickerController()
+    var alertController = UIAlertController()
     
     var image : UIImage?
     
@@ -28,7 +29,7 @@ class imagePicker : NSObject{
         selectedImageCompletion = completion
 
         //MARK: ImagePicker ActionSheet
-        let alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
         
         //MARK: Actions [Delete + PhotoLibrary + Camera + Cancel]
         let deleteAction = UIAlertAction(title: "Delete Photo", style: .destructive, handler: handleDeletePhoto(action:))
@@ -65,7 +66,7 @@ class imagePicker : NSObject{
        }
     
     func handleCancel(action: UIAlertAction){
-        currentViewController?.dismiss(animated: true, completion: nil)
+        alertController.dismiss(animated: true, completion: nil)
     }
     
     
