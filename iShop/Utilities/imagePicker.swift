@@ -8,8 +8,10 @@
 
 import UIKit
 
-extension UIViewController: UIImagePickerControllerDelegate{
-    func imagePickerAlert(_ imageView: UIImageView){
+class imagePicker <T:UIViewController> : NSObject, UIImagePickerControllerDelegate{
+    
+    
+    func imagePickerAlert(_ imageView: UIImageView, vc : T){
 
         //MARK: ImagePicker ActionSheet
         let alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -27,8 +29,10 @@ extension UIViewController: UIImagePickerControllerDelegate{
               alertController.addAction(photoLibraryAction)
               alertController.addAction(cameraAction)
               alertController.addAction(cancelAction)
+        
+        
 
-            self.present(alertController, animated: true)
+            vc.present(alertController, animated: true)
     }
     
     func handleDeletePhoto(action: UIAlertAction){
@@ -44,11 +48,8 @@ extension UIViewController: UIImagePickerControllerDelegate{
        }
     
     func handleCancel(action: UIAlertAction){
-        self.dismiss(animated: true, completion: nil)
+        T().dismiss(animated: true, completion: nil)
+        print("cancel")
     }
-    
-    
-    
-    
     
 }

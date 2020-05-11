@@ -14,7 +14,7 @@ class SignupVC: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var confirmPasswordTextField: UITextField!
-    
+    @IBOutlet var profileImageView: UIImageView!
     
     
     override func viewDidLoad() {

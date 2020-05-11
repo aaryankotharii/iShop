@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Nh-NF-GjU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -233,6 +233,7 @@
                         <outlet property="emailTextField" destination="zev-TS-glq" id="Gu2-8c-bYL"/>
                         <outlet property="nameTextField" destination="vKF-QS-aUg" id="eBw-UU-zoI"/>
                         <outlet property="passwordTextField" destination="97P-kO-nxz" id="vjL-Rc-ctM"/>
+                        <outlet property="profileImageView" destination="P53-hF-NYp" id="zlA-w4-X8k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Im-09-5cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
