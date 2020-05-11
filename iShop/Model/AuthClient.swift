@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class AuthClient{
     
-    class func emailLogin(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+    class func Login(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if let error = error{
                 completion(false,error)
@@ -21,4 +21,13 @@ class AuthClient{
         }
     }
     
+    class func SignUp(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if let error = error{
+                completion(false,error)
+                return
+            }
+            completion(true,nil)
+        }
+    }
 }
