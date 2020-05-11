@@ -12,7 +12,7 @@ import SystemConfiguration
 extension UIViewController {
     //MARK:- ALERT fucntion for error display
     internal func AuthAlert(_ message:String, completion: (() -> Void)? = nil){
-       // UIDevice.invalidVibrate()
+        UIDevice.invalidVibrate()
         let title = "Uh Oh 🙁"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default)
@@ -24,7 +24,7 @@ extension UIViewController {
     //MARK: - ALERT function for network connection
     internal func networkErrorAlert(title : String) {
         // Vibrates on errors
-       // UIDevice.invalidVibrate()
+        UIDevice.invalidVibrate()
         let alert = UIAlertController(title: title, message: "No internet connection available.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
             let settingsUrl = NSURL(string: UIApplication.openSettingsURLString)
@@ -39,7 +39,7 @@ extension UIViewController {
     
     //MARK:- ALERT fucntion for success display
     internal func successLAert(_ message:String, completion: (() -> Void)? = nil){
-       // UIDevice.validVibrate()
+        UIDevice.validVibrate()
         let title = "Yay 😄"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in

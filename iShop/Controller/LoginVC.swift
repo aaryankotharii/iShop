@@ -15,6 +15,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
 
@@ -27,9 +28,7 @@ class LoginVC: UIViewController {
     }
     
     func handleSuccessLogin(){
+        UIDevice.validVibrate()
         print("YAY LOGGED IN")
     }
-    
-    
-
 }

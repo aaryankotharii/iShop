@@ -22,10 +22,11 @@ class AuthClient{
         }
     }
     
-    class func SignUp(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+    class func SignUp(email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error{
-                completion(false,error)
+                let errorDescription = AuthClient.handleError(error)
+                completion(false,errorDescription)
                 return
             }
             completion(true,nil)
