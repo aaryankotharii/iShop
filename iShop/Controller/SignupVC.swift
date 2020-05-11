@@ -25,7 +25,7 @@ class SignupVC: UIViewController {
     
     @IBAction func signupClicked(_ sender: UIButton) {
         if let error = errorCheck() { AuthAlert(error) ; return}
-        AuthClient.SignUp(email: "ii@k.com", password: passwordTextField.text!, completion: handleSignup(success:error:))
+        AuthClient.SignUp(email: "ij@k.com", password: passwordTextField.text!, completion: handleSignup(success:error:))
     }
     
     
@@ -64,8 +64,11 @@ class SignupVC: UIViewController {
     
     func goToTabbar(){
         let image = profileImageView.image!
-        DispatchQueue.global(qos: .background).async {
-            StorageClient.createProfile(image)
+        let vc = storyboard!.instantiateViewController(identifier: "tabbar") as UITabBarController
+        self.present(vc, animated: true) {
+            DispatchQueue.global(qos: .background).async {
+                StorageClient.createProfile(image)
+            }
         }
     }
     
