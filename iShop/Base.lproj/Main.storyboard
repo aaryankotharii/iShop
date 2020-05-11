@@ -145,25 +145,84 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hro-nT-7uV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="253.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P53-hF-NYp">
+                                        <rect key="frame" x="143.5" y="63.5" width="127" height="126.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="P53-hF-NYp" secondAttribute="height" id="XCG-IT-q6d"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="XCG-IT-q6d"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="XCG-IT-q6d"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="P53-hF-NYp" firstAttribute="centerX" secondItem="hro-nT-7uV" secondAttribute="centerX" id="8px-18-XUj"/>
+                                    <constraint firstItem="P53-hF-NYp" firstAttribute="height" secondItem="hro-nT-7uV" secondAttribute="height" multiplier="0.5" id="Qj1-MH-PhE"/>
+                                    <constraint firstItem="P53-hF-NYp" firstAttribute="centerY" secondItem="hro-nT-7uV" secondAttribute="centerY" id="UY6-dw-A3n"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="P53-hF-NYp"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="8px-18-XUj"/>
+                                        <exclude reference="Qj1-MH-PhE"/>
+                                        <exclude reference="UY6-dw-A3n"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="P53-hF-NYp"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="8px-18-XUj"/>
+                                        <include reference="Qj1-MH-PhE"/>
+                                        <include reference="UY6-dw-A3n"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="3ft-gL-rlQ" firstAttribute="leading" secondItem="l1c-lN-vUh" secondAttribute="leading" constant="40" id="8wN-n5-aAA"/>
+                            <constraint firstItem="hro-nT-7uV" firstAttribute="top" secondItem="l1c-lN-vUh" secondAttribute="top" id="RXA-cB-E6v"/>
                             <constraint firstItem="l1c-lN-vUh" firstAttribute="trailing" secondItem="3ft-gL-rlQ" secondAttribute="trailing" constant="40" id="S6U-kI-p8e"/>
+                            <constraint firstItem="3ft-gL-rlQ" firstAttribute="top" secondItem="hro-nT-7uV" secondAttribute="bottom" id="WvS-7X-Apf"/>
                             <constraint firstItem="3ft-gL-rlQ" firstAttribute="centerY" secondItem="LBB-8N-gx4" secondAttribute="centerY" id="Yt5-iv-KLM"/>
+                            <constraint firstItem="l1c-lN-vUh" firstAttribute="trailing" secondItem="hro-nT-7uV" secondAttribute="trailing" id="nlH-dQ-3Im"/>
+                            <constraint firstItem="hro-nT-7uV" firstAttribute="leading" secondItem="l1c-lN-vUh" secondAttribute="leading" id="qgZ-YV-dml"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l1c-lN-vUh"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="S6U-kI-p8e"/>
+                                <exclude reference="nlH-dQ-3Im"/>
+                                <exclude reference="RXA-cB-E6v"/>
+                                <exclude reference="qgZ-YV-dml"/>
                                 <exclude reference="8wN-n5-aAA"/>
+                                <exclude reference="WvS-7X-Apf"/>
                                 <exclude reference="Yt5-iv-KLM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="S6U-kI-p8e"/>
+                                <include reference="nlH-dQ-3Im"/>
+                                <include reference="RXA-cB-E6v"/>
+                                <include reference="qgZ-YV-dml"/>
                                 <include reference="8wN-n5-aAA"/>
+                                <include reference="WvS-7X-Apf"/>
                                 <include reference="Yt5-iv-KLM"/>
                             </mask>
                         </variation>
