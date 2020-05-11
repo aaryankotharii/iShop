@@ -47,10 +47,131 @@
                     <view key="view" contentMode="scaleToFill" id="LBB-8N-gx4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3ft-gL-rlQ">
+                                <rect key="frame" x="40" y="297.5" width="334" height="301"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKF-QS-aUg">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vKF-QS-aUg" secondAttribute="height" multiplier="7" id="JBo-re-GUT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="JBo-re-GUT"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="JBo-re-GUT"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zev-TS-glq">
+                                        <rect key="frame" x="0.0" y="68" width="334" height="47.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zev-TS-glq" secondAttribute="height" multiplier="7" id="3jS-zI-EUz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="3jS-zI-EUz"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="3jS-zI-EUz"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97P-kO-nxz">
+                                        <rect key="frame" x="0.0" y="135.5" width="334" height="47.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="97P-kO-nxz" secondAttribute="height" multiplier="7" id="Va7-F3-AlM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Va7-F3-AlM"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="Va7-F3-AlM"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IaZ-rC-IxP">
+                                        <rect key="frame" x="0.0" y="203" width="334" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IaZ-rC-IxP" secondAttribute="height" multiplier="7" id="FVZ-xy-dVZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="FVZ-xy-dVZ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="FVZ-xy-dVZ"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZO-t1-lYG">
+                                        <rect key="frame" x="0.0" y="271" width="334" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="sZO-t1-lYG" secondAttribute="height" multiplier="167:15" id="4LF-5X-7UO"/>
+                                        </constraints>
+                                        <state key="normal" title="Signup"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="4LF-5X-7UO"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="4LF-5X-7UO"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3ft-gL-rlQ" firstAttribute="leading" secondItem="l1c-lN-vUh" secondAttribute="leading" constant="40" id="8wN-n5-aAA"/>
+                            <constraint firstItem="l1c-lN-vUh" firstAttribute="trailing" secondItem="3ft-gL-rlQ" secondAttribute="trailing" constant="40" id="S6U-kI-p8e"/>
+                            <constraint firstItem="3ft-gL-rlQ" firstAttribute="centerY" secondItem="LBB-8N-gx4" secondAttribute="centerY" id="Yt5-iv-KLM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="l1c-lN-vUh"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="S6U-kI-p8e"/>
+                                <exclude reference="8wN-n5-aAA"/>
+                                <exclude reference="Yt5-iv-KLM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="S6U-kI-p8e"/>
+                                <include reference="8wN-n5-aAA"/>
+                                <include reference="Yt5-iv-KLM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="vDr-yH-zKW"/>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="IaZ-rC-IxP" id="wKl-mm-aZs"/>
+                        <outlet property="emailTextField" destination="zev-TS-glq" id="Gu2-8c-bYL"/>
+                        <outlet property="nameTextField" destination="vKF-QS-aUg" id="eBw-UU-zoI"/>
+                        <outlet property="passwordTextField" destination="97P-kO-nxz" id="vjL-Rc-ctM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Im-09-5cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
