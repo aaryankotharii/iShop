@@ -13,7 +13,7 @@
 		5BAF32B524694B50004909AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B324694B50004909AB /* Main.storyboard */; };
 		5BAF32B724694B53004909AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B624694B53004909AB /* Assets.xcassets */; };
 		5BAF32BA24694B53004909AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B824694B53004909AB /* LaunchScreen.storyboard */; };
-		5BAF32C524694CEA004909AB /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32C424694CEA004909AB /* FirebaseClient.swift */; };
+		5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32C424694CEA004909AB /* AuthClient.swift */; };
 		AAE95A2BE421B4EFBF84A99A /* Pods_iShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F79CA7F4A8851B3641892C /* Pods_iShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +27,7 @@
 		5BAF32B624694B53004909AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BAF32B924694B53004909AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BAF32BB24694B53004909AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5BAF32C424694CEA004909AB /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		5BAF32C424694CEA004909AB /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		A61061895CEF15738FB4967B /* Pods-iShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop.debug.xcconfig"; path = "Target Support Files/Pods-iShop/Pods-iShop.debug.xcconfig"; sourceTree = "<group>"; };
 		CA7D6FE7D428EFE10995D98E /* Pods-iShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop.release.xcconfig"; path = "Target Support Files/Pods-iShop/Pods-iShop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +104,7 @@
 		5BAF32C324694B7F004909AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5BAF32C424694CEA004909AB /* FirebaseClient.swift */,
+				5BAF32C424694CEA004909AB /* AuthClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 				5BAF32B224694B50004909AB /* ViewController.swift in Sources */,
 				5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */,
 				5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */,
-				5BAF32C524694CEA004909AB /* FirebaseClient.swift in Sources */,
+				5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
