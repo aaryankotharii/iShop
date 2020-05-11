@@ -40,22 +40,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c7q-Hj-gZM">
-                                <rect key="frame" x="152" y="348" width="46" height="98"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c7q-Hj-gZM">
+                                <rect key="frame" x="40" y="356.5" width="334" height="183"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bP1-kT-c5U">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="47.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="bP1-kT-c5U" secondAttribute="height" multiplier="7" id="b9b-5v-Tmy"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3c-Tg-Bn4">
-                                        <rect key="frame" x="0.0" y="34" width="46" height="34"/>
+                                        <rect key="frame" x="0.0" y="67.5" width="334" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="I3c-Tg-Bn4" secondAttribute="height" multiplier="7" id="mue-dn-0Ui"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncH-VF-2H1">
-                                        <rect key="frame" x="0.0" y="68" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="0.0" y="135.5" width="334" height="47.5"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ncH-VF-2H1" secondAttribute="height" multiplier="7" id="MiD-tZ-ReA"/>
+                                        </constraints>
+                                        <state key="normal" title="login"/>
                                         <connections>
                                             <action selector="loginClicked:" destination="0af-dW-5oP" eventType="touchUpInside" id="Ksx-w5-GfF"/>
                                         </connections>
@@ -64,7 +74,26 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2aq-rt-JP0" firstAttribute="trailing" secondItem="c7q-Hj-gZM" secondAttribute="trailing" constant="40" id="24L-xC-fhH"/>
+                            <constraint firstItem="c7q-Hj-gZM" firstAttribute="centerY" secondItem="xaC-Wv-qNC" secondAttribute="centerY" id="KI1-14-pXE"/>
+                            <constraint firstItem="c7q-Hj-gZM" firstAttribute="leading" secondItem="2aq-rt-JP0" secondAttribute="leading" constant="40" id="pRI-6I-OwW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2aq-rt-JP0"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="24L-xC-fhH"/>
+                                <exclude reference="KI1-14-pXE"/>
+                                <exclude reference="pRI-6I-OwW"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="24L-xC-fhH"/>
+                                <include reference="KI1-14-pXE"/>
+                                <include reference="pRI-6I-OwW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="oI7-30-I3N"/>
                     <connections>

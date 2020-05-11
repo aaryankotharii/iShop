@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B0283B6246993DE0086EDB6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283B5246993DE0086EDB6 /* LoginVC.swift */; };
+		5B0283B9246995360086EDB6 /* Alerts+functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283B8246995360086EDB6 /* Alerts+functions.swift */; };
 		5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AD24694B50004909AB /* AppDelegate.swift */; };
 		5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AF24694B50004909AB /* SceneDelegate.swift */; };
 		5BAF32B224694B50004909AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32B124694B50004909AB /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		47F79CA7F4A8851B3641892C /* Pods_iShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0283B5246993DE0086EDB6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5B0283B8246995360086EDB6 /* Alerts+functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alerts+functions.swift"; sourceTree = "<group>"; };
 		5BAF32AA24694B50004909AB /* iShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAF32AD24694B50004909AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BAF32AF24694B50004909AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5B0283B7246995250086EDB6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5B0283B8246995360086EDB6 /* Alerts+functions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		5BAF32A124694B50004909AB = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 		5BAF32AC24694B50004909AB /* iShop */ = {
 			isa = PBXGroup;
 			children = (
+				5B0283B7246995250086EDB6 /* Utilities */,
 				5BAF32C324694B7F004909AB /* Model */,
 				5BAF32C224694B7E004909AB /* View */,
 				5BAF32C124694B7D004909AB /* Controller */,
@@ -260,6 +271,7 @@
 			files = (
 				5BAF32B224694B50004909AB /* ViewController.swift in Sources */,
 				5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */,
+				5B0283B9246995360086EDB6 /* Alerts+functions.swift in Sources */,
 				5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */,
 				5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */,
 				5B0283B6246993DE0086EDB6 /* LoginVC.swift in Sources */,
