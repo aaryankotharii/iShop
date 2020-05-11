@@ -28,6 +28,14 @@ class databaseClient{
             completion(true,nil)
         }
     }
+    
+    public func updateProfileImage(url: String,completion:@escaping (Bool) -> ()) {
+        let ref = database.child("users").child(getUID())
+        ref.updateChildValues(["imageUrl":url]) { (error, ref) in
+            if let error = error{ completion(false) ;  return }
+            completion(true)
+        }
+    }
 }
 
 

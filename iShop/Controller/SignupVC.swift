@@ -25,7 +25,7 @@ class SignupVC: UIViewController {
     
     @IBAction func signupClicked(_ sender: UIButton) {
         if let error = errorCheck() { AuthAlert(error) ; return}
-        AuthClient.SignUp(email: "d@k.com", password: "123456", completion: handleSignup(success:error:))
+        AuthClient.SignUp(email: emailTextField.text!, password: passwordTextField.text!, completion: handleSignup(success:error:))
     }
     
     
@@ -54,7 +54,7 @@ class SignupVC: UIViewController {
     }
     
     func handleSuccessSignUp(){
-        let user = User(name: "Aaryan", email: "a@k.com", imageUrl: "imageUrl")
+        let user = User(name: nameTextField.text!, email: emailTextField.text!, imageUrl: "imageUrl")
         databaseClient.shared.createUser(user: user, completion: handleCreateNewUser(success:error:))
     }
     
@@ -63,7 +63,9 @@ class SignupVC: UIViewController {
     }
     
     func goToTabbar(){
-        
+        DispatchQueue.global(qos: .background).async {
+            StorageClient.createProfile(self.profileImageView)
+        }
     }
     
     func handlePhotoTapped(image:UIImage){

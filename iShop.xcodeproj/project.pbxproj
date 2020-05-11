@@ -15,6 +15,7 @@
 		5B0283C12469A5C10086EDB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283C02469A5C10086EDB6 /* Constants.swift */; };
 		5B0283C32469BCAC0086EDB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283C22469BCAC0086EDB6 /* User.swift */; };
 		5B0283C52469CDDC0086EDB6 /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283C42469CDDC0086EDB6 /* imagePicker.swift */; };
+		5B0283C72469E0B60086EDB6 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283C62469E0B60086EDB6 /* StorageClient.swift */; };
 		5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AD24694B50004909AB /* AppDelegate.swift */; };
 		5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AF24694B50004909AB /* SceneDelegate.swift */; };
 		5BAF32B224694B50004909AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32B124694B50004909AB /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		5B0283C02469A5C10086EDB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B0283C22469BCAC0086EDB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5B0283C42469CDDC0086EDB6 /* imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePicker.swift; sourceTree = "<group>"; };
+		5B0283C62469E0B60086EDB6 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
 		5BAF32AA24694B50004909AB /* iShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAF32AD24694B50004909AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BAF32AF24694B50004909AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				5BAF32C424694CEA004909AB /* AuthClient.swift */,
 				5B0283BE2469A55C0086EDB6 /* DatabaseClient.swift */,
 				5B0283C22469BCAC0086EDB6 /* User.swift */,
+				5B0283C62469E0B60086EDB6 /* StorageClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				5B0283BF2469A55C0086EDB6 /* DatabaseClient.swift in Sources */,
 				5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */,
 				5B0283B9246995360086EDB6 /* Alerts+functions.swift in Sources */,
+				5B0283C72469E0B60086EDB6 /* StorageClient.swift in Sources */,
 				5B0283C12469A5C10086EDB6 /* Constants.swift in Sources */,
 				5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */,
 				5B0283BB246997D20086EDB6 /* haptic+Feedback.swift in Sources */,
