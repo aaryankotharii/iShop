@@ -25,7 +25,7 @@ class SignupVC: UIViewController {
     
     @IBAction func signupClicked(_ sender: UIButton) {
         if let error = errorCheck() { AuthAlert(error) ; return}
-        AuthClient.SignUp(email: emailTextField.text!, password: passwordTextField.text!, completion: handleSignup(success:error:))
+        AuthClient.SignUp(email: "o@k.com", password: passwordTextField.text!, completion: handleSignup(success:error:))
     }
     
     

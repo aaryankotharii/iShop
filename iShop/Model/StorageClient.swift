@@ -14,15 +14,17 @@ class StorageClient{
     
    class func createProfile(_ profileImageView: UIImageView){
             
+        print("IQAMG UPLAOD")
         let uid = getUID()
+            
+        var profileImage = UIImage()
+            
+        let storageRef = Storage.storage().reference().child("profile_images").child("\(uid).jpg")
         
-        let imageName = NSUUID().uuidString
-            
-        let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).jpg")
-            
-        if let profileImage = profileImageView.image,
-                
-                let uploadData = profileImage.jpegData(compressionQuality: 0.2){
+    DispatchQueue.main.async {
+        profileImage = profileImageView.image!
+    }
+         if let uploadData = profileImage.jpegData(compressionQuality: 0.2){
                         
                     storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                         if let error = error {
