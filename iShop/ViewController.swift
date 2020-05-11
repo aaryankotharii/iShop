@@ -12,9 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        AuthClient.Login(email: "a@k.com", password: "123456", completion: handleLogin(success:error:))
     }
-
-
+    
+    func handleLogin(success:Bool,error:Error?){
+        if success{
+            
+        }else{
+            print(error?.localizedDescription,"err")
+        }
+    }
 }
 

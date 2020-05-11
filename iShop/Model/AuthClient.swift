@@ -37,6 +37,10 @@ class AuthClient{
             switch errorCode {
             case .emailAlreadyInUse:
                 return "already in use"
+            case .invalidEmail:
+                return "Please enter a valid email ID"
+            case .userNotFound:
+                return "No Account found. signup to continue"
             default:
                 print("")
             }
