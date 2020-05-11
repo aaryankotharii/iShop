@@ -68,8 +68,14 @@ class imagePicker <T:UIViewController, S: UIImageView> : NSObject, UIImagePicker
             S().image = selectedImage
         }
         
-        T().dismiss(animated: true, completion: nil ) /// Dissmiss picker
+        picker.dismiss(animated: true, completion: nil ) /// Dissmiss picker
         
     }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("Cancelled Image picker")
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
