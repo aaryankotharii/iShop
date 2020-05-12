@@ -59,8 +59,6 @@ class TabBarVC: UITabBarController {
 
     override func viewDidLoad() {
       super.viewDidLoad()
-
-      // setup Settings navigation bar button
       setupUI()
     }
     
