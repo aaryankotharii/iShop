@@ -6,6 +6,8 @@
 //  Copyright © 2020 Aaryan Kothari. All rights reserved.
 //
 
+//TODO Disable signupButton
+
 import UIKit
 
 class SignupVC: UIViewController {
@@ -18,6 +20,7 @@ class SignupVC: UIViewController {
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var stackVerticalConstraint: NSLayoutConstraint!
     @IBOutlet var userFormStack: UIStackView!
+    @IBOutlet var signUpButton: UIButton!
     
     /// Value of StackView origin Y coordinate `used for textfield dynamic animation`
     var stackY : CGFloat!
@@ -51,7 +54,7 @@ class SignupVC: UIViewController {
     //MARK:- IBACTIONS
     @IBAction func signupClicked(_ sender: UIButton) {
         if let error = errorCheck() { AuthAlert(error) ; return}
-        AuthClient.SignUp(email: "ij@k.com", password: passwordTextField.text!, completion: handleSignup(success:error:))
+        AuthClient.SignUp(email: emailTextField.text!, password: passwordTextField.text!, completion: handleSignup(success:error:))
     }
     
     
