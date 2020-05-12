@@ -16,6 +16,7 @@ class SignupVC: UIViewController {
     @IBOutlet var confirmPasswordTextField: UITextField!
     @IBOutlet var profileImageView: UIImageView!
     
+    @IBOutlet var stackVerticalConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,3 +78,46 @@ class SignupVC: UIViewController {
     }
     
 }
+//MARK:- Keyboard show + hide functions
+extension SignupVC {
+    //MARK: Add Observers
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    //MARK: Remove Observers
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    //MARK: Move stackView based on keybaord
+    @objc func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            
+            //MARK: Get Keboard Y point on screen
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let endFrameY = endFrame?.origin.y ?? 0
+            
+            //MARK: Get keyboard display time
+            let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            
+            //MARK: Set animations
+            let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+            
+            //MARK: Animate stackView
+            if endFrameY >= UIScreen.main.bounds.size.height {
+                self.stackYanchor.constant = 0.0
+            } else {
+                self.stackYanchor.constant = -35
+            }
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
+        }
+    }
+}
+
