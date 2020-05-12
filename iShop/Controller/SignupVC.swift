@@ -17,6 +17,21 @@ class SignupVC: UIViewController {
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var stackVerticalConstraint: NSLayoutConstraint!
     
+    var x = -30.0
+
+    
+    var end : CGFloat = 0.0 {
+        didSet{
+                if end >= UIScreen.main.bounds.size.height {
+                    self.stackVerticalConstraint.constant = 0.0
+                } else {
+                    self.stackVerticalConstraint.constant = CGFloat(x)
+                }
+            
+        }
+    }
+    
+    
     @IBOutlet var userFormStack: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +108,7 @@ class SignupVC: UIViewController {
 extension SignupVC {
     //MARK: Add Observers
     func subscribeToKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     //MARK: Remove Observers
@@ -120,12 +135,15 @@ extension SignupVC {
             let y = userFormStack.frame.origin.y + userFormStack.frame.height
             let x = y - endFrameY + 20
             
-            //MARK: Animate stackView
-            if endFrameY >= UIScreen.main.bounds.size.height {
-                self.stackVerticalConstraint.constant = 0.0
-            } else {
-                self.stackVerticalConstraint.constant = -x
-            }
+            print(endFrameY)
+            end = endFrameY
+
+//                if endFrameY >= UIScreen.main.bounds.size.height {
+//                    self.stackVerticalConstraint.constant = 0.0
+//                } else {
+//                    self.stackVerticalConstraint.constant = -x
+//                }
+            
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,

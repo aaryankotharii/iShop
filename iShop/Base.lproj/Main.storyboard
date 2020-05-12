@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="108.48214285714285"/>
         </scene>
-        <!--SignupVC-->
+        <!--Sign Up-->
         <scene sceneID="zb5-cF-BTN">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="7Nh-NF-GjU" customClass="SignupVC" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,10 +147,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hro-nT-7uV">
-                                <rect key="frame" x="0.0" y="88" width="414" height="209.5"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="157.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="P53-hF-NYp">
-                                        <rect key="frame" x="154.5" y="52.5" width="105" height="104.5"/>
+                                        <rect key="frame" x="167.5" y="39.5" width="79" height="78.5"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="P53-hF-NYp" secondAttribute="height" id="XCG-IT-q6d"/>
@@ -232,7 +232,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="vDr-yH-zKW"/>
+                    <navigationItem key="navigationItem" title="Sign Up" largeTitleDisplayMode="always" id="vDr-yH-zKW"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="IaZ-rC-IxP" id="wKl-mm-aZs"/>
                         <outlet property="emailTextField" destination="zev-TS-glq" id="Gu2-8c-bYL"/>
@@ -330,8 +330,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cK6-m5-vIH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1kj-0h-ER8">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="1kj-0h-ER8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
