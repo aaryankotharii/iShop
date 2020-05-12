@@ -126,7 +126,6 @@ extension SignupVC {
             } else {
                 self.stackVerticalConstraint.constant = -x
             }
-            profileImageView.layer.cornerRadius = profileImageView.frame.height/2
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,
