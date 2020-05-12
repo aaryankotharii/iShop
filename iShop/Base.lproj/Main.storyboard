@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cK6-m5-vIH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2yC-WT-2Wt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -376,11 +376,11 @@
             </objects>
             <point key="canvasLocation" x="6214" y="724"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--OK-->
         <scene sceneID="yZA-eV-OGv">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" modalPresentationStyle="currentContext" id="YvY-gq-jq4" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="EeA-MY-IkE"/>
+                <tabBarController storyboardIdentifier="tabbar" modalPresentationStyle="currentContext" id="YvY-gq-jq4" customClass="TabBarVC" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="OK" id="EeA-MY-IkE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yWw-k2-izT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -416,8 +416,8 @@
         <scene sceneID="NQf-Tn-Vrn">
             <objects>
                 <navigationController id="2yC-WT-2Wt" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rTy-EA-YCG">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="rTy-EA-YCG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
