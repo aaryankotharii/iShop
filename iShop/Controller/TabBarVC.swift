@@ -52,6 +52,9 @@ class TabBarVC: UITabBarController {
         imageView.heightAnchor.constraint(equalToConstant: Const.ImageSizeForLargeState),
         imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
       ])
+        
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileTapped)))
+        imageView.isUserInteractionEnabled = true
     }
 
     override func viewDidLoad() {
@@ -59,5 +62,9 @@ class TabBarVC: UITabBarController {
 
       // setup Settings navigation bar button
       setupUI()
+    }
+    
+    @objc func profileTapped(){
+        print("tap")
     }
 }
