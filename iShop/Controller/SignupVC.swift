@@ -24,12 +24,18 @@ class SignupVC: UIViewController {
     
     /// Value of StackView origin Y coordinate `used for textfield dynamic animation`
     var stackY : CGFloat!
-
     
-    //MARK:- View LifeCycle Methods
+    //MARK: --- VIEW LIFECYCLE METHODS ---
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        subscribeToKeyboardNotifications()      /// ADD OBSERVERS `To Move StackView`
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -39,15 +45,13 @@ class SignupVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-                profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2   /// Maintains ProfileImageView to be a circle
     }
     
     //MARK: Initial Setup
     fileprivate func initialSetup() {
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.image = #imageLiteral(resourceName: "default")
-        subscribeToKeyboardNotifications()
-        hideKeyboardWhenTappedAround()
         stackY = userFormStack.frame.origin.y
     }
     
@@ -57,13 +61,13 @@ class SignupVC: UIViewController {
         AuthClient.SignUp(email: emailTextField.text!, password: passwordTextField.text!, completion: handleSignup(success:error:))
     }
     
-    
+    // ProfileImageView Tapped
     @IBAction func photoTapped(_ sender: UITapGestureRecognizer) {
         imagePicker.sharedInstance.imagePickerAlert(profileImageView, vc: self, completion: handlePhotoTapped(image:))
     }
     
     
-    //MARK:- Error Checking Function
+    //MARK: Error Checking Function ( Checks Empty Textfields + Password matching )
     func errorCheck() -> String? {
         if nameTextField.text! == "" ||
             passwordTextField.text! == "" ||
@@ -78,6 +82,7 @@ class SignupVC: UIViewController {
         return nil
     }
     
+    //MARK:- Completion Handlers
     func handleSignup(success:Bool,error:String?){
         success ? handleSuccessSignUp() : AuthAlert(error ?? "Error")
     }
@@ -91,20 +96,20 @@ class SignupVC: UIViewController {
         success ? goToTabbar() : AuthAlert(error!)
     }
     
+    func handlePhotoTapped(image:UIImage){
+        self.profileImageView.image = image
+    }
+    
+    //MARK: --- NAVIGATION ---
     func goToTabbar(){
         let image = profileImageView.image!
         let vc = storyboard!.instantiateViewController(identifier: "tabbar") as UITabBarController
         self.present(vc, animated: true) {
             DispatchQueue.global(qos: .background).async {
-                StorageClient.createProfile(image)
+                StorageClient.createProfile(image)  /// Send Profile Picture to Firebase Storage `in background Queue`
             }
         }
     }
-    
-    func handlePhotoTapped(image:UIImage){
-        self.profileImageView.image = image
-    }
-    
 }
 //MARK:- Keyboard show + hide functions
 extension SignupVC {
@@ -134,18 +139,12 @@ extension SignupVC {
             let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             
-            let y = stackY + userFormStack.frame.height
-            let x = y - endFrameY + 20
+            let stackBottomY = stackY + userFormStack.frame.height
+            let KeyboardTopInset = stackBottomY - endFrameY + 20
             let screenHeight = UIScreen.main.bounds.size.height
-
-            self.stackVerticalConstraint.constant = (endFrameY >= screenHeight) ? 0.0 : -x
             
-//                if endFrameY >= UIScreen.main.bounds.size.height {
-//                    self.stackVerticalConstraint.constant = 0.0
-//                } else {
-//                    self.stackVerticalConstraint.constant = -x
-//                }
-//
+            self.stackVerticalConstraint.constant = (endFrameY >= screenHeight) ? 0.0 : -KeyboardTopInset
+            
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,
