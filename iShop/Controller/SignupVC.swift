@@ -22,6 +22,12 @@ class SignupVC: UIViewController {
         super.viewDidLoad()
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
         profileImageView.image = #imageLiteral(resourceName: "default")
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
     }
     
     @IBAction func signupClicked(_ sender: UIButton) {
@@ -108,9 +114,9 @@ extension SignupVC {
             
             //MARK: Animate stackView
             if endFrameY >= UIScreen.main.bounds.size.height {
-                self.stackYanchor.constant = 0.0
+                self.stackVerticalConstraint.constant = 0.0
             } else {
-                self.stackYanchor.constant = -35
+                self.stackVerticalConstraint.constant = -35
             }
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
