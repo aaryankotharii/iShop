@@ -15,9 +15,9 @@ class SignupVC: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var confirmPasswordTextField: UITextField!
     @IBOutlet var profileImageView: UIImageView!
-    
     @IBOutlet var stackVerticalConstraint: NSLayoutConstraint!
     
+    @IBOutlet var userFormStack: UIStackView!
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImageView.layer.cornerRadius = profileImageView.frame.height/2
@@ -28,6 +28,11 @@ class SignupVC: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+                profileImageView.layer.cornerRadius = profileImageView.frame.height/2
     }
     
     @IBAction func signupClicked(_ sender: UIButton) {
@@ -112,12 +117,16 @@ extension SignupVC {
             let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             
+            let y = userFormStack.frame.origin.y + userFormStack.frame.height
+            let x = y - endFrameY + 20
+            
             //MARK: Animate stackView
             if endFrameY >= UIScreen.main.bounds.size.height {
                 self.stackVerticalConstraint.constant = 0.0
             } else {
-                self.stackVerticalConstraint.constant = -35
+                self.stackVerticalConstraint.constant = -x
             }
+            profileImageView.layer.cornerRadius = profileImageView.frame.height/2
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,

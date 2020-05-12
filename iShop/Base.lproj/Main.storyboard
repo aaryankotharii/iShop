@@ -240,6 +240,7 @@
                         <outlet property="passwordTextField" destination="97P-kO-nxz" id="vjL-Rc-ctM"/>
                         <outlet property="profileImageView" destination="P53-hF-NYp" id="zlA-w4-X8k"/>
                         <outlet property="stackVerticalConstraint" destination="Yt5-iv-KLM" id="haQ-Z3-2je"/>
+                        <outlet property="userFormStack" destination="3ft-gL-rlQ" id="7SQ-f6-X9V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Im-09-5cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
