@@ -10,42 +10,28 @@ import UIKit
 
 class SignupVC: UIViewController {
     
+    //MARK: Outlets
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var confirmPasswordTextField: UITextField!
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var stackVerticalConstraint: NSLayoutConstraint!
-    
-//    var end : CGFloat = 0.0 {
-//        didSet{
-//                if end >= UIScreen.main.bounds.size.height {
-//                    self.stackVerticalConstraint.constant = 0.0
-//                } else {
-//                    self.stackVerticalConstraint.constant = -x
-//                }
-//
-//        }
-//    }
-    
-    
-    
     @IBOutlet var userFormStack: UIStackView!
     
+    /// Value of StackView origin Y coordinate `used for textfield dynamic animation`
     var stackY : CGFloat!
 
+    
+    //MARK:- View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
-        profileImageView.image = #imageLiteral(resourceName: "default")
-        subscribeToKeyboardNotifications()
-        hideKeyboardWhenTappedAround()
-       stackY = userFormStack.frame.origin.y
+        initialSetup()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()  /// REMOVE OBSERVERS    `To Free Memory`
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,6 +39,16 @@ class SignupVC: UIViewController {
                 profileImageView.layer.cornerRadius = profileImageView.frame.height/2
     }
     
+    //MARK: Initial Setup
+    fileprivate func initialSetup() {
+        profileImageView.layer.cornerRadius = profileImageView.frame.height/2
+        profileImageView.image = #imageLiteral(resourceName: "default")
+        subscribeToKeyboardNotifications()
+        hideKeyboardWhenTappedAround()
+        stackY = userFormStack.frame.origin.y
+    }
+    
+    //MARK:- IBACTIONS
     @IBAction func signupClicked(_ sender: UIButton) {
         if let error = errorCheck() { AuthAlert(error) ; return}
         AuthClient.SignUp(email: "ij@k.com", password: passwordTextField.text!, completion: handleSignup(success:error:))
@@ -137,14 +133,16 @@ extension SignupVC {
             
             let y = stackY + userFormStack.frame.height
             let x = y - endFrameY + 20
-            print(endFrameY)
+            let screenHeight = UIScreen.main.bounds.size.height
 
-                if endFrameY >= UIScreen.main.bounds.size.height {
-                    self.stackVerticalConstraint.constant = 0.0
-                } else {
-                    self.stackVerticalConstraint.constant = -x
-                }
+            self.stackVerticalConstraint.constant = (endFrameY >= screenHeight) ? 0.0 : -x
             
+//                if endFrameY >= UIScreen.main.bounds.size.height {
+//                    self.stackVerticalConstraint.constant = 0.0
+//                } else {
+//                    self.stackVerticalConstraint.constant = -x
+//                }
+//
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,
