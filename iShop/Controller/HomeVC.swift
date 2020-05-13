@@ -12,6 +12,7 @@ import Firebase
 
 class HomeVC: UIViewController {
     
+    //MARK: Outlets
     @IBOutlet var stackYAnchor: NSLayoutConstraint!
     @IBOutlet var loginStack: UIStackView!
     @IBOutlet var emailTextField: UITextField!
@@ -20,12 +21,12 @@ class HomeVC: UIViewController {
     /// Value of StackView origin Y coordinate `used for textfield dynamic animation`
     var stackY : CGFloat!
     
-    var keyboardIsUp : Bool = false
+    
+    //MARK: --- VIEW LIFECYCLE METHODS ---
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-        subscribeToKeyboardNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,18 +39,20 @@ class HomeVC: UIViewController {
         unsubscribeFromKeyboardNotifications()  /// REMOVE OBSERVERS    `To Free Memory`
     }
     
+    //MARK: Initial Setup
     fileprivate func initialSetup() {
+        /// Keyboard Setup
         hideKeyboardWhenTappedAround()
         subscribeToKeyboardNotifications()
         stackY = loginStack.frame.origin.y
-
         
+        /// Google Sign In Setup
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
     }
     
     
-    
+    //MARK:- IBACTIONS
     @IBAction func loginClicked(_ sender: UIButton) {
         if let error = errorCheck() { AuthAlert(error) ; return}
         AuthClient.Login(email: emailTextField.text!, password: passwordTextField.text!, completion: handleLogin(success:error:))
@@ -57,10 +60,11 @@ class HomeVC: UIViewController {
     
     @IBAction func googleSigninClicked(_ sender: UIButton) {
         GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().signIn()
+        GIDSignIn.sharedInstance().signIn()         /// Popover Google
     }
     
     
+    //MARK:- Completion Handlers
     func handleLogin(success:Bool,error:String?){
         success ? handleSuccessLogin() : AuthAlert(error ?? "Error")
     }
@@ -71,7 +75,8 @@ class HomeVC: UIViewController {
         goToTabbar()
     }
     
-    //MARK:- Error Checking Function
+    
+    //MARK: Error Checking Function ( Checks Empty Textfields)
     func errorCheck() -> String? {
         let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         if email == "" ||
@@ -84,13 +89,13 @@ class HomeVC: UIViewController {
         return nil
     }
     
+    //MARK: --- NAVIGATION ---
     func goToTabbar(){
         let vc = storyboard!.instantiateViewController(identifier: "nav") as UINavigationController
         self.present(vc, animated: true) {
-            print("present")
+            self.saveName()
         }
     }
-    
 }
 
 
@@ -104,10 +109,10 @@ extension HomeVC {
     //MARK: Remove Observers
     func unsubscribeFromKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-
+        
     }
     
-
+    
     
     //MARK: Move stackView based on keybaord
     @objc func keyboardNotification(notification: NSNotification) {
@@ -131,12 +136,25 @@ extension HomeVC {
             let screenHeight = UIScreen.main.bounds.size.height
             
             self.stackYAnchor.constant = (endFrameY >= screenHeight) ? 0.0 : -KeyboardTopInset
-            print("top",KeyboardTopInset)
+            
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,
                            animations: { self.view.layoutIfNeeded() },
                            completion: nil)
+        }
+    }
+}
+
+
+//MARK:- Functions to locally store names
+extension HomeVC {
+    func saveName(){
+        databaseClient.shared.getName(completion: handleName(name:))
+    }
+    func handleName(name:String?){
+        if let name = name {
+            UserDefaults.standard.setValue(name, forKey: "name")
         }
     }
 }
