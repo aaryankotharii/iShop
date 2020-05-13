@@ -11,10 +11,17 @@ import GoogleSignIn
 import Firebase
 
 class HomeVC: UIViewController {
-
+    
     @IBOutlet var stackYAnchor: NSLayoutConstraint!
     
     @IBOutlet var loginStack: UIStackView!
+    
+    
+    @IBOutlet var emailTextField: UITextField!
+    
+    
+    @IBOutlet var passwordTextField: UITextField!
+    
     var stackY : CGFloat!
     var stackBottomY: CGFloat!
     override func viewDidLoad() {
@@ -28,7 +35,7 @@ class HomeVC: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -36,13 +43,47 @@ class HomeVC: UIViewController {
         unsubscribeFromKeyboardNotifications()  /// REMOVE OBSERVERS    `To Free Memory`
     }
     
-    
-    @IBAction func googleSigninClicked(_ sender: Any) {
-        GIDSignIn.sharedInstance().delegate = self
-         GIDSignIn.sharedInstance().signIn()
+    @IBAction func loginClicked(_ sender: UIButton) {
+        if let error = errorCheck() { AuthAlert(error) ; return}
+        AuthClient.Login(email: emailTextField.text!, password: passwordTextField.text!, completion: handleLogin(success:error:))
     }
     
-
+    @IBAction func googleSigninClicked(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    
+    func handleLogin(success:Bool,error:String?){
+        success ? handleSuccessLogin() : AuthAlert(error ?? "Error")
+    }
+    
+    func handleSuccessLogin(){
+        UIDevice.validVibrate()
+        print("YAY LOGGED IN")
+        goToTabbar()
+    }
+    
+    //MARK:- Error Checking Function
+    func errorCheck() -> String? {
+        let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if email == "" ||
+            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            return "Please Fill in all the fields"
+        }
+        if emailTextField.text == nil || passwordTextField.text == nil {
+            return "Please Fill in all the fields"
+        }
+        return nil
+    }
+    
+    func goToTabbar(){
+        let vc = storyboard!.instantiateViewController(identifier: "nav") as UINavigationController
+        self.present(vc, animated: true) {
+            print("preszen")
+        }
+    }
+    
 }
 
 
