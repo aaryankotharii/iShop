@@ -14,19 +14,19 @@ class imagePicker : NSObject{
     
     public static let sharedInstance = imagePicker()
     
-    var selectedImageCompletion: ImageClosure?
+    var  selectedImageCompletion: ImageClosure?
     weak var currentViewController: UIViewController?
     var imagePickerVC = UIImagePickerController()
     var alertController = UIAlertController()
     var imageview = UIImageView()
     
-     
+    
     func imagePickerAlert(_ imageView: UIImageView, vc : UIViewController,completion: @escaping ImageClosure){
-
+        
         currentViewController = vc
         selectedImageCompletion = completion
         imageview = imageView
-
+        
         //MARK: ImagePicker ActionSheet
         alertController = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -35,35 +35,33 @@ class imagePicker : NSObject{
         let photoLibraryAction = UIAlertAction.init(title: "Choose Photo", style: .default, handler: handleChoosePhoto(action:))
         let cameraAction = UIAlertAction.init(title: "Take photo", style: .default, handler: handleCameraTapped(action:))
         let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: handleCancel(action:))
-    
-       //MARK: Add Actions
+        
+        //MARK: Add Actions
         
         if imageview.image != #imageLiteral(resourceName: "default") {
             alertController.addAction(deleteAction)
         }
-              alertController.addAction(photoLibraryAction)
-              alertController.addAction(cameraAction)
-              alertController.addAction(cancelAction)
+        alertController.addAction(photoLibraryAction)
+        alertController.addAction(cameraAction)
+        alertController.addAction(cancelAction)
         
         
-
-            vc.present(alertController, animated: true)
+        
+        vc.present(alertController, animated: true)
     }
     
     func handleDeletePhoto(action: UIAlertAction){
         imageview.image = #imageLiteral(resourceName: "default")
+        selectedImageCompletion?(#imageLiteral(resourceName: "default"))
     }
     
     func handleChoosePhoto(action: UIAlertAction){
-        print("PHOTO")
-           presentImagePicker(.photoLibrary) /// Presents PhotoLibrary
-
-       }
+        presentImagePicker(.photoLibrary) /// Presents PhotoLibrary
+    }
     
     func handleCameraTapped(action: UIAlertAction){
-           presentImagePicker(.camera) /// Presents Camera
-
-       }
+        presentImagePicker(.camera) /// Presents Camera
+    }
     
     func handleCancel(action: UIAlertAction){
         alertController.dismiss(animated: true, completion: nil)

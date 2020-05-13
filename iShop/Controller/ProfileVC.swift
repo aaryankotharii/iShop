@@ -13,6 +13,8 @@ class ProfileVC: UIViewController {
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     
+    var initialImage : UIImage!
+    
     @IBOutlet var profileImageOutlineView: UIImageView!
     
     override func viewDidLoad() {
@@ -27,12 +29,14 @@ class ProfileVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         profileImageOutlineView.rotate360Degrees()
+        initialImage = profileImageView.image
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         profileImageOutlineView.layer.removeAllAnimations()
     }
+    
     @IBAction func imageTapGesture(_ sender: UITapGestureRecognizer) {
         imagePicker.sharedInstance.imagePickerAlert(profileImageView, vc: self, completion: handlePhotoTapped(image:))
     }
@@ -46,6 +50,9 @@ class ProfileVC: UIViewController {
         DispatchQueue.global(qos: .background).async {
                 StorageClient.createProfile(image)  /// Send Profile Picture to Firebase Storage `in background Queue`
         }
+        if image != initialImage {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil)
+            self.dismiss(animated: true, completion: nil) }
     }
 }
 

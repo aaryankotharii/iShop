@@ -60,6 +60,11 @@ class TabBarVC: UITabBarController {
     override func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
+                NotificationCenter.default.addObserver(self,selector: #selector(refreshLbl),name:NSNotification.Name(rawValue: "refresh"),object: nil)
+    }
+    
+    @objc func refreshLbl() {
+        imageView.loadImage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
