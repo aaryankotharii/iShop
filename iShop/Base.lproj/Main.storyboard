@@ -44,7 +44,6 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="eec-VS-nE3" firstAttribute="top" secondItem="drk-V1-SDy" secondAttribute="top" id="73D-y3-ALG"/>
                                     <constraint firstAttribute="bottom" secondItem="eec-VS-nE3" secondAttribute="bottom" id="ASm-gu-Elh"/>
@@ -122,24 +121,57 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoI-1R-LiS">
-                                <rect key="frame" x="40" y="779" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SIGN UP"/>
-                                <connections>
-                                    <segue destination="7Nh-NF-GjU" kind="show" id="Pqn-d6-PvV"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="r8k-D5-ilr">
+                                <rect key="frame" x="25" y="768" width="364" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoI-1R-LiS">
+                                        <rect key="frame" x="0.0" y="0.0" width="167" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NoI-1R-LiS" secondAttribute="height" multiplier="148:39" id="wBg-1y-0lw"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="signup"/>
+                                        <connections>
+                                            <segue destination="7Nh-NF-GjU" kind="show" id="Pqn-d6-PvV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsm-dm-FDt">
+                                        <rect key="frame" x="197" y="0.0" width="167" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fsm-dm-FDt" secondAttribute="height" multiplier="148:39" id="b9j-HC-HtL"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="google"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Afa-PB-1nc">
+                                <rect key="frame" x="15" y="736.5" width="384" height="1.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1.3" id="BDw-Z0-IhF"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHT-uX-5dk">
+                                <rect key="frame" x="195.5" y="716" width="23.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Afa-PB-1nc" firstAttribute="top" secondItem="yHT-uX-5dk" secondAttribute="bottom" id="3Rb-0F-Roc"/>
                             <constraint firstItem="CsO-0r-Sjh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="3hu-nq-aT1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r8k-D5-ilr" secondAttribute="bottom" constant="50" id="AdF-RE-lkf"/>
                             <constraint firstItem="CsO-0r-Sjh" firstAttribute="top" secondItem="drk-V1-SDy" secondAttribute="bottom" constant="19.5" id="Fq8-Q5-F8q"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GQg-Fb-fLi"/>
+                            <constraint firstItem="Afa-PB-1nc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Gi9-qT-MPL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CsO-0r-Sjh" secondAttribute="trailing" constant="40" id="NZQ-fX-H0h"/>
                             <constraint firstItem="CsO-0r-Sjh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OZD-Mf-5aQ"/>
+                            <constraint firstItem="yHT-uX-5dk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T0e-g6-MIa"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WmB-Ns-L1D"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cxa-Pp-dhw"/>
+                            <constraint firstItem="r8k-D5-ilr" firstAttribute="top" secondItem="Afa-PB-1nc" secondAttribute="bottom" constant="30" id="uUK-gm-RKH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Afa-PB-1nc" secondAttribute="trailing" constant="15" id="yDz-Ed-GRj"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.325893" priority="250" id="zRD-tY-vZW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -595,7 +627,9 @@
         <image name="default" width="332" height="332"/>
         <image name="forward.fill" catalog="system" width="128" height="79"/>
         <image name="gardient" width="414" height="292"/>
+        <image name="google" width="156" height="44"/>
         <image name="logo" width="216" height="198"/>
         <image name="playpause.fill" catalog="system" width="128" height="73"/>
+        <image name="signup" width="156" height="44"/>
     </resources>
 </document>
