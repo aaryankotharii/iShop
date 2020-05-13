@@ -121,7 +121,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="r8k-D5-ilr">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="r8k-D5-ilr">
                                 <rect key="frame" x="25" y="768" width="364" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoI-1R-LiS">
@@ -161,18 +161,20 @@
                         <constraints>
                             <constraint firstItem="Afa-PB-1nc" firstAttribute="top" secondItem="yHT-uX-5dk" secondAttribute="bottom" id="3Rb-0F-Roc"/>
                             <constraint firstItem="CsO-0r-Sjh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="3hu-nq-aT1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r8k-D5-ilr" secondAttribute="bottom" constant="50" id="AdF-RE-lkf"/>
                             <constraint firstItem="CsO-0r-Sjh" firstAttribute="top" secondItem="drk-V1-SDy" secondAttribute="bottom" constant="19.5" id="Fq8-Q5-F8q"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GQg-Fb-fLi"/>
                             <constraint firstItem="Afa-PB-1nc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="Gi9-qT-MPL"/>
+                            <constraint firstItem="r8k-D5-ilr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="Mkz-e3-rg5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CsO-0r-Sjh" secondAttribute="trailing" constant="40" id="NZQ-fX-H0h"/>
                             <constraint firstItem="CsO-0r-Sjh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OZD-Mf-5aQ"/>
+                            <constraint firstItem="r8k-D5-ilr" firstAttribute="top" secondItem="Afa-PB-1nc" secondAttribute="bottom" constant="30" id="Pbx-ta-ewm"/>
                             <constraint firstItem="yHT-uX-5dk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T0e-g6-MIa"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WmB-Ns-L1D"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cxa-Pp-dhw"/>
-                            <constraint firstItem="r8k-D5-ilr" firstAttribute="top" secondItem="Afa-PB-1nc" secondAttribute="bottom" constant="30" id="uUK-gm-RKH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r8k-D5-ilr" secondAttribute="bottom" constant="50" id="uuq-wy-h1P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Afa-PB-1nc" secondAttribute="trailing" constant="15" id="yDz-Ed-GRj"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.325893" priority="250" id="zRD-tY-vZW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r8k-D5-ilr" secondAttribute="trailing" constant="25" id="zfq-zv-dN1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
@@ -181,6 +183,10 @@
                                 <exclude reference="WmB-Ns-L1D"/>
                                 <exclude reference="cxa-Pp-dhw"/>
                                 <exclude reference="zRD-tY-vZW"/>
+                                <exclude reference="uuq-wy-h1P"/>
+                                <exclude reference="zfq-zv-dN1"/>
+                                <exclude reference="Mkz-e3-rg5"/>
+                                <exclude reference="Pbx-ta-ewm"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -189,6 +195,10 @@
                                 <include reference="WmB-Ns-L1D"/>
                                 <include reference="cxa-Pp-dhw"/>
                                 <include reference="zRD-tY-vZW"/>
+                                <include reference="uuq-wy-h1P"/>
+                                <include reference="zfq-zv-dN1"/>
+                                <include reference="Mkz-e3-rg5"/>
+                                <include reference="Pbx-ta-ewm"/>
                             </mask>
                         </variation>
                     </view>
