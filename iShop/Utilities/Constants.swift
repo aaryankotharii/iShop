@@ -15,6 +15,14 @@ var profilePicture : UIImage?{
     return UserDefaults.standard.value(forKey: "image") as? UIImage
 }
 
+
+//MARK: -  function to get uid
+internal func getName() -> String {
+    let name = UserDefaults.standard.value(forKey: "name") as? String
+    return name ?? ""
+}
+
+
 //MARK: -  function to get uid
 internal func getUID() -> String {
     let uid = Auth.auth().currentUser?.uid

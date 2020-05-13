@@ -28,6 +28,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="loginClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5PY-wI-8DA"/>
                                     <segue destination="0af-dW-5oP" kind="show" id="3sT-Dq-4Ng"/>
                                 </connections>
                             </button>
@@ -207,7 +208,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Xbz-Dm-gHP"/>
                     <connections>
+                        <outlet property="emailTextField" destination="JwP-l4-m3B" id="swG-Ia-wSp"/>
                         <outlet property="loginStack" destination="CsO-0r-Sjh" id="OQd-IG-tEe"/>
+                        <outlet property="passwordTextField" destination="BzB-32-Tnv" id="su4-If-YdK"/>
                         <outlet property="stackYAnchor" destination="OZD-Mf-5aQ" id="jyP-Vi-rkF"/>
                     </connections>
                 </viewController>
@@ -616,22 +619,39 @@
                                     <constraint firstAttribute="width" secondItem="SWM-dU-JmS" secondAttribute="height" id="GXf-4I-YhT"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Appleseed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="8N6-YM-srH">
+                                <rect key="frame" x="87" y="444" width="240" height="29"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="24"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.42352941179999998" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.20000000000000001" green="0.42352941179999998" blue="0.54117647059999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmF-Jf-KnO">
+                                <rect key="frame" x="176" y="652" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LOGOUT"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="8N6-YM-srH" firstAttribute="trailing" secondItem="SWM-dU-JmS" secondAttribute="trailing" id="8Rj-w0-rab"/>
                             <constraint firstItem="SWM-dU-JmS" firstAttribute="centerX" secondItem="PeC-BP-aNV" secondAttribute="centerX" id="IUY-mi-Gj5"/>
                             <constraint firstItem="SWM-dU-JmS" firstAttribute="top" secondItem="FhC-MX-kd5" secondAttribute="top" constant="100" id="Irp-8T-zRA"/>
                             <constraint firstItem="SWM-dU-JmS" firstAttribute="width" secondItem="PeC-BP-aNV" secondAttribute="width" multiplier="0.57971" id="SSX-Rc-RAn"/>
+                            <constraint firstItem="8N6-YM-srH" firstAttribute="top" secondItem="SWM-dU-JmS" secondAttribute="bottom" constant="60" id="qf1-UI-z68"/>
+                            <constraint firstItem="8N6-YM-srH" firstAttribute="leading" secondItem="SWM-dU-JmS" secondAttribute="leading" id="y1U-q2-09b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FhC-MX-kd5"/>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="8N6-YM-srH" id="vQu-bF-Tt5"/>
                         <outlet property="profileImageView" destination="SWM-dU-JmS" id="zgX-ym-p7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5d-uG-XWL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4774" y="-506"/>
+            <point key="canvasLocation" x="4773.913043478261" y="-506.25"/>
         </scene>
     </scenes>
     <resources>
