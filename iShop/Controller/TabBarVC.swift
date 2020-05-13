@@ -58,11 +58,16 @@ class TabBarVC: UITabBarController {
     }
 
     override func viewDidLoad() {
+    imageView.loadImage()
       super.viewDidLoad()
       setupUI()
     }
     
     @objc func profileTapped(){
-        print("tap")
+        print("tapped")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ProfileVC")  as! ProfileVC
+        vc.modalPresentationStyle = .popover
+        present(vc,animated: true)
     }
 }

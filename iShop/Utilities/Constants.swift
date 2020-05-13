@@ -11,6 +11,10 @@ import Firebase
 
 let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
+var profilePicture : UIImage?{
+    return UserDefaults.standard.value(forKey: "image") as? UIImage
+}
+
 //MARK: -  function to get uid
 internal func getUID() -> String {
     let uid = Auth.auth().currentUser?.uid

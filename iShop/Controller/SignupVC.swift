@@ -93,6 +93,7 @@ class SignupVC: UIViewController {
     }
     
     func handleCreateNewUser(success:Bool,error:String?){
+        print("Sign up success")
         success ? goToTabbar() : AuthAlert(error!)
     }
     
@@ -103,7 +104,8 @@ class SignupVC: UIViewController {
     //MARK: --- NAVIGATION ---
     func goToTabbar(){
         let image = profileImageView.image!
-        let vc = storyboard!.instantiateViewController(identifier: "tabbar") as UITabBarController
+        let vc = storyboard!.instantiateViewController(identifier: "nav") as UINavigationController
+        profileImageView.saveImage()
         self.present(vc, animated: true) {
             DispatchQueue.global(qos: .background).async {
                 StorageClient.createProfile(image)  /// Send Profile Picture to Firebase Storage `in background Queue`
@@ -111,6 +113,7 @@ class SignupVC: UIViewController {
         }
     }
 }
+
 //MARK:- Keyboard show + hide functions
 extension SignupVC {
     //MARK: Add Observers
