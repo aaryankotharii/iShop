@@ -140,6 +140,9 @@
                                             <constraint firstAttribute="width" secondItem="fsm-dm-FDt" secondAttribute="height" multiplier="148:39" id="b9j-HC-HtL"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="google"/>
+                                        <connections>
+                                            <action selector="googleSigninClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yl8-qZ-Egm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -179,24 +182,24 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="uuq-wy-h1P"/>
+                                <exclude reference="zfq-zv-dN1"/>
                                 <exclude reference="GQg-Fb-fLi"/>
                                 <exclude reference="WmB-Ns-L1D"/>
                                 <exclude reference="cxa-Pp-dhw"/>
                                 <exclude reference="zRD-tY-vZW"/>
-                                <exclude reference="uuq-wy-h1P"/>
-                                <exclude reference="zfq-zv-dN1"/>
                                 <exclude reference="Mkz-e3-rg5"/>
                                 <exclude reference="Pbx-ta-ewm"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="uuq-wy-h1P"/>
+                                <include reference="zfq-zv-dN1"/>
                                 <include reference="GQg-Fb-fLi"/>
                                 <include reference="WmB-Ns-L1D"/>
                                 <include reference="cxa-Pp-dhw"/>
                                 <include reference="zRD-tY-vZW"/>
-                                <include reference="uuq-wy-h1P"/>
-                                <include reference="zfq-zv-dN1"/>
                                 <include reference="Mkz-e3-rg5"/>
                                 <include reference="Pbx-ta-ewm"/>
                             </mask>

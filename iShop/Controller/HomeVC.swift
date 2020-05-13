@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleSignIn
+import Firebase
 
 class HomeVC: UIViewController {
 
@@ -21,6 +23,10 @@ class HomeVC: UIViewController {
         hideKeyboardWhenTappedAround()
         stackY = loginStack.frame.origin.y
         stackBottomY = stackY + loginStack.frame.height
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
 
     }
     
@@ -28,6 +34,13 @@ class HomeVC: UIViewController {
         super.viewDidDisappear(animated)
         unsubscribeFromKeyboardNotifications()  /// REMOVE OBSERVERS    `To Free Memory`
     }
+    
+    
+    @IBAction func googleSigninClicked(_ sender: Any) {
+        GIDSignIn.sharedInstance().delegate = self
+         GIDSignIn.sharedInstance().signIn()
+    }
+    
 
 }
 
