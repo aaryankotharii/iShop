@@ -35,6 +35,7 @@ class LoginVC: UIViewController {
     func handleSuccessLogin(){
         UIDevice.validVibrate()
         print("YAY LOGGED IN")
+        goToTabbar()
     }
     
     //MARK:- Error Checking Function
@@ -48,5 +49,12 @@ class LoginVC: UIViewController {
             return "Please Fill in all the fields"
         }
         return nil
+    }
+    
+    func goToTabbar(){
+        let vc = storyboard!.instantiateViewController(identifier: "nav") as UINavigationController
+        self.present(vc, animated: true) {
+            print("preszen")
+        }
     }
 }

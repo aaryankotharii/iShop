@@ -435,9 +435,25 @@
                     <view key="view" contentMode="scaleToFill" id="PeC-BP-aNV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SWM-dU-JmS">
+                                <rect key="frame" x="87" y="144" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SWM-dU-JmS" secondAttribute="height" id="GXf-4I-YhT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SWM-dU-JmS" firstAttribute="centerX" secondItem="PeC-BP-aNV" secondAttribute="centerX" id="IUY-mi-Gj5"/>
+                            <constraint firstItem="SWM-dU-JmS" firstAttribute="top" secondItem="FhC-MX-kd5" secondAttribute="top" constant="100" id="Irp-8T-zRA"/>
+                            <constraint firstItem="SWM-dU-JmS" firstAttribute="width" secondItem="PeC-BP-aNV" secondAttribute="width" multiplier="0.57971" id="SSX-Rc-RAn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FhC-MX-kd5"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="SWM-dU-JmS" id="zgX-ym-p7h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5d-uG-XWL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

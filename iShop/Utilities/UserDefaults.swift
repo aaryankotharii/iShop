@@ -11,18 +11,57 @@ import UIKit
 let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView{
-        
+    
     func saveImage(){
         let imageData = self.image?.jpegData(compressionQuality: 1.0)
         UserDefaults.standard.set(imageData, forKey: "image")
     }
     
     func loadImage(){
-
+        
         if let imagedata = UserDefaults.standard.value(forKey: "image") as? Data{
             self.image = UIImage(data: imagedata)
+        } else {
+            databaseClient.shared.getProfileImageUrl{ url in
+            self.loadImageUsingCacheWithUrlString(urlString: url!)
+            
+            }
         }
     }
+    
+    
+    func loadImageUsingCacheWithUrlString(urlString : String){
+        
+        self.image = nil
+        
+        //check cache for image
+        if let cachedImage = imageCache.object(forKey: urlString as NSString) {
+            self.image = cachedImage
+            return
+        }
+        
+        let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+            }
+            else{
+                DispatchQueue.main.async {
+                    if  let downloadedImage = UIImage(data: data!) {
+                        
+                        imageCache.setObject(downloadedImage, forKey: urlString as NSString)
+                        
+                        self.image = downloadedImage
+                        
+                        /// Download Image and set as `userDefault`
+                        let imageData = downloadedImage.jpegData(compressionQuality: 1.0)
+                        UserDefaults.standard.set(imageData, forKey: "image")
+                    }
+                }
+            }
+        }.resume()
+    }
+    
 }
 
 

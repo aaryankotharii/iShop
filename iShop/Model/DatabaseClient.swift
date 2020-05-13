@@ -17,9 +17,9 @@ class databaseClient{
     let myUID = getUID()
     
     //MARK: - Function to fill the user form
-   public func createUser(user: User,completion: @escaping (Bool, String?) -> ()) {
+    public func createUser(user: User,completion: @escaping (Bool, String?) -> ()) {
         // setValue with param = ["name": "yourName", ....] type
-    self.database.child("users").child(myUID).setValue(user.param) { (error, ref) in
+        self.database.child("users").child(myUID).setValue(user.param) { (error, ref) in
             if let error = error{
                 let errorDescription = AuthClient.handleError(error)
                 completion(false,errorDescription)
@@ -32,8 +32,20 @@ class databaseClient{
     public func updateProfileImage(url: String,completion:@escaping (Bool) -> ()) {
         let ref = database.child("users").child(getUID())
         ref.updateChildValues(["imageUrl":url]) { (error, ref) in
-            if let error = error{ completion(false) ;  return }
+            if let _ = error{ completion(false) ;  return }
             completion(true)
+        }
+    }
+    
+    public func getProfileImageUrl(completion : @escaping (String?)->()){
+        let ref = database.child("users").child(getUID())
+        ref.observe(.value) { (snapshot) in
+            guard let dictionary = snapshot.value as?[String:AnyObject] else { return }
+            
+            if let url = dictionary["imageUrl"]{completion((url as! String)) }
+            else {
+                completion(nil)
+            }
         }
     }
 }
