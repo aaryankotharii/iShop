@@ -52,7 +52,7 @@ extension HomeVC : GIDSignInDelegate{
             
             let user = User(name: name!, email: email!, imageUrl:  url!.absoluteString)
             databaseClient.shared.createUser(user: user) { (success, error) in
-                if error != nil { print(error) }
+                if error != nil { print(error!) }
             }
             
            //Access the storyboard and fetch an instance of the view controller

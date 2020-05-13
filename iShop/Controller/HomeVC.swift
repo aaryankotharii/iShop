@@ -24,24 +24,35 @@ class HomeVC: UIViewController {
     
     var stackY : CGFloat!
     var stackBottomY: CGFloat!
+    
     override func viewDidLoad() {
-        UserDefaults.standard.set(nil, forKey: "image")
         super.viewDidLoad()
+        initialSetup()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         subscribeToKeyboardNotifications()
-        hideKeyboardWhenTappedAround()
-        stackY = loginStack.frame.origin.y
-        stackBottomY = stackY + loginStack.frame.height
-        
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         unsubscribeFromKeyboardNotifications()  /// REMOVE OBSERVERS    `To Free Memory`
     }
+    
+    fileprivate func initialSetup() {
+        UserDefaults.standard.set(nil, forKey: "image")
+        hideKeyboardWhenTappedAround()
+        subscribeToKeyboardNotifications()
+        stackY = loginStack.frame.origin.y
+        stackBottomY = stackY + loginStack.frame.height
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+    }
+    
+    
     
     @IBAction func loginClicked(_ sender: UIButton) {
         if let error = errorCheck() { AuthAlert(error) ; return}

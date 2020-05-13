@@ -58,9 +58,13 @@ class TabBarVC: UITabBarController {
     }
 
     override func viewDidLoad() {
-    imageView.loadImage()
       super.viewDidLoad()
       setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+            imageView.loadImage()
     }
     
     @objc func profileTapped(){

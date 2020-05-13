@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B0283B6246993DE0086EDB6 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283B5246993DE0086EDB6 /* LoginVC.swift */; };
 		5B0283B9246995360086EDB6 /* Alerts+functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283B8246995360086EDB6 /* Alerts+functions.swift */; };
 		5B0283BB246997D20086EDB6 /* haptic+Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283BA246997D10086EDB6 /* haptic+Feedback.swift */; };
 		5B0283BD2469A0090086EDB6 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283BC2469A0090086EDB6 /* SignupVC.swift */; };
@@ -23,6 +22,7 @@
 		5B0283DA246BB2E80086EDB6 /* yellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283D9246BB2E80086EDB6 /* yellowViewController.swift */; };
 		5B0283DC246BC5B20086EDB6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283DB246BC5B20086EDB6 /* HomeVC.swift */; };
 		5B0283DE246BF5750086EDB6 /* Google+Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283DD246BF5750086EDB6 /* Google+Signin.swift */; };
+		5B0283E0246C42680086EDB6 /* launch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5B0283DF246C42680086EDB6 /* launch.gif */; };
 		5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AD24694B50004909AB /* AppDelegate.swift */; };
 		5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AF24694B50004909AB /* SceneDelegate.swift */; };
 		5BAF32B224694B50004909AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32B124694B50004909AB /* ViewController.swift */; };
@@ -36,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		47F79CA7F4A8851B3641892C /* Pods_iShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B0283B5246993DE0086EDB6 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5B0283B8246995360086EDB6 /* Alerts+functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alerts+functions.swift"; sourceTree = "<group>"; };
 		5B0283BA246997D10086EDB6 /* haptic+Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "haptic+Feedback.swift"; sourceTree = "<group>"; };
 		5B0283BC2469A0090086EDB6 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		5B0283D9246BB2E80086EDB6 /* yellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yellowViewController.swift; sourceTree = "<group>"; };
 		5B0283DB246BC5B20086EDB6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5B0283DD246BF5750086EDB6 /* Google+Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Google+Signin.swift"; sourceTree = "<group>"; };
+		5B0283DF246C42680086EDB6 /* launch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launch.gif; sourceTree = "<group>"; };
 		5BAF32AA24694B50004909AB /* iShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAF32AD24694B50004909AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BAF32AF24694B50004909AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +133,7 @@
 				5BAF32C6246954C8004909AB /* GoogleService-Info.plist */,
 				5BAF32B824694B53004909AB /* LaunchScreen.storyboard */,
 				5BAF32BB24694B53004909AB /* Info.plist */,
+				5B0283DF246C42680086EDB6 /* launch.gif */,
 			);
 			path = iShop;
 			sourceTree = "<group>";
@@ -141,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				5B0283DB246BC5B20086EDB6 /* HomeVC.swift */,
-				5B0283B5246993DE0086EDB6 /* LoginVC.swift */,
 				5B0283BC2469A0090086EDB6 /* SignupVC.swift */,
 				5B0283CA246AA7950086EDB6 /* TabBarVC.swift */,
 				5B0283D3246B27970086EDB6 /* ProfileVC.swift */,
@@ -239,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BAF32C7246954C8004909AB /* GoogleService-Info.plist in Resources */,
+				5B0283E0246C42680086EDB6 /* launch.gif in Resources */,
 				5BAF32BA24694B53004909AB /* LaunchScreen.storyboard in Resources */,
 				5BAF32B724694B53004909AB /* Assets.xcassets in Resources */,
 				5BAF32B524694B50004909AB /* Main.storyboard in Resources */,
@@ -327,7 +328,6 @@
 				5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */,
 				5B0283BB246997D20086EDB6 /* haptic+Feedback.swift in Sources */,
 				5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */,
-				5B0283B6246993DE0086EDB6 /* LoginVC.swift in Sources */,
 				5B0283C9246A9E590086EDB6 /* Keyboard+Hide.swift in Sources */,
 				5B0283DC246BC5B20086EDB6 /* HomeVC.swift in Sources */,
 				5B0283C32469BCAC0086EDB6 /* User.swift in Sources */,

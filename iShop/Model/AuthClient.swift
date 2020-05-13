@@ -18,6 +18,7 @@ class AuthClient{
                 completion(false,errorDescription)
                 return
             }
+            UserDefaults.standard.setValue(true, forKey: "login")
             completion(true,nil)
         }
     }
@@ -29,6 +30,7 @@ class AuthClient{
                 completion(false,errorDescription)
                 return
             }
+            UserDefaults.standard.setValue(true, forKey: "login")
             completion(true,nil)
         }
     }
