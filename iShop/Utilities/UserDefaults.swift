@@ -24,7 +24,6 @@ extension UIImageView{
         } else {
             databaseClient.shared.getProfileImageUrl{ url in
             self.loadImageUsingCacheWithUrlString(urlString: url!)
-            
             }
         }
     }

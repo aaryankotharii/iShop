@@ -18,6 +18,7 @@ class HomeVC: UIViewController {
     var stackY : CGFloat!
     var stackBottomY: CGFloat!
     override func viewDidLoad() {
+        UserDefaults.standard.set(nil, forKey: "image")
         super.viewDidLoad()
         subscribeToKeyboardNotifications()
         hideKeyboardWhenTappedAround()

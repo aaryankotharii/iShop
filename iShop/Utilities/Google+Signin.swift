@@ -13,15 +13,15 @@ import FirebaseAuth
 extension HomeVC : GIDSignInDelegate{
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         if let error = error {
-            if error.localizedDescription == "The user canceled the sign-in flow." {
-               // removeBlurView()
+            switch error.localizedDescription {
+            case "The user canceled the sign-in flow.": break
+                               // removeBlurView()
+            default:
+                print(error.localizedDescription)
+            }
                 return
             }
-            else {
-            print(error)
-            return
-            }
-        }
+        
         guard let authentication = user.authentication else { return }
         
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
@@ -32,13 +32,29 @@ extension HomeVC : GIDSignInDelegate{
                 return
             }
             
-            print(user.profile.name)
-            print(user.profile)
             
+           if user.profile.hasImage
+            {
+                let pic = user.profile.imageURL(withDimension: 100)
+                print(pic)
+            }
+            
+            
+            let name = user.profile.name
+            let email = user.profile.email
+            let url = user.profile.imageURL(withDimension: 100)
             
             guard let uid = user.userID else { return }
             print("Sucessfully logged into firebase with Google!",uid)
             UserDefaults.standard.setValue(true, forKey: "login")
+            UserDefaults.standard.setValue(name, forKey: "name")
+            
+            
+            let user = User(name: name!, email: email!, imageUrl:  url!.absoluteString)
+            databaseClient.shared.createUser(user: user) { (success, error) in
+                if error != nil { print(error) }
+            }
+            
            //Access the storyboard and fetch an instance of the view controller
             let storyboard = UIStoryboard(name: "Main", bundle: nil);
             let vc = storyboard.instantiateViewController(withIdentifier: "nav") as! UINavigationController
@@ -46,6 +62,4 @@ extension HomeVC : GIDSignInDelegate{
             self.present(vc, animated:true, completion: nil)
         }
     }
-    
-    
 }
