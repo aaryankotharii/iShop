@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drk-V1-SDy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="293.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gardient" translatesAutoresizingMaskIntoConstraints="NO" id="eec-VS-nE3">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gardient" translatesAutoresizingMaskIntoConstraints="NO" id="eec-VS-nE3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="293.5"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="qW5-vu-qwO">
@@ -44,7 +44,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="eec-VS-nE3" firstAttribute="top" secondItem="drk-V1-SDy" secondAttribute="top" id="73D-y3-ALG"/>
                                     <constraint firstAttribute="bottom" secondItem="eec-VS-nE3" secondAttribute="bottom" id="ASm-gu-Elh"/>
@@ -88,9 +88,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="86.5" id="q6W-J4-Hma"/>
+                                        </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JwP-l4-m3B">
-                                        <rect key="frame" x="0.0" y="106.5" width="334" height="48"/>
+                                        <rect key="frame" x="0.0" y="106.5" width="334" height="47.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JwP-l4-m3B" secondAttribute="height" multiplier="7" id="X9b-Ab-4di"/>
                                         </constraints>
@@ -98,7 +101,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BzB-32-Tnv">
-                                        <rect key="frame" x="0.0" y="174.5" width="334" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="174" width="334" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BzB-32-Tnv" secondAttribute="height" multiplier="7" id="kby-P4-EBD"/>
                                         </constraints>
@@ -131,12 +134,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="CsO-0r-Sjh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="3hu-nq-aT1"/>
+                            <constraint firstItem="CsO-0r-Sjh" firstAttribute="top" secondItem="drk-V1-SDy" secondAttribute="bottom" constant="19.5" id="Fq8-Q5-F8q"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GQg-Fb-fLi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CsO-0r-Sjh" secondAttribute="trailing" constant="40" id="NZQ-fX-H0h"/>
                             <constraint firstItem="CsO-0r-Sjh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OZD-Mf-5aQ"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WmB-Ns-L1D"/>
                             <constraint firstItem="drk-V1-SDy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cxa-Pp-dhw"/>
-                            <constraint firstItem="drk-V1-SDy" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.325893" priority="500" id="zRD-tY-vZW"/>
+                            <constraint firstItem="drk-V1-SDy" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.325893" priority="250" id="zRD-tY-vZW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
@@ -157,6 +161,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Xbz-Dm-gHP"/>
+                    <connections>
+                        <outlet property="loginStack" destination="CsO-0r-Sjh" id="OQd-IG-tEe"/>
+                        <outlet property="stackYAnchor" destination="OZD-Mf-5aQ" id="jyP-Vi-rkF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
