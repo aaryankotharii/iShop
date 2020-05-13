@@ -23,7 +23,9 @@ extension UIImageView{
             self.image = UIImage(data: imagedata)
         } else {
             databaseClient.shared.getProfileImageUrl{ url in
-            self.loadImageUsingCacheWithUrlString(urlString: url!)
+                if let url = url {
+                    self.loadImageUsingCacheWithUrlString(urlString: url)
+                }
             }
         }
     }
@@ -60,7 +62,6 @@ extension UIImageView{
             }
         }.resume()
     }
-    
 }
 
 

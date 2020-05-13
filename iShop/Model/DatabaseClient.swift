@@ -48,6 +48,18 @@ class databaseClient{
             }
         }
     }
+    
+    public func getName(completion : @escaping (String?)->()){
+        let ref = database.child("users").child(getUID())
+        ref.observe(.value) { (snapshot) in
+            guard let dictionary = snapshot.value as?[String:AnyObject] else { return }
+            
+            if let name = dictionary["name"]{completion((name as! String)) }
+            else {
+                completion(nil)
+            }
+        }
+    }
 }
 
 
