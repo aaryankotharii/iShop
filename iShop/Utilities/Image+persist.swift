@@ -1,5 +1,5 @@
 //
-//  Image+Saving.swift
+//  Image+Persist.swift
 //  iShop
 //
 //  Created by Aaryan Kothari on 13/05/20.

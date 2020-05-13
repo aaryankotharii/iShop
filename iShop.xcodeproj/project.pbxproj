@@ -18,20 +18,18 @@
 		5B0283C9246A9E590086EDB6 /* Keyboard+Hide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283C8246A9E590086EDB6 /* Keyboard+Hide.swift */; };
 		5B0283CB246AA7950086EDB6 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283CA246AA7950086EDB6 /* TabBarVC.swift */; };
 		5B0283D4246B27970086EDB6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283D3246B27970086EDB6 /* ProfileVC.swift */; };
-		5B0283D8246B35D20086EDB6 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283D7246B35D20086EDB6 /* UserDefaults.swift */; };
+		5B0283D8246B35D20086EDB6 /* Image+persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283D7246B35D20086EDB6 /* Image+persist.swift */; };
 		5B0283DA246BB2E80086EDB6 /* yellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283D9246BB2E80086EDB6 /* yellowViewController.swift */; };
 		5B0283DC246BC5B20086EDB6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283DB246BC5B20086EDB6 /* HomeVC.swift */; };
 		5B0283DE246BF5750086EDB6 /* Google+Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283DD246BF5750086EDB6 /* Google+Signin.swift */; };
-		5B0283E0246C42680086EDB6 /* launch.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5B0283DF246C42680086EDB6 /* launch.gif */; };
 		5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AD24694B50004909AB /* AppDelegate.swift */; };
-		5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AF24694B50004909AB /* SceneDelegate.swift */; };
-		5BAF32B224694B50004909AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32B124694B50004909AB /* ViewController.swift */; };
 		5BAF32B524694B50004909AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B324694B50004909AB /* Main.storyboard */; };
 		5BAF32B724694B53004909AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B624694B53004909AB /* Assets.xcassets */; };
 		5BAF32BA24694B53004909AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B824694B53004909AB /* LaunchScreen.storyboard */; };
 		5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32C424694CEA004909AB /* AuthClient.swift */; };
 		5BAF32C7246954C8004909AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32C6246954C8004909AB /* GoogleService-Info.plist */; };
 		5BC68805246C76CB0059EC21 /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC68804246C76CB0059EC21 /* SignOut.swift */; };
+		5BC6880A246C86D30059EC21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC68809246C86D30059EC21 /* SceneDelegate.swift */; };
 		AAE95A2BE421B4EFBF84A99A /* Pods_iShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F79CA7F4A8851B3641892C /* Pods_iShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,15 +46,12 @@
 		5B0283C8246A9E590086EDB6 /* Keyboard+Hide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+Hide.swift"; sourceTree = "<group>"; };
 		5B0283CA246AA7950086EDB6 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		5B0283D3246B27970086EDB6 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		5B0283D7246B35D20086EDB6 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		5B0283D7246B35D20086EDB6 /* Image+persist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+persist.swift"; sourceTree = "<group>"; };
 		5B0283D9246BB2E80086EDB6 /* yellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yellowViewController.swift; sourceTree = "<group>"; };
 		5B0283DB246BC5B20086EDB6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5B0283DD246BF5750086EDB6 /* Google+Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Google+Signin.swift"; sourceTree = "<group>"; };
-		5B0283DF246C42680086EDB6 /* launch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launch.gif; sourceTree = "<group>"; };
 		5BAF32AA24694B50004909AB /* iShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAF32AD24694B50004909AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BAF32AF24694B50004909AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5BAF32B124694B50004909AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BAF32B424694B50004909AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BAF32B624694B53004909AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BAF32B924694B53004909AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +59,7 @@
 		5BAF32C424694CEA004909AB /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		5BAF32C6246954C8004909AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BC68804246C76CB0059EC21 /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
+		5BC68809246C86D30059EC21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A61061895CEF15738FB4967B /* Pods-iShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop.debug.xcconfig"; path = "Target Support Files/Pods-iShop/Pods-iShop.debug.xcconfig"; sourceTree = "<group>"; };
 		CA7D6FE7D428EFE10995D98E /* Pods-iShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop.release.xcconfig"; path = "Target Support Files/Pods-iShop/Pods-iShop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,10 +89,9 @@
 			children = (
 				5B0283B8246995360086EDB6 /* Alerts+functions.swift */,
 				5B0283BA246997D10086EDB6 /* haptic+Feedback.swift */,
-				5B0283C02469A5C10086EDB6 /* Constants.swift */,
 				5B0283C42469CDDC0086EDB6 /* imagePicker.swift */,
 				5B0283C8246A9E590086EDB6 /* Keyboard+Hide.swift */,
-				5B0283D7246B35D20086EDB6 /* UserDefaults.swift */,
+				5B0283D7246B35D20086EDB6 /* Image+persist.swift */,
 				5B0283DD246BF5750086EDB6 /* Google+Signin.swift */,
 			);
 			path = Utilities;
@@ -127,15 +122,10 @@
 				5BAF32C324694B7F004909AB /* Model */,
 				5BAF32C224694B7E004909AB /* View */,
 				5BAF32C124694B7D004909AB /* Controller */,
-				5BAF32AD24694B50004909AB /* AppDelegate.swift */,
-				5BAF32AF24694B50004909AB /* SceneDelegate.swift */,
-				5BAF32B124694B50004909AB /* ViewController.swift */,
-				5BAF32B324694B50004909AB /* Main.storyboard */,
-				5BAF32B624694B53004909AB /* Assets.xcassets */,
+				5BC68808246C86790059EC21 /* Helpers */,
+				5BC6880B246C87500059EC21 /* Storyboards+Assets */,
 				5BAF32C6246954C8004909AB /* GoogleService-Info.plist */,
-				5BAF32B824694B53004909AB /* LaunchScreen.storyboard */,
 				5BAF32BB24694B53004909AB /* Info.plist */,
-				5B0283DF246C42680086EDB6 /* launch.gif */,
 			);
 			path = iShop;
 			sourceTree = "<group>";
@@ -162,13 +152,49 @@
 		5BAF32C324694B7F004909AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5BAF32C424694CEA004909AB /* AuthClient.swift */,
-				5B0283BE2469A55C0086EDB6 /* DatabaseClient.swift */,
-				5B0283C22469BCAC0086EDB6 /* User.swift */,
-				5B0283C62469E0B60086EDB6 /* StorageClient.swift */,
+				5BC68806246C85EE0059EC21 /* Clients */,
+				5BC68807246C86000059EC21 /* Request */,
 				5BC68804246C76CB0059EC21 /* SignOut.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5BC68806246C85EE0059EC21 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				5BAF32C424694CEA004909AB /* AuthClient.swift */,
+				5B0283BE2469A55C0086EDB6 /* DatabaseClient.swift */,
+				5B0283C62469E0B60086EDB6 /* StorageClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		5BC68807246C86000059EC21 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				5B0283C22469BCAC0086EDB6 /* User.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		5BC68808246C86790059EC21 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5BC68809246C86D30059EC21 /* SceneDelegate.swift */,
+				5BAF32AD24694B50004909AB /* AppDelegate.swift */,
+				5B0283C02469A5C10086EDB6 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5BC6880B246C87500059EC21 /* Storyboards+Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5BAF32B324694B50004909AB /* Main.storyboard */,
+				5BAF32B624694B53004909AB /* Assets.xcassets */,
+				5BAF32B824694B53004909AB /* LaunchScreen.storyboard */,
+			);
+			path = "Storyboards+Assets";
 			sourceTree = "<group>";
 		};
 		7BD02C23909250145C0A2F48 /* Pods */ = {
@@ -242,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BAF32C7246954C8004909AB /* GoogleService-Info.plist in Resources */,
-				5B0283E0246C42680086EDB6 /* launch.gif in Resources */,
 				5BAF32BA24694B53004909AB /* LaunchScreen.storyboard in Resources */,
 				5BAF32B724694B53004909AB /* Assets.xcassets in Resources */,
 				5BAF32B524694B50004909AB /* Main.storyboard in Resources */,
@@ -320,17 +345,16 @@
 				5B0283BD2469A0090086EDB6 /* SignupVC.swift in Sources */,
 				5B0283DE246BF5750086EDB6 /* Google+Signin.swift in Sources */,
 				5B0283C52469CDDC0086EDB6 /* imagePicker.swift in Sources */,
-				5BAF32B224694B50004909AB /* ViewController.swift in Sources */,
 				5B0283BF2469A55C0086EDB6 /* DatabaseClient.swift in Sources */,
 				5B0283D4246B27970086EDB6 /* ProfileVC.swift in Sources */,
 				5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */,
-				5B0283D8246B35D20086EDB6 /* UserDefaults.swift in Sources */,
+				5B0283D8246B35D20086EDB6 /* Image+persist.swift in Sources */,
 				5B0283B9246995360086EDB6 /* Alerts+functions.swift in Sources */,
 				5B0283C72469E0B60086EDB6 /* StorageClient.swift in Sources */,
 				5B0283CB246AA7950086EDB6 /* TabBarVC.swift in Sources */,
 				5B0283C12469A5C10086EDB6 /* Constants.swift in Sources */,
-				5BAF32B024694B50004909AB /* SceneDelegate.swift in Sources */,
 				5B0283BB246997D20086EDB6 /* haptic+Feedback.swift in Sources */,
+				5BC6880A246C86D30059EC21 /* SceneDelegate.swift in Sources */,
 				5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */,
 				5B0283C9246A9E590086EDB6 /* Keyboard+Hide.swift in Sources */,
 				5B0283DC246BC5B20086EDB6 /* HomeVC.swift in Sources */,

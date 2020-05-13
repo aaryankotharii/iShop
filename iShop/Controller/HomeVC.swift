@@ -70,6 +70,7 @@ class HomeVC: UIViewController {
     }
     
     func handleSuccessLogin(){
+        self.saveName()
         UIDevice.validVibrate()
         print("YAY LOGGED IN")
         goToTabbar()
@@ -93,7 +94,6 @@ class HomeVC: UIViewController {
     func goToTabbar(){
         let vc = storyboard!.instantiateViewController(identifier: "nav") as UINavigationController
         self.present(vc, animated: true) {
-            self.saveName()
         }
     }
 }
