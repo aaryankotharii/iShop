@@ -13,6 +13,9 @@ class ViewController: UIViewController {
 
     @IBOutlet var gifImageView: UIImageView!
     
+    var loginstatus = UserDefaults.standard.bool(forKey: "login")
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
@@ -35,14 +38,14 @@ class ViewController: UIViewController {
     }
     
     @objc func segue(){
-        performSegue(withIdentifier: "tohome", sender: nil)
+        switch loginstatus {
+        case false:
+            //TODO LOGOUT
+            print("Signout successful")
+            performSegue(withIdentifier: "tohome", sender: nil)
+        case true:
+            performSegue(withIdentifier: "tonav", sender: nil)
+        }
+        
     }
-    
-
 }
-
-//extension ViewController: SwiftyGifDelegate {
-//    func gifDidStop(sender: UIImageView) {
-//        logoAnimationView.isHidden = true
-//    }
-//}

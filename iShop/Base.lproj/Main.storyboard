@@ -445,7 +445,7 @@
             <objects>
                 <viewController id="EKZ-os-TML" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VLg-Js-Dqa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.94867634663674216" blue="0.60163966159372217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="nsg-vR-udN"/>
@@ -461,7 +461,7 @@
             <objects>
                 <viewController id="fdd-bI-egO" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TJH-4G-dYs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.74417608489034615" green="0.95338156991174583" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="FQN-os-myo"/>
@@ -497,7 +497,7 @@
             <objects>
                 <viewController id="O0O-pE-jCm" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WKW-fm-WHF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.67019444307245557" blue="0.59438870940120392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="b8K-di-2q6"/>
@@ -511,7 +511,8 @@
         <!--Navigation Controller-->
         <scene sceneID="NQf-Tn-Vrn">
             <objects>
-                <navigationController storyboardIdentifier="nav" modalPresentationStyle="fullScreen" id="2yC-WT-2Wt" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="2yC-WT-2Wt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Aeq-0Y-98A"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="rTy-EA-YCG">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -636,11 +637,12 @@
                     <connections>
                         <outlet property="gifImageView" destination="pwE-B1-Fhe" id="IMB-td-HbN"/>
                         <segue destination="cK6-m5-vIH" kind="show" identifier="tohome" id="JQQ-pP-szb"/>
+                        <segue destination="2yC-WT-2Wt" kind="show" identifier="tonav" id="9fN-RU-h3l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBM-Lk-MgB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-813.04347826086962" y="107.8125"/>
+            <point key="canvasLocation" x="2670" y="-674"/>
         </scene>
     </scenes>
     <resources>

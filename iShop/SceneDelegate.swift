@@ -12,26 +12,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    var loginstatus = UserDefaults.standard.bool(forKey: "login")
-    
-    
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window!.windowScene = windowScene
-        
-        switch loginstatus {
-        case false:
-            //TODO LOGOUT
-            print("Signout successful")
-            let VC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            window!.rootViewController = VC
-        case true:
-            let VC = storyboard.instantiateViewController(withIdentifier: "nav") as! UINavigationController
-            window!.rootViewController = VC
-        }
-        window!.makeKeyAndVisible()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
