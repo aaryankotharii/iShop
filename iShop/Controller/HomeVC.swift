@@ -13,22 +13,19 @@ import Firebase
 class HomeVC: UIViewController {
     
     @IBOutlet var stackYAnchor: NSLayoutConstraint!
-    
     @IBOutlet var loginStack: UIStackView!
-    
-    
     @IBOutlet var emailTextField: UITextField!
-    
-    
     @IBOutlet var passwordTextField: UITextField!
     
+    /// Value of StackView origin Y coordinate `used for textfield dynamic animation`
     var stackY : CGFloat!
-    var stackBottomY: CGFloat!
+    
+    var keyboardIsUp : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-        
+        subscribeToKeyboardNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,7 +42,7 @@ class HomeVC: UIViewController {
         hideKeyboardWhenTappedAround()
         subscribeToKeyboardNotifications()
         stackY = loginStack.frame.origin.y
-        stackBottomY = stackY + loginStack.frame.height
+
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
@@ -90,7 +87,7 @@ class HomeVC: UIViewController {
     func goToTabbar(){
         let vc = storyboard!.instantiateViewController(identifier: "nav") as UINavigationController
         self.present(vc, animated: true) {
-            print("preszen")
+            print("present")
         }
     }
     
@@ -107,11 +104,14 @@ extension HomeVC {
     //MARK: Remove Observers
     func unsubscribeFromKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+
     }
+    
+
     
     //MARK: Move stackView based on keybaord
     @objc func keyboardNotification(notification: NSNotification) {
-        print(stackYAnchor.constant)
+        print(stackYAnchor.constant,"stack anchor")
         if let userInfo = notification.userInfo {
             
             //MARK: Get Keboard Y point on screen
@@ -126,11 +126,12 @@ extension HomeVC {
             let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             
-            let KeyboardTopInset = stackBottomY - endFrameY + 20
+            let stackBottomY = stackY + loginStack.frame.height
+            let KeyboardTopInset = stackBottomY - endFrameY + 40
             let screenHeight = UIScreen.main.bounds.size.height
             
             self.stackYAnchor.constant = (endFrameY >= screenHeight) ? 0.0 : -KeyboardTopInset
-            
+            print("top",KeyboardTopInset)
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,

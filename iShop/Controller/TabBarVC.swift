@@ -60,17 +60,26 @@ class TabBarVC: UITabBarController {
     override func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
-                NotificationCenter.default.addObserver(self,selector: #selector(refreshLbl),name:NSNotification.Name(rawValue: "refresh"),object: nil)
+                
     }
     
-    @objc func refreshLbl() {
+    
+    @objc func refreshImage() {
         imageView.loadImage()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
             imageView.loadImage()
+        NotificationCenter.default.addObserver(self,selector: #selector(refreshImage),name:NSNotification.Name(rawValue: "refresh"),object: nil)
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "refresh"), object: nil)
+    }
+    
+    
     
     @objc func profileTapped(){
         print("tapped")
