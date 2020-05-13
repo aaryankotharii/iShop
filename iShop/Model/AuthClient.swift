@@ -56,4 +56,7 @@ class AuthClient{
         }
         return "please try again later"
     }
+    class func logout(){
+        
+    }
 }

@@ -42,7 +42,6 @@ class HomeVC: UIViewController {
     }
     
     fileprivate func initialSetup() {
-        UserDefaults.standard.set(nil, forKey: "image")
         hideKeyboardWhenTappedAround()
         subscribeToKeyboardNotifications()
         stackY = loginStack.frame.origin.y

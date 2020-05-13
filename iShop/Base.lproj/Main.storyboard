@@ -559,10 +559,17 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="-1" height="-1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmF-Jf-KnO">
-                                <rect key="frame" x="176" y="652" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="LOGOUT"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmF-Jf-KnO">
+                                <rect key="frame" x="87" y="777.5" width="240" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hmF-Jf-KnO" secondAttribute="height" multiplier="7" id="j2z-UQ-ap5"/>
+                                </constraints>
+                                <state key="normal" title="LOGOUT" backgroundImage="button_gradient">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="juK-nE-epq" eventType="touchUpInside" id="F3o-mu-IIr"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5D-qg-6N4">
                                 <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -578,8 +585,11 @@
                             <constraint firstItem="mOU-b0-dL9" firstAttribute="width" secondItem="SWM-dU-JmS" secondAttribute="width" multiplier="1.05833" id="G5C-Pi-yoD"/>
                             <constraint firstItem="SWM-dU-JmS" firstAttribute="centerX" secondItem="PeC-BP-aNV" secondAttribute="centerX" id="IUY-mi-Gj5"/>
                             <constraint firstItem="SWM-dU-JmS" firstAttribute="top" secondItem="Y5D-qg-6N4" secondAttribute="bottom" constant="50" id="Irp-8T-zRA"/>
+                            <constraint firstItem="FhC-MX-kd5" firstAttribute="bottom" secondItem="hmF-Jf-KnO" secondAttribute="bottom" constant="50" id="RQR-WP-T1y"/>
                             <constraint firstItem="SWM-dU-JmS" firstAttribute="width" secondItem="PeC-BP-aNV" secondAttribute="width" multiplier="0.57971" id="SSX-Rc-RAn"/>
+                            <constraint firstItem="hmF-Jf-KnO" firstAttribute="trailing" secondItem="SWM-dU-JmS" secondAttribute="trailing" id="TvE-Is-Ncf"/>
                             <constraint firstItem="mOU-b0-dL9" firstAttribute="centerX" secondItem="SWM-dU-JmS" secondAttribute="centerX" id="Xfn-a7-PSc"/>
+                            <constraint firstItem="hmF-Jf-KnO" firstAttribute="leading" secondItem="SWM-dU-JmS" secondAttribute="leading" id="fgr-5o-Kd4"/>
                             <constraint firstItem="Y5D-qg-6N4" firstAttribute="trailing" secondItem="FhC-MX-kd5" secondAttribute="trailing" id="ibI-Dm-H3k"/>
                             <constraint firstItem="mOU-b0-dL9" firstAttribute="centerY" secondItem="SWM-dU-JmS" secondAttribute="centerY" id="mVx-g6-1Yr"/>
                             <constraint firstItem="mOU-b0-dL9" firstAttribute="width" secondItem="mOU-b0-dL9" secondAttribute="height" id="o03-3z-x5v"/>

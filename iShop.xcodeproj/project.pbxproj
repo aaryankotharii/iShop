@@ -31,6 +31,7 @@
 		5BAF32BA24694B53004909AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B824694B53004909AB /* LaunchScreen.storyboard */; };
 		5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32C424694CEA004909AB /* AuthClient.swift */; };
 		5BAF32C7246954C8004909AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32C6246954C8004909AB /* GoogleService-Info.plist */; };
+		5BC68805246C76CB0059EC21 /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC68804246C76CB0059EC21 /* SignOut.swift */; };
 		AAE95A2BE421B4EFBF84A99A /* Pods_iShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F79CA7F4A8851B3641892C /* Pods_iShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		5BAF32BB24694B53004909AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BAF32C424694CEA004909AB /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		5BAF32C6246954C8004909AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5BC68804246C76CB0059EC21 /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
 		A61061895CEF15738FB4967B /* Pods-iShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop.debug.xcconfig"; path = "Target Support Files/Pods-iShop/Pods-iShop.debug.xcconfig"; sourceTree = "<group>"; };
 		CA7D6FE7D428EFE10995D98E /* Pods-iShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop.release.xcconfig"; path = "Target Support Files/Pods-iShop/Pods-iShop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 				5B0283BE2469A55C0086EDB6 /* DatabaseClient.swift */,
 				5B0283C22469BCAC0086EDB6 /* User.swift */,
 				5B0283C62469E0B60086EDB6 /* StorageClient.swift */,
+				5BC68804246C76CB0059EC21 /* SignOut.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B0283DA246BB2E80086EDB6 /* yellowViewController.swift in Sources */,
+				5BC68805246C76CB0059EC21 /* SignOut.swift in Sources */,
 				5B0283BD2469A0090086EDB6 /* SignupVC.swift in Sources */,
 				5B0283DE246BF5750086EDB6 /* Google+Signin.swift in Sources */,
 				5B0283C52469CDDC0086EDB6 /* imagePicker.swift in Sources */,

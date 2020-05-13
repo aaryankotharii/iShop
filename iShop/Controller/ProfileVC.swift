@@ -23,8 +23,21 @@ class ProfileVC: UIViewController {
         nameLabel.text = getName()
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        profileImageOutlineView.rotate360Degrees()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        profileImageOutlineView.layer.removeAllAnimations()
+    }
     @IBAction func imageTapGesture(_ sender: UITapGestureRecognizer) {
         imagePicker.sharedInstance.imagePickerAlert(profileImageView, vc: self, completion: handlePhotoTapped(image:))
+    }
+    @IBAction func logoutClicked(_ sender: Any) {
+        signOut()
     }
     
     func handlePhotoTapped(image:UIImage){
@@ -33,5 +46,17 @@ class ProfileVC: UIViewController {
         DispatchQueue.global(qos: .background).async {
                 StorageClient.createProfile(image)  /// Send Profile Picture to Firebase Storage `in background Queue`
         }
+    }
+}
+
+extension UIView {
+    func rotate360Degrees() {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat(Double.pi * 2)
+        rotateAnimation.isRemovedOnCompletion = false
+        rotateAnimation.duration = 1
+        rotateAnimation.repeatCount=Float.infinity
+        self.layer.add(rotateAnimation, forKey: nil)
     }
 }
