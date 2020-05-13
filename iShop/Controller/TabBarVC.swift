@@ -35,7 +35,7 @@ class TabBarVC: UITabBarController {
      */
     private func setupUI() {
       navigationController?.navigationBar.prefersLargeTitles = true
-      title = "Large Title"
+        title = UserDefaults.standard.value(forKey: "name") as! String
 
       // Initial setup for image for Large NavBar state since the the screen always has Large NavBar once it gets opened
       guard let navigationBar = self.navigationController?.navigationBar else { return }
