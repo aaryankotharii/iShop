@@ -10,10 +10,12 @@ import UIKit
 
 //MARK:- Present When auth is false
 
+//TODO : Improve class use
+
 class LockedVC: UIViewController {
 
+    //MARK: Outlets
     @IBOutlet var unlcokButton: UIButton!
-    
     @IBOutlet var lockedPhoto: UIImageView!
     
     override func viewDidLoad() {

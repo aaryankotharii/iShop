@@ -29,6 +29,7 @@ class databaseClient{
         }
     }
     
+    //MARK:- Update profile picture
     public func updateProfileImage(url: String,completion:@escaping (Bool) -> ()) {
         let ref = database.child("users").child(getUID())
         ref.updateChildValues(["imageUrl":url]) { (error, ref) in
@@ -37,6 +38,7 @@ class databaseClient{
         }
     }
     
+    //MARK:- Get profileImageUrl ( To persist Image )
     public func getProfileImageUrl(completion : @escaping (String?)->()){
         let ref = database.child("users").child(getUID())
         ref.observe(.value) { (snapshot) in
@@ -49,6 +51,7 @@ class databaseClient{
         }
     }
     
+    //MARK:- Get User Name
     public func getName(completion : @escaping (String?)->()){
         let ref = database.child("users").child(getUID())
         ref.observe(.value) { (snapshot) in

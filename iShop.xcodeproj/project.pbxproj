@@ -22,6 +22,7 @@
 		5B0283DC246BC5B20086EDB6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283DB246BC5B20086EDB6 /* HomeVC.swift */; };
 		5B0283DE246BF5750086EDB6 /* Google+Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283DD246BF5750086EDB6 /* Google+Signin.swift */; };
 		5B7D1CE5246DBEAD00D531DB /* LockedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D1CE4246DBEAD00D531DB /* LockedVC.swift */; };
+		5B7D1CE7246DD67D00D531DB /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D1CE6246DD67D00D531DB /* ForgotPasswordVC.swift */; };
 		5BAF32AE24694B50004909AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF32AD24694B50004909AB /* AppDelegate.swift */; };
 		5BAF32B524694B50004909AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B324694B50004909AB /* Main.storyboard */; };
 		5BAF32B724694B53004909AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BAF32B624694B53004909AB /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		5B0283DB246BC5B20086EDB6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5B0283DD246BF5750086EDB6 /* Google+Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Google+Signin.swift"; sourceTree = "<group>"; };
 		5B7D1CE4246DBEAD00D531DB /* LockedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedVC.swift; sourceTree = "<group>"; };
+		5B7D1CE6246DD67D00D531DB /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		5BAF32AA24694B50004909AB /* iShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BAF32AD24694B50004909AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BAF32B424694B50004909AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				5B0283D3246B27970086EDB6 /* ProfileVC.swift */,
 				5BF6F8A0246D8C8C005F6514 /* productsVC.swift */,
 				5B7D1CE4246DBEAD00D531DB /* LockedVC.swift */,
+				5B7D1CE6246DD67D00D531DB /* ForgotPasswordVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				5B0283C72469E0B60086EDB6 /* StorageClient.swift in Sources */,
 				5B0283CB246AA7950086EDB6 /* TabBarVC.swift in Sources */,
 				5B0283C12469A5C10086EDB6 /* Constants.swift in Sources */,
+				5B7D1CE7246DD67D00D531DB /* ForgotPasswordVC.swift in Sources */,
 				5B0283BB246997D20086EDB6 /* haptic+Feedback.swift in Sources */,
 				5BC6880A246C86D30059EC21 /* SceneDelegate.swift in Sources */,
 				5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */,

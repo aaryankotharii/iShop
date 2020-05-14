@@ -14,30 +14,29 @@ class StorageClient{
     
     class func createProfile(_ profileImage : UIImage){
             
-        print("IQAMG UPLAOD")
+        print("IMAGE UPLAOD")
         let uid = getUID()
-                        
-        let storageRef = Storage.storage().reference().child("profile_images").child("\(uid).jpg")
+        let ref = Storage.storage().reference()
+        let storageRef = ref.child("profile_images").child("\(uid).jpg")
         
-         if let uploadData = profileImage.jpegData(compressionQuality: 0.2){
-                        print("reached here")
+         if let uploadData = profileImage.jpegData(compressionQuality: 0.2){    /// convert image to data
                     storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
                         if let error = error {
                             print(error.localizedDescription)
                         } else {
                             
-                        storageRef.downloadURL { (url, error) in
+                        storageRef.downloadURL { (url, error) in    /// get url from storage
                             if let error = error {
                                 print(error.localizedDescription)
                             }else{
+                                // Update profile URL
                                 databaseClient.shared.updateProfileImage(url: url?.absoluteString ?? "invalid") { (success) in
-                                    print(success)
                             }
                         }
                     }
                 }
             }
         }
-}
-
+    }
+    
 }

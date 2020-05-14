@@ -12,13 +12,14 @@ let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView{
     
+    //MARK:- Save Image as Userdefault
     func saveImage(){
         let imageData = self.image?.jpegData(compressionQuality: 1.0)
         UserDefaults.standard.set(imageData, forKey: "image")
     }
     
+    // download image if not persisted
     func loadImage(){
-        
         if let imagedata = UserDefaults.standard.value(forKey: "image") as? Data{
             self.image = UIImage(data: imagedata)
         } else {
@@ -31,8 +32,8 @@ extension UIImageView{
     }
     
     
+    // Download and cache image from url
     func loadImageUsingCacheWithUrlString(urlString : String){
-        
         self.image = nil
         
         //check cache for image
@@ -62,6 +63,7 @@ extension UIImageView{
             }
         }.resume()
     }
+    
 }
 
 

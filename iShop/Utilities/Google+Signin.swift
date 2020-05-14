@@ -10,12 +10,13 @@ import UIKit
 import GoogleSignIn
 import FirebaseAuth
 
+//MARK:- SIGN IN WITH GOOGLE + FETCH USER DATA
 extension HomeVC : GIDSignInDelegate{
     public func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         if let error = error {
             switch error.localizedDescription {
             case "The user canceled the sign-in flow.": break
-                               // removeBlurView()
+                //TODO remove blur of background
             default:
                 print(error.localizedDescription)
             }
@@ -31,14 +32,6 @@ extension HomeVC : GIDSignInDelegate{
                 print(error)
                 return
             }
-            
-            
-           if user.profile.hasImage
-            {
-                let pic = user.profile.imageURL(withDimension: 100)
-                print(pic)
-            }
-            
             
             let name = user.profile.name
             let email = user.profile.email

@@ -128,22 +128,11 @@ extension SignupVC {
     //MARK: Add Observers
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardisUp), name: UIResponder.keyboardDidShowNotification, object: nil)
     }
     
     //MARK: Remove Observers
     func unsubscribeFromKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
-    }
-    
-    @objc func keyboardisUp(notification: NSNotification){
-        if let userInfo = notification.userInfo {
-        
-        //MARK: Get Keboard Y point on screen
-        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        let endFrameY = endFrame?.origin.y ?? 0
-            print("END FRAME IS ",endFrame)
-        }
     }
     
     //MARK: Move stackView based on keybaord
