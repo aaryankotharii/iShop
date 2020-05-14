@@ -54,6 +54,7 @@ class ProfileVC: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil)
             self.dismiss(animated: true, completion: nil) }
     }
+    
 }
 
 extension UIView {

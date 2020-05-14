@@ -193,21 +193,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="uuq-wy-h1P"/>
+                                <exclude reference="zfq-zv-dN1"/>
                                 <exclude reference="GQg-Fb-fLi"/>
                                 <exclude reference="WmB-Ns-L1D"/>
                                 <exclude reference="cxa-Pp-dhw"/>
-                                <exclude reference="uuq-wy-h1P"/>
-                                <exclude reference="zfq-zv-dN1"/>
                                 <exclude reference="Mkz-e3-rg5"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="uuq-wy-h1P"/>
+                                <include reference="zfq-zv-dN1"/>
                                 <include reference="GQg-Fb-fLi"/>
                                 <include reference="WmB-Ns-L1D"/>
                                 <include reference="cxa-Pp-dhw"/>
-                                <include reference="uuq-wy-h1P"/>
-                                <include reference="zfq-zv-dN1"/>
                                 <include reference="Mkz-e3-rg5"/>
                             </mask>
                         </variation>
@@ -582,6 +582,42 @@
             </objects>
             <point key="canvasLocation" x="3757" y="185"/>
         </scene>
+        <!--LockedVC-->
+        <scene sceneID="P12-2W-YlM">
+            <objects>
+                <viewController storyboardIdentifier="LockedVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Tye-7U-CHQ" customClass="LockedVC" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="urc-Rn-tEi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="faceID" translatesAutoresizingMaskIntoConstraints="NO" id="Qr1-hi-HwN">
+                                <rect key="frame" x="0.0" y="379.5" width="414" height="137"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGc-g2-bDT">
+                                <rect key="frame" x="184" y="580.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="UseFaceIdTapped:" destination="Yhg-Le-sPy" eventType="touchUpInside" id="OqF-Qx-1i7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Qr1-hi-HwN" firstAttribute="centerX" secondItem="urc-Rn-tEi" secondAttribute="centerX" id="3IY-2N-d9O"/>
+                            <constraint firstItem="OnZ-Wz-01o" firstAttribute="trailing" secondItem="Qr1-hi-HwN" secondAttribute="trailing" id="YvD-QW-PGF"/>
+                            <constraint firstItem="Qr1-hi-HwN" firstAttribute="leading" secondItem="OnZ-Wz-01o" secondAttribute="leading" id="aly-A4-gEZ"/>
+                            <constraint firstItem="Qr1-hi-HwN" firstAttribute="centerY" secondItem="urc-Rn-tEi" secondAttribute="centerY" id="chO-Bb-Z28"/>
+                            <constraint firstItem="UGc-g2-bDT" firstAttribute="top" secondItem="Qr1-hi-HwN" secondAttribute="bottom" constant="64" id="h0H-9j-Fg4"/>
+                            <constraint firstItem="UGc-g2-bDT" firstAttribute="centerX" secondItem="urc-Rn-tEi" secondAttribute="centerX" id="oVL-vc-sEh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OnZ-Wz-01o"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgs-Is-fmR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Yhg-Le-sPy" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3790" y="1075"/>
+        </scene>
         <!--ProfileVC-->
         <scene sceneID="pnW-Vy-RPn">
             <objects>
@@ -676,6 +712,7 @@
         <image name="backward.fill" catalog="system" width="128" height="79"/>
         <image name="button_gradient" width="318" height="46"/>
         <image name="default" width="332" height="332"/>
+        <image name="faceID" width="224" height="137"/>
         <image name="forward.fill" catalog="system" width="128" height="79"/>
         <image name="gardient" width="414" height="292"/>
         <image name="google" width="156" height="44"/>

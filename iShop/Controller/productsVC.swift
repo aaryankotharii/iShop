@@ -11,6 +11,7 @@ import UIKit
 class productsVC: UIViewController {
     /// TableView that displays products
     @IBOutlet var productsTableView: UITableView!
+    
 }
 
 extension productsVC : UITableViewDelegate, UITableViewDataSource{
