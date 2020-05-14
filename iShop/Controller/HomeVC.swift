@@ -21,6 +21,11 @@ class HomeVC: UIViewController {
     /// Value of StackView origin Y coordinate `used for textfield dynamic animation`
     var stackY : CGFloat!
     
+    /// Space between `loginStack and keyboard` when keyboard is up!
+    var keyboardInset : CGFloat!
+
+    /// Used to determine value of keyboardInset.   { when keyboard is up for first time }
+    var bool : Bool = false
     
     //MARK: --- VIEW LIFECYCLE METHODS ---
     
@@ -31,9 +36,8 @@ class HomeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("subscribed")
-        unsubscribeFromKeyboardNotifications()
-        subscribeToKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()  /// REMOVE OBSERVERS    `Precaution!!!`
+        subscribeToKeyboardNotifications()      /// ADD OBSERVERS    `To observe keyboard chnages`
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -72,21 +76,22 @@ class HomeVC: UIViewController {
     }
     
     func handleSuccessLogin(){
+        print("YAY LOGGED IN")
         self.saveName()
         UIDevice.validVibrate()
-        print("YAY LOGGED IN")
         goToTabbar()
     }
     
     
     //MARK: Error Checking Function ( Checks Empty Textfields)
     func errorCheck() -> String? {
-        let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        if email == "" ||
-            passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-            return "Please Fill in all the fields"
-        }
-        if emailTextField.text == nil || passwordTextField.text == nil {
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        if let email = email , let password = password {
+            if email.isEmpty || password.isEmpty {
+                 return "Please Fill in all the fields"     /// Either textfield is empty
+            }
+        }else{
             return "Please Fill in all the fields"
         }
         return nil
@@ -135,9 +140,11 @@ extension HomeVC {
             
             let stackBottomY = stackY + loginStack.frame.height
             let KeyboardTopInset = stackBottomY - endFrameY + 20
+            if !bool { self.keyboardInset = KeyboardTopInset; self.bool = true}
+            
             let screenHeight = UIScreen.main.bounds.size.height
             
-            self.stackYAnchor.constant = (endFrameY >= screenHeight) ? 0.0 : -KeyboardTopInset
+            self.stackYAnchor.constant = (endFrameY >= screenHeight) ? 0.0 : -keyboardInset
             
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),

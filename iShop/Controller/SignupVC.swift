@@ -25,6 +25,8 @@ class SignupVC: UIViewController {
     /// Value of StackView origin Y coordinate `used for textfield dynamic animation`
     var stackY : CGFloat!
     
+    var bool : Bool = false
+    
     //MARK: --- VIEW LIFECYCLE METHODS ---
     
     override func viewDidLoad() {
@@ -57,6 +59,7 @@ class SignupVC: UIViewController {
     
     //MARK:- IBACTIONS
     @IBAction func signupClicked(_ sender: UIButton) {
+        signUpButton.isEnabled = false
         if let error = errorCheck() { AuthAlert(error) ; return}
         AuthClient.SignUp(email: emailTextField.text!, password: passwordTextField.text!, completion: handleSignup(success:error:))
     }
@@ -79,6 +82,11 @@ class SignupVC: UIViewController {
         else if !(passwordTextField.text == confirmPasswordTextField.text){
             return "Passwords do not match."
         }
+        if !bool{
+        if profileImageView.image == #imageLiteral(resourceName: "default"){
+            bool = true
+            return "You can change your profile picture by tapping on it. (optional)"
+        }}
         return nil
     }
     
@@ -106,6 +114,7 @@ class SignupVC: UIViewController {
         let image = profileImageView.image!
         let vc = storyboard!.instantiateViewController(identifier: "nav") as UINavigationController
         profileImageView.saveImage()
+        UserDefaults.standard.setValue(nameTextField.text!, forKey: "name")
         self.present(vc, animated: true) {
             DispatchQueue.global(qos: .background).async {
                 StorageClient.createProfile(image)  /// Send Profile Picture to Firebase Storage `in background Queue`
@@ -153,18 +162,12 @@ extension SignupVC {
             let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             
+            // MARK: Get Keyboard Top Inset
             let stackBottomY = stackY + userFormStack.frame.height
-            let KeyboardTopInset = stackBottomY - endFrameY
+            let KeyboardTopInset = stackBottomY - endFrameY + 20
             let screenHeight = UIScreen.main.bounds.size.height
             
             self.stackVerticalConstraint.constant = (endFrameY >= screenHeight) ? 0.0 : -KeyboardTopInset
-            
-            print("endFrame is ",endFrame?.origin.y)
-            print("stack bottom is",stackBottomY)
-            print("stack height is ",userFormStack.frame.height)
-            
-            
-            
             
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
