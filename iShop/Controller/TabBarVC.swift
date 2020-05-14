@@ -58,7 +58,6 @@ class TabBarVC: UITabBarController {
     override func viewDidLoad() {
       super.viewDidLoad()
       setupUI()
-                
     }
     
     
@@ -82,6 +81,9 @@ class TabBarVC: UITabBarController {
         }
             imageView.loadImage()
         NotificationCenter.default.addObserver(self,selector: #selector(refreshImage),name:NSNotification.Name(rawValue: "refresh"),object: nil)
+        let blur = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blur.frame = self.view.bounds
+        self.view.addSubview(blur)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
