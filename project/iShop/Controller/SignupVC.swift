@@ -36,6 +36,7 @@ class SignupVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        signUpButton.isEnabled = true
         subscribeToKeyboardNotifications()      /// ADD OBSERVERS `To Move StackView`
         hideKeyboardWhenTappedAround()
     }
@@ -72,6 +73,7 @@ class SignupVC: UIViewController {
     
     //MARK: Error Checking Function ( Checks Empty Textfields + Password matching )
     func errorCheck() -> String? {
+        signUpButton.isEnabled = true
         if nameTextField.text! == "" ||
             passwordTextField.text! == "" ||
             confirmPasswordTextField.text! == "" ||

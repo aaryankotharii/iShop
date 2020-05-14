@@ -577,7 +577,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nsg-vR-udN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Products" image="backward.fill" catalog="system" id="IhY-52-vJ7"/>
+                    <tabBarItem key="tabBarItem" title="Products" image="tray.full.fill" catalog="system" id="IhY-52-vJ7"/>
                     <connections>
                         <outlet property="productsTableView" destination="bwL-pI-Xnc" id="Ogl-J0-bga"/>
                     </connections>
@@ -586,7 +586,7 @@
             </objects>
             <point key="canvasLocation" x="6213.04347826087" y="-506.25"/>
         </scene>
-        <!--Blue-->
+        <!--Cart-->
         <scene sceneID="Pig-YT-Q3c">
             <objects>
                 <viewController id="fdd-bI-egO" sceneMemberID="viewController">
@@ -596,7 +596,7 @@
                         <color key="backgroundColor" red="0.74417608489034615" green="0.95338156991174583" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="FQN-os-myo"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Blue" image="forward.fill" catalog="system" id="wfb-gJ-y1O"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart.fill" catalog="system" id="wfb-gJ-y1O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrP-4y-Ddc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -622,7 +622,7 @@
             </objects>
             <point key="canvasLocation" x="4741" y="185"/>
         </scene>
-        <!--Red-->
+        <!--Search-->
         <scene sceneID="yGh-Yq-yx5">
             <objects>
                 <viewController id="O0O-pE-jCm" sceneMemberID="viewController">
@@ -632,7 +632,7 @@
                         <color key="backgroundColor" red="1" green="0.67019444307245557" blue="0.59438870940120392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="b8K-di-2q6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Red" image="playpause.fill" catalog="system" id="yvY-qh-Rap"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="yvY-qh-Rap"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUx-yi-O1Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -810,15 +810,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backward.fill" catalog="system" width="128" height="79"/>
         <image name="button_gradient" width="318" height="46"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="default" width="332" height="332"/>
         <image name="faceID" width="224" height="137"/>
-        <image name="forward.fill" catalog="system" width="128" height="79"/>
         <image name="gardient" width="414" height="292"/>
         <image name="google" width="156" height="44"/>
         <image name="logo" width="216" height="198"/>
-        <image name="playpause.fill" catalog="system" width="128" height="73"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="signup" width="156" height="44"/>
+        <image name="tray.full.fill" catalog="system" width="128" height="88"/>
     </resources>
 </document>
