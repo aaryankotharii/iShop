@@ -10,54 +10,65 @@ import UIKit
 
 class TabBarVC: UITabBarController {
     
+    /// imageView That shows `ProfileVC` on tap
     private let imageView = UIImageView(image: UIImage(named: "default"))
     
+    //MARK:- View LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        imageView.loadImage()
-        UserDefaults.standard.set(false, forKey: "auth")
-         self.title = "Products"
+        initialUISetup()
     }
     
-    
-    @objc func refreshImage() {
-        imageView.loadImage()
-    }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //imageView.loadImage()
-        NotificationCenter.default.addObserver(self,selector: #selector(refreshImage),name:NSNotification.Name(rawValue: "refresh"),object: nil)
+        let notificationName = NSNotification.Name(rawValue: "refresh") 
+        NotificationCenter.default.addObserver(self,selector: #selector(refreshImage),name: notificationName,object: nil)    /// ADD OBSERVER
         showbioAuth()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "refresh"), object: nil)
+        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "refresh"), object: nil)    /// remove observers
+    }
+    
+    //MARK: Private methods
+    
+    fileprivate func initialUISetup() {
+        setupUI()
+        imageView.loadImage()
+        UserDefaults.standard.set(false, forKey: "auth")
+        self.title = "Products"
+    }
+    
+    @objc func refreshImage() {
+        imageView.loadImage()
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        self.title = item.title!
+        self.title = item.title!    /// SET NavBar Title
     }
     
+    //TODO :- refactor func
     func showbioAuth(){
         if let authrequired =  UserDefaults.standard.value(forKey: "bio") as? Bool{
             if authrequired {
-        if let bool = UserDefaults.standard.value(forKey: "auth") as? Bool {
-            if !bool{
-                let vc = storyboard?.instantiateViewController(identifier: "LockedVC") as! LockedVC
-                self.present(vc, animated: true, completion: nil)
+                if let bool = UserDefaults.standard.value(forKey: "auth") as? Bool {
+                    if !bool{
+                        let vc = storyboard?.instantiateViewController(identifier: "LockedVC") as! LockedVC
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
             }
         }
     }
-    }
-}
+    
 }
 
+
+//MARK:- Extension to setup Profile button on navigation bar
 extension TabBarVC {
     
-    /// WARNING: Change these constants according to your project's design
+    //CONSTANTS USED TO ADD CONSTRAINTS
     private struct Const {
         /// Image height/width for Large NavBar state
         static let ImageSizeForLargeState: CGFloat = 40
@@ -71,13 +82,12 @@ extension TabBarVC {
         static let ImageSizeForSmallState: CGFloat = 32
         /// Height of NavBar for Small state. Usually it's just 44
         static let NavBarHeightSmallState: CGFloat = 44
-        /// Height of NavBar for Large state. Usually it's just 96.5 but if you have a custom font for the title, please make sure to edit this value since it changes the height for Large state of NavBar
+        /// Height of NavBar for Large state.
         static let NavBarHeightLargeState: CGFloat = 96.5
     }
     
-    /**
-     Setup the image in navbar to be on the same line as the navbar title
-     */
+    
+    /** Setup the image in navbar to be on the same line as the navbar title **/
     private func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         // Initial setup for image for Large NavBar state since the the screen always has Large NavBar once it gets opened
@@ -95,13 +105,14 @@ extension TabBarVC {
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor)
         ])
         
+        //ADD TAP GESTURE RECOGNIZER
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(profileTapped)))
         imageView.isUserInteractionEnabled = true
     }
+    
+    //MARK: Present ProfileVC
     @objc func profileTapped(){
-        print("tapped")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "ProfileVC")  as! ProfileVC
+        let vc = storyboard!.instantiateViewController(identifier: "ProfileVC")  as! ProfileVC
         vc.modalPresentationStyle = .popover
         present(vc,animated: true)
     }

@@ -19,7 +19,6 @@
 		5B0283CB246AA7950086EDB6 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283CA246AA7950086EDB6 /* TabBarVC.swift */; };
 		5B0283D4246B27970086EDB6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283D3246B27970086EDB6 /* ProfileVC.swift */; };
 		5B0283D8246B35D20086EDB6 /* Image+persist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283D7246B35D20086EDB6 /* Image+persist.swift */; };
-		5B0283DA246BB2E80086EDB6 /* yellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283D9246BB2E80086EDB6 /* yellowViewController.swift */; };
 		5B0283DC246BC5B20086EDB6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283DB246BC5B20086EDB6 /* HomeVC.swift */; };
 		5B0283DE246BF5750086EDB6 /* Google+Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0283DD246BF5750086EDB6 /* Google+Signin.swift */; };
 		5B7D1CE5246DBEAD00D531DB /* LockedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D1CE4246DBEAD00D531DB /* LockedVC.swift */; };
@@ -50,7 +49,6 @@
 		5B0283CA246AA7950086EDB6 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		5B0283D3246B27970086EDB6 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		5B0283D7246B35D20086EDB6 /* Image+persist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+persist.swift"; sourceTree = "<group>"; };
-		5B0283D9246BB2E80086EDB6 /* yellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yellowViewController.swift; sourceTree = "<group>"; };
 		5B0283DB246BC5B20086EDB6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5B0283DD246BF5750086EDB6 /* Google+Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Google+Signin.swift"; sourceTree = "<group>"; };
 		5B7D1CE4246DBEAD00D531DB /* LockedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedVC.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				5B0283BC2469A0090086EDB6 /* SignupVC.swift */,
 				5B0283CA246AA7950086EDB6 /* TabBarVC.swift */,
 				5B0283D3246B27970086EDB6 /* ProfileVC.swift */,
-				5B0283D9246BB2E80086EDB6 /* yellowViewController.swift */,
 				5BF6F8A0246D8C8C005F6514 /* productsVC.swift */,
 				5B7D1CE4246DBEAD00D531DB /* LockedVC.swift */,
 			);
@@ -350,7 +347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF6F8A1246D8C8C005F6514 /* productsVC.swift in Sources */,
-				5B0283DA246BB2E80086EDB6 /* yellowViewController.swift in Sources */,
 				5BC68805246C76CB0059EC21 /* SignOut.swift in Sources */,
 				5B0283BD2469A0090086EDB6 /* SignupVC.swift in Sources */,
 				5B0283DE246BF5750086EDB6 /* Google+Signin.swift in Sources */,

@@ -12,11 +12,13 @@ class productsVC: UIViewController {
     /// TableView that displays products
     @IBOutlet var productsTableView: UITableView!
     
+    /// Height for row of TableView
+    private let tableViewHeight = 100
 }
 
 extension productsVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return tableViewHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
