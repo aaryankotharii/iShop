@@ -687,6 +687,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2DI-P1-hwX">
                                                 <rect key="frame" x="191" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="toggleSwitched:" destination="juK-nE-epq" eventType="valueChanged" id="r9L-wy-y2r"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -716,6 +719,8 @@
                         <viewLayoutGuide key="safeArea" id="FhC-MX-kd5"/>
                     </view>
                     <connections>
+                        <outlet property="bioAuthToggle" destination="2DI-P1-hwX" id="RmU-6u-bpt"/>
+                        <outlet property="enableBioAuthLabel" destination="d2v-nP-opH" id="CfH-Pq-ysp"/>
                         <outlet property="nameLabel" destination="8N6-YM-srH" id="vQu-bF-Tt5"/>
                         <outlet property="profileImageOutlineView" destination="mOU-b0-dL9" id="HVa-XY-0xF"/>
                         <outlet property="profileImageView" destination="SWM-dU-JmS" id="zgX-ym-p7h"/>

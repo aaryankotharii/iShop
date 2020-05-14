@@ -57,4 +57,8 @@ class BiometricAuth {
               return self.context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) ? .touchID : .none
           }
       }
+    
+    var biometricTypeString : String {
+        return biometricType.rawValue
+    }
 }

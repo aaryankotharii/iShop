@@ -17,6 +17,7 @@ class TabBarVC: UITabBarController {
         setupUI()
         imageView.loadImage()
         UserDefaults.standard.set(false, forKey: "auth")
+         self.title = "Products"
     }
     
     
@@ -41,6 +42,8 @@ class TabBarVC: UITabBarController {
     }
     
     func showbioAuth(){
+        if let authrequired =  UserDefaults.standard.value(forKey: "bio") as? Bool{
+            if authrequired {
         if let bool = UserDefaults.standard.value(forKey: "auth") as? Bool {
             if !bool{
                 let vc = storyboard?.instantiateViewController(identifier: "LockedVC") as! LockedVC
@@ -48,6 +51,8 @@ class TabBarVC: UITabBarController {
             }
         }
     }
+    }
+}
 }
 
 extension TabBarVC {
