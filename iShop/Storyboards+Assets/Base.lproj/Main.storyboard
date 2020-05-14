@@ -176,7 +176,6 @@
                             <constraint firstItem="drk-V1-SDy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cxa-Pp-dhw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r8k-D5-ilr" secondAttribute="bottom" constant="50" id="uuq-wy-h1P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Afa-PB-1nc" secondAttribute="trailing" constant="15" id="yDz-Ed-GRj"/>
-                            <constraint firstItem="drk-V1-SDy" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.325893" priority="250" id="zRD-tY-vZW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r8k-D5-ilr" secondAttribute="trailing" constant="25" id="zfq-zv-dN1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -187,7 +186,6 @@
                                 <exclude reference="GQg-Fb-fLi"/>
                                 <exclude reference="WmB-Ns-L1D"/>
                                 <exclude reference="cxa-Pp-dhw"/>
-                                <exclude reference="zRD-tY-vZW"/>
                                 <exclude reference="Mkz-e3-rg5"/>
                                 <exclude reference="Pbx-ta-ewm"/>
                             </mask>
@@ -199,7 +197,6 @@
                                 <include reference="GQg-Fb-fLi"/>
                                 <include reference="WmB-Ns-L1D"/>
                                 <include reference="cxa-Pp-dhw"/>
-                                <include reference="zRD-tY-vZW"/>
                                 <include reference="Mkz-e3-rg5"/>
                                 <include reference="Pbx-ta-ewm"/>
                             </mask>

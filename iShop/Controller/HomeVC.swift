@@ -31,6 +31,8 @@ class HomeVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        print("subscribed")
+        unsubscribeFromKeyboardNotifications()
         subscribeToKeyboardNotifications()
     }
     
@@ -132,7 +134,7 @@ extension HomeVC {
             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             
             let stackBottomY = stackY + loginStack.frame.height
-            let KeyboardTopInset = stackBottomY - endFrameY + 40
+            let KeyboardTopInset = stackBottomY - endFrameY + 20
             let screenHeight = UIScreen.main.bounds.size.height
             
             self.stackYAnchor.constant = (endFrameY >= screenHeight) ? 0.0 : -KeyboardTopInset

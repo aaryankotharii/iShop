@@ -119,11 +119,22 @@ extension SignupVC {
     //MARK: Add Observers
     func subscribeToKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardNotification), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardisUp), name: UIResponder.keyboardDidShowNotification, object: nil)
     }
     
     //MARK: Remove Observers
     func unsubscribeFromKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func keyboardisUp(notification: NSNotification){
+        if let userInfo = notification.userInfo {
+        
+        //MARK: Get Keboard Y point on screen
+        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        let endFrameY = endFrame?.origin.y ?? 0
+            print("END FRAME IS ",endFrame)
+        }
     }
     
     //MARK: Move stackView based on keybaord
@@ -143,10 +154,17 @@ extension SignupVC {
             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
             
             let stackBottomY = stackY + userFormStack.frame.height
-            let KeyboardTopInset = stackBottomY - endFrameY + 20
+            let KeyboardTopInset = stackBottomY - endFrameY
             let screenHeight = UIScreen.main.bounds.size.height
             
             self.stackVerticalConstraint.constant = (endFrameY >= screenHeight) ? 0.0 : -KeyboardTopInset
+            
+            print("endFrame is ",endFrame?.origin.y)
+            print("stack bottom is",stackBottomY)
+            print("stack height is ",userFormStack.frame.height)
+            
+            
+            
             
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
