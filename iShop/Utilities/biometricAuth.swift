@@ -11,11 +11,15 @@ import LocalAuthentication
 
 
 class BiometricAuth {
-    class func Authenticate(completion: @escaping (Bool,NSError?)->()){
-        let context = LAContext()
-        var error: NSError?
+    
+    public static let shared = BiometricAuth()
+    private let context = LAContext()
+    private let reason = "Your Request Message"
+    private var error: NSError?
+
+    
+    public func Authenticate(completion: @escaping (Bool,NSError?)->()){
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Identify yourself"
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { (success, error) in
                 if let error = error {
                     print(error.localizedDescription)
@@ -28,4 +32,29 @@ class BiometricAuth {
             completion(false,nil)
         }
     }
+    
+    enum BiometricType: String {
+          case none
+          case touchID
+          case faceID
+      }
+    
+      var biometricType: BiometricType {
+          guard self.context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+              return .none
+          }
+
+          if #available(iOS 11.0, *) {
+              switch context.biometryType {
+              case .none:
+                  return .none
+              case .touchID:
+                  return .touchID
+              case .faceID:
+                  return .faceID
+              }
+          } else {
+              return self.context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) ? .touchID : .none
+          }
+      }
 }
