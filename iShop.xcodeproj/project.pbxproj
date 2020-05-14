@@ -31,6 +31,7 @@
 		5BC68805246C76CB0059EC21 /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC68804246C76CB0059EC21 /* SignOut.swift */; };
 		5BC6880A246C86D30059EC21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC68809246C86D30059EC21 /* SceneDelegate.swift */; };
 		5BF6F8A1246D8C8C005F6514 /* productsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6F8A0246D8C8C005F6514 /* productsVC.swift */; };
+		5BF6F8C6246DA809005F6514 /* biometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF6F8C5246DA809005F6514 /* biometricAuth.swift */; };
 		AAE95A2BE421B4EFBF84A99A /* Pods_iShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F79CA7F4A8851B3641892C /* Pods_iShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		5BC68804246C76CB0059EC21 /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
 		5BC68809246C86D30059EC21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5BF6F8A0246D8C8C005F6514 /* productsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productsVC.swift; sourceTree = "<group>"; };
+		5BF6F8C5246DA809005F6514 /* biometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = biometricAuth.swift; sourceTree = "<group>"; };
 		A61061895CEF15738FB4967B /* Pods-iShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop.debug.xcconfig"; path = "Target Support Files/Pods-iShop/Pods-iShop.debug.xcconfig"; sourceTree = "<group>"; };
 		CA7D6FE7D428EFE10995D98E /* Pods-iShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop.release.xcconfig"; path = "Target Support Files/Pods-iShop/Pods-iShop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				5B0283C8246A9E590086EDB6 /* Keyboard+Hide.swift */,
 				5B0283D7246B35D20086EDB6 /* Image+persist.swift */,
 				5B0283DD246BF5750086EDB6 /* Google+Signin.swift */,
+				5BF6F8C5246DA809005F6514 /* biometricAuth.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				5B0283BB246997D20086EDB6 /* haptic+Feedback.swift in Sources */,
 				5BC6880A246C86D30059EC21 /* SceneDelegate.swift in Sources */,
 				5BAF32C524694CEA004909AB /* AuthClient.swift in Sources */,
+				5BF6F8C6246DA809005F6514 /* biometricAuth.swift in Sources */,
 				5B0283C9246A9E590086EDB6 /* Keyboard+Hide.swift in Sources */,
 				5B0283DC246BC5B20086EDB6 /* HomeVC.swift in Sources */,
 				5B0283C32469BCAC0086EDB6 /* User.swift in Sources */,
