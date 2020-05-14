@@ -437,17 +437,24 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="108.48214285714285"/>
         </scene>
-        <!--Yellow-->
+        <!--Products-->
         <scene sceneID="jWe-k6-dPU">
             <objects>
-                <viewController id="EKZ-os-TML" sceneMemberID="viewController">
+                <viewController title="Products" id="EKZ-os-TML" customClass="productsVC" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VLg-Js-Dqa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwL-pI-Xnc">
+                                <rect key="frame" x="87" y="364" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.94867634663674216" blue="0.60163966159372217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="nsg-vR-udN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Yellow" image="backward.fill" catalog="system" id="IhY-52-vJ7"/>
+                    <tabBarItem key="tabBarItem" title="Products" image="backward.fill" catalog="system" id="IhY-52-vJ7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Olo-4f-dMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,11 +476,11 @@
             </objects>
             <point key="canvasLocation" x="6214" y="724"/>
         </scene>
-        <!--OK-->
+        <!--Tab BarVC-->
         <scene sceneID="yZA-eV-OGv">
             <objects>
                 <tabBarController storyboardIdentifier="tabbar" modalPresentationStyle="currentContext" id="YvY-gq-jq4" customClass="TabBarVC" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="OK" id="EeA-MY-IkE"/>
+                    <navigationItem key="navigationItem" id="EeA-MY-IkE"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yWw-k2-izT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

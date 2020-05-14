@@ -35,8 +35,6 @@ class TabBarVC: UITabBarController {
      */
     private func setupUI() {
       navigationController?.navigationBar.prefersLargeTitles = true
-      title = getName()
-
       // Initial setup for image for Large NavBar state since the the screen always has Large NavBar once it gets opened
       guard let navigationBar = self.navigationController?.navigationBar else { return }
 
@@ -68,8 +66,20 @@ class TabBarVC: UITabBarController {
         imageView.loadImage()
     }
     
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        self.title = item.title!
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        switch self.selectedIndex {
+        case 0:
+            self.title = "Products"
+        case 1:
+            self.title = "yo"
+        default:
+            self.title = "NO"
+        }
             imageView.loadImage()
         NotificationCenter.default.addObserver(self,selector: #selector(refreshImage),name:NSNotification.Name(rawValue: "refresh"),object: nil)
     }
