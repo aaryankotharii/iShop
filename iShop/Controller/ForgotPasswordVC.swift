@@ -10,21 +10,33 @@ import UIKit
 
 class ForgotPasswordVC: UIViewController {
 
+    @IBOutlet var emailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    @IBAction func sendLinkClicked(_ sender: Any) {
+        if let error = errorCheck() { AuthAlert(error) ; return}
+        AuthClient.forgotPassword(email: emailTextField.text!, completion: handleForgotPassword(success:error:))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func handleForgotPassword(success:Bool,error:String?){
+        if success {
+            successLAert("Verification Link sent. please check your email")
+            emailTextField.text = ""
+        } else {
+            AuthAlert(error ?? "Error")
+        }
     }
-    */
-
+    
+    func errorCheck()->String?{
+        let email = emailTextField.text
+        if let email = email  {
+            if email.isEmpty{
+                return "Please Fill in your email"
+            }
+        }
+        return nil
+    }
 }

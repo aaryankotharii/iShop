@@ -100,6 +100,11 @@
                                                 <state key="normal" title="Forgot Password?">
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="ZD3-NT-YHR" kind="popoverPresentation" popoverAnchorView="mtU-aD-mnR" id="WI5-wi-d1t">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -224,6 +229,71 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="108.48214285714285"/>
         </scene>
+        <!--Forgot PasswordVC-->
+        <scene sceneID="RSO-iP-zRg">
+            <objects>
+                <viewController id="ZD3-NT-YHR" customClass="ForgotPasswordVC" customModule="iShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LeE-ZN-MGO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="CNl-T4-mAm">
+                                <rect key="frame" x="40" y="158" width="334" height="135.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hWX-Q4-zed">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="47.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="hWX-Q4-zed" secondAttribute="height" multiplier="7" id="jDq-sY-w9j"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jM6-CJ-1Sg">
+                                        <rect key="frame" x="0.0" y="87.5" width="334" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jM6-CJ-1Sg" secondAttribute="height" multiplier="7" id="4pP-hj-Efh"/>
+                                        </constraints>
+                                        <state key="normal" title="SEND LINK" backgroundImage="button_gradient">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sendLinkClicked:" destination="ZD3-NT-YHR" eventType="touchUpInside" id="AIN-dN-6SV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45U-66-hxP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                <items>
+                                    <navigationItem title="Forgot Password" id="JPu-lZ-blW"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="45U-66-hxP" firstAttribute="leading" secondItem="LeE-ZN-MGO" secondAttribute="leading" id="1S2-Qj-0ga"/>
+                            <constraint firstItem="ynR-nG-k1A" firstAttribute="trailing" secondItem="CNl-T4-mAm" secondAttribute="trailing" constant="40" id="5a6-H8-t3R"/>
+                            <constraint firstItem="CNl-T4-mAm" firstAttribute="leading" secondItem="ynR-nG-k1A" secondAttribute="leading" constant="40" id="IL3-0g-Pa2"/>
+                            <constraint firstItem="CNl-T4-mAm" firstAttribute="top" secondItem="45U-66-hxP" secondAttribute="bottom" constant="50" id="OQS-tl-sLc"/>
+                            <constraint firstItem="45U-66-hxP" firstAttribute="top" secondItem="ynR-nG-k1A" secondAttribute="top" id="d98-tU-mWn"/>
+                            <constraint firstItem="ynR-nG-k1A" firstAttribute="trailing" secondItem="45U-66-hxP" secondAttribute="trailing" id="hMA-0I-3Pb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ynR-nG-k1A"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="hWX-Q4-zed" id="klq-q5-OdB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hC7-E1-rKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="819"/>
+        </scene>
         <!--Sign Up-->
         <scene sceneID="zb5-cF-BTN">
             <objects>
@@ -317,6 +387,9 @@
                                             <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>

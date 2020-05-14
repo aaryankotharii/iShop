@@ -123,7 +123,6 @@ extension HomeVC {
     
     //MARK: Move stackView based on keybaord
     @objc func keyboardNotification(notification: NSNotification) {
-        print(stackYAnchor.constant,"stack anchor")
         if let userInfo = notification.userInfo {
             
             //MARK: Get Keboard Y point on screen

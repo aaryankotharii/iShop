@@ -43,7 +43,7 @@ extension UIViewController {
         let title = "Yay 😄"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { (UIAlertAction) in
-            self.navigationController?.popToRootViewController(animated: true)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
         }
         alert.addAction(action)
         self.present(alert, animated: true)

@@ -37,6 +37,17 @@ class AuthClient{
         }
     }
     
+    class func forgotPassword(email:String, completion: @escaping (Bool, String?) -> Void){
+        Auth.auth().sendPasswordReset(withEmail: email) { (error) in
+            if let error = error {
+                let errorDescription = AuthClient.handleError(error)
+                completion(false,errorDescription)
+                return
+            }
+            completion(true,nil)
+        }
+    }
+    
     //MARK:- Handle Errors
     class func handleError(_ error : Error) -> String{
         if let errorCode = AuthErrorCode(rawValue: error._code){
