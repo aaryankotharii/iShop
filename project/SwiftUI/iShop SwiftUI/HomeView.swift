@@ -10,11 +10,12 @@ import SwiftUI
 import Combine
 
 
-struct ContentView: View {
+struct HomeView: View {
     
     @State var email : String = ""
     @State var password : String = ""
     @ObservedObject private var keyboard = KeyboardInfo.shared
+    @EnvironmentObject var session : sessionStore
     
     var body: some View {
         NavigationView{
@@ -76,6 +77,10 @@ struct ContentView: View {
         }
     }
     
+    func getuser(){
+        session.listen()
+    }
+    
     func forgotPassword(){
         print("forgot password")
     }
@@ -103,8 +108,8 @@ struct orLabel : View{
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
