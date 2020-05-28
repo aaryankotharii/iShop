@@ -17,6 +17,7 @@
 		5BE8B17024800ED2008A74A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BE8B16F24800ED2008A74A2 /* GoogleService-Info.plist */; };
 		5BE8B17224800F8D008A74A2 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B17124800F8D008A74A2 /* SessionStore.swift */; };
 		5BE8B17424803051008A74A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B17324803051008A74A2 /* ContentView.swift */; };
+		5BE8B176248035FC008A74A2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B175248035FC008A74A2 /* ImagePicker.swift */; };
 		5BFD4CD3247ABEE700AB8B9B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */; };
 		5BFD4CD5247ABFCD00AB8B9B /* Custom+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4CD4247ABFCD00AB8B9B /* Custom+UI.swift */; };
 		E7C925F836AA5F1846F42A69 /* Pods_iShop_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */; };
@@ -35,6 +36,7 @@
 		5BE8B16F24800ED2008A74A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BE8B17124800F8D008A74A2 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		5BE8B17324803051008A74A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5BE8B175248035FC008A74A2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		5BFD4CD4247ABFCD00AB8B9B /* Custom+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom+UI.swift"; sourceTree = "<group>"; };
 		D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShop_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 				5B3A841F247A295500633F25 /* Keyboard+notification.swift */,
 				5BE8B17124800F8D008A74A2 /* SessionStore.swift */,
 				5BE8B17324803051008A74A2 /* ContentView.swift */,
+				5BE8B175248035FC008A74A2 /* ImagePicker.swift */,
 			);
 			path = "iShop SwiftUI";
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				5B3A840C2479B06600633F25 /* AppDelegate.swift in Sources */,
 				5BE8B17224800F8D008A74A2 /* SessionStore.swift in Sources */,
 				5BE8B17424803051008A74A2 /* ContentView.swift in Sources */,
+				5BE8B176248035FC008A74A2 /* ImagePicker.swift in Sources */,
 				5B3A8420247A295500633F25 /* Keyboard+notification.swift in Sources */,
 				5BFD4CD5247ABFCD00AB8B9B /* Custom+UI.swift in Sources */,
 				5B3A840E2479B06600633F25 /* SceneDelegate.swift in Sources */,
