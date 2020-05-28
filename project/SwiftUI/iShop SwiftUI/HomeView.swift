@@ -11,12 +11,15 @@ import Combine
 
 
 struct HomeView: View {
+    @EnvironmentObject var session : sessionStore
+
+    @ObservedObject private var keyboard = KeyboardInfo.shared
     
     @State var email : String = ""
     @State var password : String = ""
-    @ObservedObject private var keyboard = KeyboardInfo.shared
-    @EnvironmentObject var session : sessionStore
-    
+    @State var error : String = ""
+
+
     var body: some View {
         NavigationView{
             VStack{
@@ -77,8 +80,14 @@ struct HomeView: View {
         }
     }
     
-    func getuser(){
-        session.listen()
+    func signIn(){
+        session.signIn(email: email, password: password) { (result, error) in
+            if let error = error{
+                self.error = error
+                return
+            }
+            
+        }
     }
     
     func forgotPassword(){
