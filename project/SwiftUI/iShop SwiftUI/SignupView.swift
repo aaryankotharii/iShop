@@ -9,11 +9,15 @@
 import SwiftUI
 
 struct SignupView: View {
+    
+    @EnvironmentObject var session : sessionStore
+
     @State private var name : String = ""
     @State private var email : String = ""
     @State private var password : String = ""
     @State private var confirmpassword : String = ""
-    
+    @State var error : String = ""
+        
     @ObservedObject private var keyboard = KeyboardInfo.shared
 
     
@@ -32,13 +36,24 @@ struct SignupView: View {
                         customTextField(placeholder: "Email ID", text: self.$email)
                         customTextField(placeholder: "Password", text: self.$password)
                         customTextField(placeholder: "Confirm Password", text: self.$confirmpassword)
-                        NavigationLink(destination: Text("Home")) {
+                        Button(action: signUp){
                             CustomButton(title: "SIGN UP")
                         }
                     }
                     .padding(.horizontal,40)
                     Spacer()
                 }.navigationBarTitle(Text("Sign Up"), displayMode: .large)
+    }
+    
+    func signUp(){
+        session.signUp(email: email, password: password) { (result, error) in
+            if let error = error{
+                self.error = error.localizedDescription
+                return
+            }
+            self.email = ""
+            self.password = ""
+        }
     }
 }
 

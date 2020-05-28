@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 
+//TODO use secureField instead of textfield for password
 
 struct HomeView: View {
     @EnvironmentObject var session : sessionStore
@@ -56,7 +57,7 @@ struct HomeView: View {
                 .padding(.horizontal, 40.0)
                 .offset(y: self.keyboard.keyboardIsUp ? -30 : 0)
                 
-                Button(action: login){
+                Button(action: signIn){
                     CustomButton(title: "LOGIN")
                 }.padding(.horizontal, 40.0)
                     .padding(.top,10)
@@ -72,6 +73,11 @@ struct HomeView: View {
                         Image("google")
                             .renderingMode(.original)
                     }
+                    if (error != ""){
+                        Text(error)
+                    } else {
+                        
+                    }
                 }.padding(.horizontal, 22.5)
                 
                 Spacer()
@@ -83,19 +89,17 @@ struct HomeView: View {
     func signIn(){
         session.signIn(email: email, password: password) { (result, error) in
             if let error = error{
-                self.error = error
+                self.error = error.localizedDescription
                 return
             }
+            self.email = ""
+            self.password = ""
             
         }
     }
     
     func forgotPassword(){
         print("forgot password")
-    }
-    
-    func login(){
-        print("Login")
     }
     
     func emailSignUp(){
