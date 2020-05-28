@@ -17,6 +17,7 @@ struct SignupView: View {
     @ObservedObject private var keyboard = KeyboardInfo.shared
 
     
+    
     var body: some View {
                 VStack(spacing: 0){
                     Image("default")
