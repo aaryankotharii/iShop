@@ -1,0 +1,6 @@
+framework module Pods_iShop_SwiftUI {
+  umbrella header "Pods-iShop SwiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

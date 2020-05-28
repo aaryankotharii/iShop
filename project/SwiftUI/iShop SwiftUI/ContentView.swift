@@ -21,14 +21,13 @@ struct ContentView: View {
             VStack{
                 ZStack{
                     Image("gardient")
-                        //.frame(height: self.keyboard.keyboardIsUp ? 240 : 292)
-                    .offset(y: self.keyboard.keyboardIsUp ? -15 : 0)
+                        .offset(y: self.keyboard.keyboardIsUp ? -15 : 0)
                         .padding(.bottom,self.keyboard.keyboardIsUp ? -15 : 0)
                     Image("logo").scaleEffect(self.keyboard.keyboardIsUp ? 0.8 : 1)
                 }
                 VStack{
                     HStack{
-                    VStack(alignment: .leading){
+                        VStack(alignment: .leading){
                             Text("Hello")
                                 .font(.system(size: 50, weight: .bold))
                             Text("Sign in to your account")
@@ -56,6 +55,7 @@ struct ContentView: View {
                 Button(action: login){
                     CustomButton(title: "LOGIN")
                 }.padding(.horizontal, 40.0)
+                    .padding(.top,10)
                 Spacer()
                 orLabel()
                 HStack{

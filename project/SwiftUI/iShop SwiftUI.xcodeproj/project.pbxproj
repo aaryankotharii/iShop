@@ -16,6 +16,7 @@
 		5B3A8420247A295500633F25 /* Keyboard+notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A841F247A295500633F25 /* Keyboard+notification.swift */; };
 		5BFD4CD3247ABEE700AB8B9B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */; };
 		5BFD4CD5247ABFCD00AB8B9B /* Custom+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4CD4247ABFCD00AB8B9B /* Custom+UI.swift */; };
+		E7C925F836AA5F1846F42A69 /* Pods_iShop_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,9 @@
 		5B3A841F247A295500633F25 /* Keyboard+notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+notification.swift"; sourceTree = "<group>"; };
 		5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		5BFD4CD4247ABFCD00AB8B9B /* Custom+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom+UI.swift"; sourceTree = "<group>"; };
+		D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShop_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD4870D3669133E5E1DFAEAD /* Pods-iShop SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-iShop SwiftUI/Pods-iShop SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		E6B180A7B8ED60D83B842505 /* Pods-iShop SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShop SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-iShop SwiftUI/Pods-iShop SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C925F836AA5F1846F42A69 /* Pods_iShop_SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				5B3A840A2479B06600633F25 /* iShop SwiftUI */,
 				5B3A84092479B06600633F25 /* Products */,
+				9C3BDEEA08E72F4E0B607660 /* Pods */,
+				F65EA73EBA0D0CCFB01BD9C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +91,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9C3BDEEA08E72F4E0B607660 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD4870D3669133E5E1DFAEAD /* Pods-iShop SwiftUI.debug.xcconfig */,
+				E6B180A7B8ED60D83B842505 /* Pods-iShop SwiftUI.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F65EA73EBA0D0CCFB01BD9C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B3A841C2479B06A00633F25 /* Build configuration list for PBXNativeTarget "iShop SwiftUI" */;
 			buildPhases = (
+				90F8538EDF703E438F639C03 /* [CP] Check Pods Manifest.lock */,
 				5B3A84042479B06600633F25 /* Sources */,
 				5B3A84052479B06600633F25 /* Frameworks */,
 				5B3A84062479B06600633F25 /* Resources */,
+				BB3D369A3BB538BBD8389350 /* [CP] Embed Pods Frameworks */,
+				7338A3BD0427ADDBB973F6DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +177,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7338A3BD0427ADDBB973F6DB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iShop SwiftUI/Pods-iShop SwiftUI-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iShop SwiftUI/Pods-iShop SwiftUI-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iShop SwiftUI/Pods-iShop SwiftUI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90F8538EDF703E438F639C03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iShop SwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB3D369A3BB538BBD8389350 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iShop SwiftUI/Pods-iShop SwiftUI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iShop SwiftUI/Pods-iShop SwiftUI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iShop SwiftUI/Pods-iShop SwiftUI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B3A84042479B06600633F25 /* Sources */ = {
@@ -294,6 +381,7 @@
 		};
 		5B3A841D2479B06A00633F25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD4870D3669133E5E1DFAEAD /* Pods-iShop SwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +402,7 @@
 		};
 		5B3A841E2479B06A00633F25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6B180A7B8ED60D83B842505 /* Pods-iShop SwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
