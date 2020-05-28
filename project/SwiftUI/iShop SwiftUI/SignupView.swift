@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+//TODO refactor image modifier
 struct SignupView: View {
     
     @EnvironmentObject var session : sessionStore
@@ -23,13 +24,19 @@ struct SignupView: View {
     
     @ObservedObject private var keyboard = KeyboardInfo.shared
     
-    
-    
     var body: some View {
         VStack(spacing: 0){
             ZStack{
                 if profileImage != nil {
-                    profileImage
+                    profileImage!
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width: self.keyboard.keyboardIsUp ? 50 : 88, height: self.keyboard.keyboardIsUp ? 50 : 88)
+                        .padding(.top, self.keyboard.keyboardIsUp ? 0 : 20)
+                        .padding(.bottom,20)
+                        .onTapGesture {
+                            self.showingImagePicker = true
+                    }
                 }else {
                     Image("default")
                         .resizable()
