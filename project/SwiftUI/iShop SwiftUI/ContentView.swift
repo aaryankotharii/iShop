@@ -13,7 +13,12 @@ struct ContentView: View {
     var body: some View {
         Group{
         if (session.session != nil){
+            VStack{
             Text("Welcome back")
+                Button(action: session.signOut) {
+                    Text("signOut")
+                }
+            }
             } else{
                 HomeView()
             }

@@ -17,6 +17,9 @@ struct SignupView: View {
     @State private var password : String = ""
     @State private var confirmpassword : String = ""
     @State var error : String = ""
+    @State private var showingImagePicker = false
+    @State private var inputImage : UIImage?
+    @State var profileImage : Image?
     
     @ObservedObject private var keyboard = KeyboardInfo.shared
     
@@ -24,12 +27,21 @@ struct SignupView: View {
     
     var body: some View {
         VStack(spacing: 0){
-            Image("default")
-                .resizable()
-                .clipShape(Circle())
-                .frame(width: self.keyboard.keyboardIsUp ? 50 : 88, height: self.keyboard.keyboardIsUp ? 50 : 88)
-                .padding(.top, self.keyboard.keyboardIsUp ? 0 : 20)
-                .padding(.bottom,20)
+            ZStack{
+                if profileImage != nil {
+                    profileImage
+                }else {
+                    Image("default")
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width: self.keyboard.keyboardIsUp ? 50 : 88, height: self.keyboard.keyboardIsUp ? 50 : 88)
+                        .padding(.top, self.keyboard.keyboardIsUp ? 0 : 20)
+                        .padding(.bottom,20)
+                        .onTapGesture {
+                            self.showingImagePicker = true
+                    }
+                }
+            }
             
             VStack(spacing:20){
                 customTextField(placeholder: "Full Name", text: self.$name)
@@ -43,6 +55,9 @@ struct SignupView: View {
             .padding(.horizontal,40)
             Spacer()
         }.navigationBarTitle(Text("Sign Up"), displayMode: .large)
+            .sheet(isPresented: $showingImagePicker,onDismiss: loadImage){
+                ImagePicker(image: self.$inputImage)
+        }
     }
     
     func signUp(){
@@ -54,6 +69,11 @@ struct SignupView: View {
             self.email = ""
             self.password = ""
         }
+    }
+    
+    func loadImage(){
+        guard let inputImage = inputImage else { return}
+        profileImage = Image(uiImage: inputImage)
     }
 }
 
