@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		5B3A84152479B06A00633F25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3A84142479B06A00633F25 /* Preview Assets.xcassets */; };
 		5B3A84182479B06A00633F25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3A84162479B06A00633F25 /* LaunchScreen.storyboard */; };
 		5B3A8420247A295500633F25 /* Keyboard+notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A841F247A295500633F25 /* Keyboard+notification.swift */; };
+		5BE8B17024800ED2008A74A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BE8B16F24800ED2008A74A2 /* GoogleService-Info.plist */; };
+		5BE8B17224800F8D008A74A2 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B17124800F8D008A74A2 /* SessionStore.swift */; };
 		5BFD4CD3247ABEE700AB8B9B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */; };
 		5BFD4CD5247ABFCD00AB8B9B /* Custom+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4CD4247ABFCD00AB8B9B /* Custom+UI.swift */; };
 		E7C925F836AA5F1846F42A69 /* Pods_iShop_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */; };
@@ -29,6 +31,8 @@
 		5B3A84172479B06A00633F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B3A84192479B06A00633F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3A841F247A295500633F25 /* Keyboard+notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+notification.swift"; sourceTree = "<group>"; };
+		5BE8B16F24800ED2008A74A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5BE8B17124800F8D008A74A2 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		5BFD4CD4247ABFCD00AB8B9B /* Custom+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom+UI.swift"; sourceTree = "<group>"; };
 		D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShop_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,8 +81,10 @@
 				5B3A84112479B06A00633F25 /* Assets.xcassets */,
 				5B3A84162479B06A00633F25 /* LaunchScreen.storyboard */,
 				5B3A84192479B06A00633F25 /* Info.plist */,
+				5BE8B16F24800ED2008A74A2 /* GoogleService-Info.plist */,
 				5B3A84132479B06A00633F25 /* Preview Content */,
 				5B3A841F247A295500633F25 /* Keyboard+notification.swift */,
+				5BE8B17124800F8D008A74A2 /* SessionStore.swift */,
 			);
 			path = "iShop SwiftUI";
 			sourceTree = "<group>";
@@ -97,7 +103,6 @@
 				DD4870D3669133E5E1DFAEAD /* Pods-iShop SwiftUI.debug.xcconfig */,
 				E6B180A7B8ED60D83B842505 /* Pods-iShop SwiftUI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -172,6 +177,7 @@
 			files = (
 				5B3A84182479B06A00633F25 /* LaunchScreen.storyboard in Resources */,
 				5B3A84152479B06A00633F25 /* Preview Assets.xcassets in Resources */,
+				5BE8B17024800ED2008A74A2 /* GoogleService-Info.plist in Resources */,
 				5B3A84122479B06A00633F25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3A840C2479B06600633F25 /* AppDelegate.swift in Sources */,
+				5BE8B17224800F8D008A74A2 /* SessionStore.swift in Sources */,
 				5B3A8420247A295500633F25 /* Keyboard+notification.swift in Sources */,
 				5BFD4CD5247ABFCD00AB8B9B /* Custom+UI.swift in Sources */,
 				5B3A840E2479B06600633F25 /* SceneDelegate.swift in Sources */,
