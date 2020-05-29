@@ -13,14 +13,16 @@ import Combine
 
 struct HomeView: View {
     @EnvironmentObject var session : sessionStore
-
+    
     @ObservedObject private var keyboard = KeyboardInfo.shared
     
     @State var email : String = ""
     @State var password : String = ""
     @State var error : String = ""
-
-
+    @State private var showingAlert = false
+    @State var alertTitle : String = "Uh Oh 🙁"
+    
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -59,8 +61,12 @@ struct HomeView: View {
                 
                 Button(action: signIn){
                     CustomButton(title: "LOGIN")
-                }.padding(.horizontal, 40.0)
-                    .padding(.top,10)
+                }
+                .padding(.horizontal, 40.0)
+                .padding(.top,10)
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text(alertTitle), message: Text(error), dismissButton: .default(Text("OK")))
+                }
                 Spacer()
                 orLabel()
                 HStack{
@@ -72,11 +78,6 @@ struct HomeView: View {
                     Button(action: googleSignin){
                         Image("google")
                             .renderingMode(.original)
-                    }
-                    if (error != ""){
-                        Text(error)
-                    } else {
-                        
                     }
                 }.padding(.horizontal, 22.5)
                 
@@ -90,11 +91,11 @@ struct HomeView: View {
         session.signIn(email: email, password: password) { (result, error) in
             if let error = error{
                 self.error = error.localizedDescription
+                self.showingAlert = true
                 return
             }
             self.email = ""
             self.password = ""
-            
         }
     }
     
@@ -108,6 +109,7 @@ struct HomeView: View {
     func googleSignin(){
         print("google sign up")
     }
+    
 }
 
 
