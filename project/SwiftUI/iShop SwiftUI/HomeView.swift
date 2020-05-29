@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import Firebase
 
 //TODO use secureField instead of textfield for password
 
@@ -88,15 +89,29 @@ struct HomeView: View {
     }
     
     func signIn(){
+        if let error = errorCheck(){
+            self.error = error
+            self.showingAlert = true
+            return
+        }
+        
         session.signIn(email: email, password: password) { (result, error) in
             if let error = error{
-                self.error = error.localizedDescription
+                let errorcode = AuthErrorCode(rawValue: error._code)
+                self.error = errorcode!.stringValue
                 self.showingAlert = true
                 return
             }
             self.email = ""
             self.password = ""
         }
+    }
+    
+    func errorCheck()->String?{
+        if email.trimmingCharacters(in: .whitespaces).isEmpty || password.trimmingCharacters(in: .whitespaces).isEmpty{
+            return "Please Fill in all the fields"
+        }
+        return nil
     }
     
     func forgotPassword(){
@@ -126,5 +141,29 @@ struct orLabel : View{
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+    }
+}
+
+
+
+extension AuthErrorCode {
+    var stringValue: String {
+        switch self {
+        case .emailAlreadyInUse:
+            return "user exists! please Login"
+        case .invalidEmail:
+            return "Please enter a valid email ID"
+        case .userNotFound:
+            return "No Account found. signup to continue"
+        case .networkError:
+            return "No internet"
+        case .wrongPassword:
+            return "Password invalid"
+        case .weakPassword:
+            return "Password should have minimum 6 characters"
+        default:
+            print("Error")
+            return "please try again later"
+        }
     }
 }
