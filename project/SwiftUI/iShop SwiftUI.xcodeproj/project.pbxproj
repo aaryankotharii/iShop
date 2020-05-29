@@ -20,6 +20,7 @@
 		5BE8B176248035FC008A74A2 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B175248035FC008A74A2 /* ImagePicker.swift */; };
 		5BE8B1782480C03E008A74A2 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B1772480C03E008A74A2 /* ErrorHandler.swift */; };
 		5BE8B17F2480EAD5008A74A2 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B17E2480EAD5008A74A2 /* TabBar.swift */; };
+		5BE8B18124810D93008A74A2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B18024810D93008A74A2 /* ProfileView.swift */; };
 		5BFD4CD3247ABEE700AB8B9B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */; };
 		5BFD4CD5247ABFCD00AB8B9B /* Custom+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFD4CD4247ABFCD00AB8B9B /* Custom+UI.swift */; };
 		E7C925F836AA5F1846F42A69 /* Pods_iShop_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */; };
@@ -41,6 +42,7 @@
 		5BE8B175248035FC008A74A2 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5BE8B1772480C03E008A74A2 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		5BE8B17E2480EAD5008A74A2 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		5BE8B18024810D93008A74A2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		5BFD4CD4247ABFCD00AB8B9B /* Custom+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom+UI.swift"; sourceTree = "<group>"; };
 		D54F89153BE805192C694EF4 /* Pods_iShop_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iShop_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 				5B3A840F2479B06600633F25 /* HomeView.swift */,
 				5BFD4CD2247ABEE700AB8B9B /* SignupView.swift */,
 				5BE8B17E2480EAD5008A74A2 /* TabBar.swift */,
+				5BE8B18024810D93008A74A2 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				5BE8B17224800F8D008A74A2 /* SessionStore.swift in Sources */,
 				5BE8B17424803051008A74A2 /* ContentView.swift in Sources */,
 				5BE8B176248035FC008A74A2 /* ImagePicker.swift in Sources */,
+				5BE8B18124810D93008A74A2 /* ProfileView.swift in Sources */,
 				5B3A8420247A295500633F25 /* Keyboard+notification.swift in Sources */,
 				5BFD4CD5247ABFCD00AB8B9B /* Custom+UI.swift in Sources */,
 				5B3A840E2479B06600633F25 /* SceneDelegate.swift in Sources */,
