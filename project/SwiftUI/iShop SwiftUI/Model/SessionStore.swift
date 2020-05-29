@@ -16,6 +16,8 @@ class sessionStore : ObservableObject{
     
     var didChange = PassthroughSubject<sessionStore,Never>()
     
+    let uid = Auth.auth().currentUser?.uid ?? "uid"
+    
     @Published var session : User? {
         didSet {
             self.didChange.send(self)
@@ -91,6 +93,42 @@ class sessionStore : ObservableObject{
              }
          }
      }
+    
+    func createProfile(_ profileImage : UIImage){
+            
+        print("IMAGE UPLAOD")
+      //  let uid = session?.uid ?? "uid"
+        let ref = Storage.storage().reference()
+        let storageRef = ref.child("profile_images").child("\(uid).jpg")
+        
+         if let uploadData = profileImage.jpegData(compressionQuality: 0.2){    /// convert image to data
+                    storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            
+                        storageRef.downloadURL { (url, error) in    /// get url from storage
+                            if let error = error {
+                                print(error.localizedDescription)
+                            }else{
+                                // Update profile URL
+                                self.updateProfileImage(url: url?.absoluteString ?? "invalid") { (success) in
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK:- Update profile picture
+    public func updateProfileImage(url: String,completion:@escaping (Bool) -> ()) {
+        let ref = self.ref.child("users").child(session?.uid ?? "uid")
+        ref.updateChildValues(["imageUrl":url]) { (error, ref) in
+            if let _ = error{ completion(false) ;  return }
+            completion(true)
+        }
+    }
 }
 
 struct User {

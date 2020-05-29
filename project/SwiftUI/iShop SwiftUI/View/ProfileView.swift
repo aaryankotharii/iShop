@@ -13,10 +13,13 @@ struct ProfileView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var isPresented: Bool
     var body: some View {
+        VStack{
         Button(action: logout){
-            Text("logout")
+            CustomButton(title: "LOGOUT")
+            }
         }
     }
+    
     func logout(){
         self.presentationMode.wrappedValue.dismiss()
         self.isPresented = false

@@ -104,11 +104,18 @@ struct SignupView: View {
             self.session.uploadUser(name: self.name, image: "imageUrl", user: self.session.session!) { (error) in
                 if let error = error{
                     print(error.localizedDescription)
+                }else {
+                    self.sendImage()
                 }
             }
             self.email = ""
             self.password = ""
         }
+    }
+    
+    func sendImage(){
+         guard let inputImage = inputImage else { return}
+        session.createProfile(inputImage)
     }
     
     func errorCheck()->String?{
