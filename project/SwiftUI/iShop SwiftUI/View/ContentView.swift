@@ -14,10 +14,10 @@ struct ContentView: View {
         Group{
         if (session.session != nil){
             VStack{
-            Text("Welcome back")
-                Button(action: session.signOut) {
-                    Text("signOut")
-                }
+                TabBar()
+//                Button(action: session.signOut) {
+//                    Text("signOut")
+//                }
             }
             } else{
                 HomeView()
