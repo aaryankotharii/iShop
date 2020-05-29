@@ -11,6 +11,7 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var session : sessionStore
     @Environment(\.presentationMode) var presentationMode
+    @Binding var isPresented: Bool
     var body: some View {
         Button(action: logout){
             Text("logout")
@@ -18,12 +19,13 @@ struct ProfileView: View {
     }
     func logout(){
         self.presentationMode.wrappedValue.dismiss()
+        self.isPresented = false
         session.signOut()
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(isPresented: .constant(true))
     }
 }

@@ -23,6 +23,9 @@ struct SignupView: View {
     @State var profileImage : Image?
     @State private var showingAlert = false
     @State var alertTitle : String = "Uh Oh 🙁"
+    @State private var showingActionSheet = false
+    @State private var sourceType : UIImagePickerController.SourceType = .photoLibrary
+
     
     @ObservedObject private var keyboard = KeyboardInfo.shared
     
@@ -37,7 +40,7 @@ struct SignupView: View {
                         .padding(.top, self.keyboard.keyboardIsUp ? 0 : 20)
                         .padding(.bottom,20)
                         .onTapGesture {
-                            self.showingImagePicker = true
+                              self.showingActionSheet = true
                     }
                 }else {
                     Image("default")
@@ -46,9 +49,9 @@ struct SignupView: View {
                         .frame(width: self.keyboard.keyboardIsUp ? 50 : 88, height: self.keyboard.keyboardIsUp ? 50 : 88)
                         .padding(.top, self.keyboard.keyboardIsUp ? 0 : 20)
                         .padding(.bottom,20)
-                        .onTapGesture {
-                            self.showingImagePicker = true
-                    }
+                         .onTapGesture {
+                                  self.showingActionSheet = true
+                        }
                 }
             }
             
@@ -68,7 +71,20 @@ struct SignupView: View {
             Spacer()
         }.navigationBarTitle(Text("Sign Up"), displayMode: .large)
             .sheet(isPresented: $showingImagePicker,onDismiss: loadImage){
-                ImagePicker(image: self.$inputImage)
+                ImagePicker(image: self.$inputImage, source: self.sourceType)
+        }
+        .actionSheet(isPresented: $showingActionSheet) {
+            ActionSheet(title: Text(""), buttons: [
+                .default(Text("Choose Photo")) {
+                    self.sourceType = .photoLibrary
+                    self.showingImagePicker = true
+                },
+                .default(Text("Take Photo")) {
+                    self.sourceType = .camera
+                    self.showingImagePicker = true
+                },
+                .cancel()
+            ])
         }
     }
     

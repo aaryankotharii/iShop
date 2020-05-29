@@ -12,7 +12,7 @@ struct ImagePicker : UIViewControllerRepresentable {
     
     class Coordinator : NSObject , UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let parent : ImagePicker
-        
+            
         init(_ parent : ImagePicker){
             self.parent = parent
         }
@@ -27,6 +27,7 @@ struct ImagePicker : UIViewControllerRepresentable {
     
     @Environment(\.presentationMode) var presentationMode
     @Binding var image : UIImage?
+    @State var source : UIImagePickerController.SourceType
     
     
     func makeCoordinator() -> Coordinator {
@@ -36,6 +37,7 @@ struct ImagePicker : UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
+        picker.sourceType = source
         return picker
     }
     

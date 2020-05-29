@@ -74,7 +74,6 @@ class imagePicker : NSObject{
         imagePickerVC.allowsEditing = true
         currentViewController?.present(imagePickerVC, animated: true, completion: nil)
     }
-    
 }
 
 

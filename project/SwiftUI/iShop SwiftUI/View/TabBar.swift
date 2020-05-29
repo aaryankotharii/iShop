@@ -40,7 +40,7 @@ struct TabBar: View {
                         .renderingMode(.original)
                         .offset(y:45)
                 }.sheet(isPresented: $showingDetail){
-                    ProfileView().environmentObject(sessionStore())
+                    ProfileView(isPresented: self.$showingDetail).environmentObject(sessionStore())
                 })
         }
     }
