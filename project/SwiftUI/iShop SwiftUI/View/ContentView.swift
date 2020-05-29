@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         Group{
         if (session.session != nil){
-            TabBar(email : session.session?.email ?? "")
+            TabBar(email : session.userData?.name ?? "yo")
             } else {
                 HomeView()
             }

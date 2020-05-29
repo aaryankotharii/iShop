@@ -22,7 +22,7 @@ class sessionStore : ObservableObject{
         }
     }
     
-    @Published var UserData : UserData? {
+    @Published var userData : UserData? {
         didSet{
             self.didChange.send(self)
         }
@@ -34,6 +34,7 @@ class sessionStore : ObservableObject{
         handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if let user = user {
                 self.session = User(uid: user.uid, email: user.email)
+                self.getName(user: self.session!)
             } else {
                 self.session = nil
             }
@@ -79,9 +80,17 @@ class sessionStore : ObservableObject{
         }
     }
     
-    func getUserData completion: @escaping (Error?)->()){
-    ref
-    }
+    //MARK:- Get User Name
+    public func getName(user : User){
+        print("gettin user")
+        ref.child("users").child(user.uid).observe(.value) { (snapshot) in
+             guard let dictionary = snapshot.value as?[String:AnyObject] else { return }
+             if let name = dictionary["name"] as? String{
+                self.userData = .init(user: user, name: name, image: "idk")
+                print(name)
+             }
+         }
+     }
 }
 
 struct User {
@@ -98,4 +107,10 @@ struct UserData{
     var user : User
     var name :String
     var image : String
+    
+    init(user:User,name:String,image:String) {
+        self.name = name
+        self.image = image
+        self.user = user
+    }
 }

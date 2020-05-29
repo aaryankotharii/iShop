@@ -9,8 +9,16 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var session : sessionStore
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: logout){
+            Text("logout")
+        }
+    }
+    func logout(){
+        self.presentationMode.wrappedValue.dismiss()
+        session.signOut()
     }
 }
 
