@@ -11,6 +11,9 @@ import Firebase
 import Combine
 
 class sessionStore : ObservableObject{
+    
+    let ref = Database.database().reference()
+    
     var didChange = PassthroughSubject<sessionStore,Never>()
     
     @Published var session : User? { didSet {self.didChange.send(self)}}
@@ -54,6 +57,17 @@ class sessionStore : ObservableObject{
         unbind()
     }
     
+    func uploadUser(name : String, image : String,user : User, completion: @escaping (Error?)->()){
+        let param = ["name":name,"email":user.email,"imageUrl":image]
+        ref.child("users").child(user.uid).setValue(param) { (error, ref) in
+            if let error = error{
+                print("Uplaod failed")
+                completion(error)
+                return
+            }
+            completion(nil)
+        }
+    }
 }
 
 struct User {
@@ -64,4 +78,10 @@ struct User {
         self.uid = uid
         self.email = email
     }
+}
+
+struct UserData{
+    var user : User
+    var name :String
+    var image : String
 }

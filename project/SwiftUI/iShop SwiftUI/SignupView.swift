@@ -85,6 +85,11 @@ struct SignupView: View {
                 self.showingAlert = true
                 return
             }
+            self.session.uploadUser(name: self.name, image: "imageUrl", user: self.session.session!) { (error) in
+                if let error = error{
+                    print(error.localizedDescription)
+                }
+            }
             self.email = ""
             self.password = ""
         }
