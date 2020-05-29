@@ -13,11 +13,8 @@ struct ContentView: View {
     var body: some View {
         Group{
         if (session.session != nil){
-                TabBar()
-//                Button(action: session.signOut) {
-//                    Text("signOut")
-//                }
-            } else{
+            TabBar(email : session.session?.email ?? "")
+            } else {
                 HomeView()
             }
         }.onAppear(perform: getUser)

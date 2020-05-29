@@ -16,7 +16,17 @@ class sessionStore : ObservableObject{
     
     var didChange = PassthroughSubject<sessionStore,Never>()
     
-    @Published var session : User? { didSet {self.didChange.send(self)}}
+    @Published var session : User? {
+        didSet {
+            self.didChange.send(self)
+        }
+    }
+    
+    @Published var UserData : UserData? {
+        didSet{
+            self.didChange.send(self)
+        }
+    }
     
     var handle : AuthStateDidChangeListenerHandle?
     
@@ -67,6 +77,10 @@ class sessionStore : ObservableObject{
             }
             completion(nil)
         }
+    }
+    
+    func getUserData completion: @escaping (Error?)->()){
+    ref
     }
 }
 

@@ -14,6 +14,8 @@ struct TabBar: View {
     @State var showingDetail = false
     @State var tabIndex:Int = 0
     
+    var email : String
+    
     var body: some View {
         NavigationView {
             TabView(selection: $tabIndex) {
@@ -32,7 +34,7 @@ struct TabBar: View {
                         Image(systemName: "3.circle")
                         Text("Third")
                 }.tag(2)
-            }.navigationBarTitle(NavigationTitles[tabIndex])
+            }.navigationBarTitle(email)
                 .navigationBarItems(trailing: Button(action: showProfile){
                     Image(systemName: "person.fill")
                         .renderingMode(.original)
@@ -50,6 +52,6 @@ struct TabBar: View {
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
+        TabBar(email: "A@k.com")
     }
 }
