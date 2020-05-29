@@ -7,8 +7,6 @@
 //
 
 import SwiftUI
-import Combine
-import Firebase
 
 //TODO use secureField instead of textfield for password
 
@@ -97,8 +95,7 @@ struct HomeView: View {
         
         session.signIn(email: email, password: password) { (result, error) in
             if let error = error{
-                let errorcode = AuthErrorCode(rawValue: error._code)
-                self.error = errorcode!.stringValue
+                self.error = error.authErrorValue
                 self.showingAlert = true
                 return
             }
@@ -146,24 +143,3 @@ struct HomeView_Previews: PreviewProvider {
 
 
 
-extension AuthErrorCode {
-    var stringValue: String {
-        switch self {
-        case .emailAlreadyInUse:
-            return "user exists! please Login"
-        case .invalidEmail:
-            return "Please enter a valid email ID"
-        case .userNotFound:
-            return "No Account found. signup to continue"
-        case .networkError:
-            return "No internet"
-        case .wrongPassword:
-            return "Password invalid"
-        case .weakPassword:
-            return "Password should have minimum 6 characters"
-        default:
-            print("Error")
-            return "please try again later"
-        }
-    }
-}

@@ -21,6 +21,8 @@ struct SignupView: View {
     @State private var showingImagePicker = false
     @State private var inputImage : UIImage?
     @State var profileImage : Image?
+    @State private var showingAlert = false
+    @State var alertTitle : String = "Uh Oh 🙁"
     
     @ObservedObject private var keyboard = KeyboardInfo.shared
     
@@ -58,6 +60,9 @@ struct SignupView: View {
                 Button(action: signUp){
                     CustomButton(title: "SIGN UP")
                 }
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text(alertTitle), message: Text(error), dismissButton: .default(Text("OK")))
+                }
             }
             .padding(.horizontal,40)
             Spacer()
@@ -68,14 +73,34 @@ struct SignupView: View {
     }
     
     func signUp(){
+        if let error = errorCheck(){
+            self.error = error
+            self.showingAlert = true
+            return
+        }
+        
         session.signUp(email: email, password: password) { (result, error) in
             if let error = error{
-                self.error = error.localizedDescription
+                self.error = error.authErrorValue
+                self.showingAlert = true
                 return
             }
             self.email = ""
             self.password = ""
         }
+    }
+    
+    func errorCheck()->String?{
+        if email.trimmingCharacters(in: .whitespaces).isEmpty ||
+            password.trimmingCharacters(in: .whitespaces).isEmpty ||
+            confirmpassword.trimmingCharacters(in: .whitespaces).isEmpty ||
+            name.trimmingCharacters(in: .whitespaces).isEmpty {
+            return "Please Fill in all the fields"
+        }
+        if !(password == confirmpassword) {
+            return "Passwords do not match"
+        }
+        return nil
     }
     
     func loadImage(){
