@@ -30,7 +30,6 @@ struct google : UIViewRepresentable {
 
 extension AppDelegate : GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-      // ...
       if let error = error {
         print(error.localizedDescription)
         return

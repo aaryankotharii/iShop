@@ -15,6 +15,7 @@
 		5B3A84182479B06A00633F25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3A84162479B06A00633F25 /* LaunchScreen.storyboard */; };
 		5B3A8420247A295500633F25 /* Keyboard+notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A841F247A295500633F25 /* Keyboard+notification.swift */; };
 		5B3BAD4C2482465500A04879 /* Google+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BAD4B2482465500A04879 /* Google+Login.swift */; };
+		5B3BAD4E2482CA0400A04879 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3BAD4D2482CA0400A04879 /* ImageLoader.swift */; };
 		5BE8B17024800ED2008A74A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5BE8B16F24800ED2008A74A2 /* GoogleService-Info.plist */; };
 		5BE8B17224800F8D008A74A2 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B17124800F8D008A74A2 /* SessionStore.swift */; };
 		5BE8B17424803051008A74A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE8B17324803051008A74A2 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		5B3A84192479B06A00633F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3A841F247A295500633F25 /* Keyboard+notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+notification.swift"; sourceTree = "<group>"; };
 		5B3BAD4B2482465500A04879 /* Google+Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Google+Login.swift"; sourceTree = "<group>"; };
+		5B3BAD4D2482CA0400A04879 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		5BE8B16F24800ED2008A74A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5BE8B17124800F8D008A74A2 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		5BE8B17324803051008A74A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				5BE8B175248035FC008A74A2 /* ImagePicker.swift */,
 				5BE8B1772480C03E008A74A2 /* ErrorHandler.swift */,
 				5B3A841F247A295500633F25 /* Keyboard+notification.swift */,
+				5B3BAD4D2482CA0400A04879 /* ImageLoader.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3BAD4E2482CA0400A04879 /* ImageLoader.swift in Sources */,
 				5B3A840C2479B06600633F25 /* AppDelegate.swift in Sources */,
 				5B3BAD4C2482465500A04879 /* Google+Login.swift in Sources */,
 				5BE8B17224800F8D008A74A2 /* SessionStore.swift in Sources */,
