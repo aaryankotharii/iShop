@@ -79,7 +79,8 @@ struct HomeView: View {
                             .renderingMode(.original)
                     }
                 }.padding(.horizontal, 22.5)
-                
+                google().frame(width: 120, height: 50, alignment: .center)
+
                 Spacer()
             }
             .edgesIgnoringSafeArea(.all)
@@ -119,7 +120,6 @@ struct HomeView: View {
         print("email sign up")
     }
     func googleSignin(){
-        print("google sign up")
     }
     
 }

@@ -12,12 +12,34 @@ struct ProfileView: View {
     @EnvironmentObject var session : sessionStore
     @Environment(\.presentationMode) var presentationMode
     @Binding var isPresented: Bool
+    @State private var isAnimating = false
+    
+    var foreverAnimation: Animation {
+        Animation.linear(duration: 2.0)
+            .repeatForever(autoreverses: false)
+    }
+    
     var body: some View {
         VStack{
-        Button(action: logout){
-            CustomButton(title: "LOGOUT")
-            }
+            ZStack{
+                LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.9948013425, green: 0.5377405882, blue: 0.26955688, alpha: 1)),Color(#colorLiteral(red: 0.9937531352, green: 0.2513984144, blue: 0.352616936, alpha: 1))]), startPoint: .leading, endPoint: .trailing)
+                    .frame(width: 255, height: 255)
+                    .clipShape(Circle())
+                    .rotationEffect(Angle(degrees: self.isAnimating ? 360 : 0.0))
+                    .animation(self.isAnimating ? foreverAnimation : .default)
+                    .onAppear { self.isAnimating = true }
+                    .onDisappear { self.isAnimating = false }
+                Image("default")
+                    .frame(width: 240, height: 240)
+                    .clipShape(Circle())
+            }.padding(.top,100)
+            Spacer()
+            Button(action: logout){
+                CustomButton(title: "LOGOUT")
+            }.padding(.bottom,50)
         }
+        .padding(.horizontal, 40.0)
+        .navigationBarTitle(Text("Profile"), displayMode: .large)
     }
     
     func logout(){
