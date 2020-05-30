@@ -12,4 +12,24 @@ import Combine
 
 class ImageLoader : ObservableObject {
     
+    var downloadedImage : UIImage?
+    let didChange = PassthroughSubject<ImageLoader?,Never>()
+    
+    func load(url:String){
+        guard let imageUrl = URL(string: url) else { return }
+        
+        URLSession.shared.dataTask(with: imageUrl) { (data, response, error ) in
+            guard let data = data , error == nil else {
+                DispatchQueue.main.async {
+                    self.didChange.send(nil)
+                }
+                return
+            }
+            
+            self.downloadedImage = UIImage(data: data)
+            DispatchQueue.main.async {
+                self.didChange.send(self)
+            }
+        }
+    }
 }
