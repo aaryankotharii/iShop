@@ -9,13 +9,26 @@
 import SwiftUI
 
 struct URLImage: View {
+    @ObservedObject private var imageLoader = ImageLoader()
+    
+    var placeholder : Image
+    
+    init(url:String,placeholder:Image = Image(systemName: "person.fill")) {
+        self.placeholder = placeholder
+        self.imageLoader.load(url: url)
+    }
+    
     var body: some View {
-       Text("urlImage")
+        if let uiimage = self.imageLoader.downloadedImage {
+            return Image(uiImage: uiimage)
+        } else {
+            return placeholder
+        }
     }
 }
 
 struct URLImage_Previews: PreviewProvider {
     static var previews: some View {
-        URLImage()
+        URLImage(url: "")
     }
 }
