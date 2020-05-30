@@ -13,6 +13,9 @@ import Firebase
 
 struct google : UIViewRepresentable {
     
+
+    @EnvironmentObject var session : sessionStore
+
     func makeUIView(context: Context) -> GIDSignInButton {
         let button = GIDSignInButton()
         button.colorScheme = .light
