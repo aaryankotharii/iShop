@@ -87,33 +87,33 @@ class sessionStore : ObservableObject{
     public func getName(user : User){
         print("gettin user")
         ref.child("users").child(user.uid).observe(.value) { (snapshot) in
-             guard let dictionary = snapshot.value as?[String:AnyObject] else { return }
-             if let name = dictionary["name"] as? String{
+            guard let dictionary = snapshot.value as?[String:AnyObject] else { return }
+            if let name = dictionary["name"] as? String{
                 self.userData = .init(user: user, name: name, image: "idk")
                 print(name)
-             }
-         }
-     }
+            }
+        }
+    }
     
     func createProfile(_ profileImage : UIImage){
-            
+        
         print("IMAGE UPLAOD")
-      //  let uid = session?.uid ?? "uid"
+        //  let uid = session?.uid ?? "uid"
         let ref = Storage.storage().reference()
         let storageRef = ref.child("profile_images").child("\(uid).jpg")
         
-         if let uploadData = profileImage.jpegData(compressionQuality: 0.2){    /// convert image to data
-                    storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+        if let uploadData = profileImage.jpegData(compressionQuality: 0.2){    /// convert image to data
+            storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    
+                    storageRef.downloadURL { (url, error) in    /// get url from storage
                         if let error = error {
                             print(error.localizedDescription)
-                        } else {
-                            
-                        storageRef.downloadURL { (url, error) in    /// get url from storage
-                            if let error = error {
-                                print(error.localizedDescription)
-                            }else{
-                                // Update profile URL
-                                self.updateProfileImage(url: url?.absoluteString ?? "invalid") { (success) in
+                        }else{
+                            // Update profile URL
+                            self.updateProfileImage(url: url?.absoluteString ?? "invalid") { (success) in
                             }
                         }
                     }
@@ -121,9 +121,22 @@ class sessionStore : ObservableObject{
             }
         }
     }
+        
+        //MARK:- Get profileImageUrl ( To persist Image )
+    func getProfileImageUrl(completion : @escaping (String?)->()){
+        let ref = self.ref.child("users").child(session?.uid ?? uid)
+            ref.observe(.value) { (snapshot) in
+                guard let dictionary = snapshot.value as?[String:AnyObject] else { return }
+                print(dictionary)
+                if let url = dictionary["imageUrl"] as? String{completion(url) }
+                else {
+                    completion(nil)
+                }
+            }
+        }
     
     //MARK:- Update profile picture
-    public func updateProfileImage(url: String,completion:@escaping (Bool) -> ()) {
+     func updateProfileImage(url: String,completion:@escaping (Bool) -> ()) {
         let ref = self.ref.child("users").child(session?.uid ?? "uid")
         ref.updateChildValues(["imageUrl":url]) { (error, ref) in
             if let _ = error{ completion(false) ;  return }

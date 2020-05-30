@@ -29,7 +29,7 @@ struct ProfileView: View {
                     .animation(self.isAnimating ? foreverAnimation : .default)
                     .onAppear { self.isAnimating = true }
                     .onDisappear { self.isAnimating = false }
-                Image("default")
+                AsyncImage(url: URL(string: "https://lh3.googleusercontent.com/a-/AOh14Gh-Bpoh37OUtOAdJOpfu1EpZCC0QrYZJ9w8jGzX_Q=s96-c")!)
                     .frame(width: 240, height: 240)
                     .clipShape(Circle())
             }.padding(.top,100)
@@ -40,6 +40,12 @@ struct ProfileView: View {
         }
         .padding(.horizontal, 40.0)
         .navigationBarTitle(Text("Profile"), displayMode: .large)
+        .onAppear {
+            print("appear")
+                self.session.getProfileImageUrl(completion: { (url) in
+                    //self.profieImage = URLImage(url: url)
+                })
+        }
     }
     
     func logout(){

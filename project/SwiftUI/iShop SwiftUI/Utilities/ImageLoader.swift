@@ -9,27 +9,38 @@
 import SwiftUI
 import Combine
 
-
-class ImageLoader : ObservableObject {
+final class Loader: ObservableObject {
     
-    var downloadedImage : UIImage?
-    let didChange = PassthroughSubject<ImageLoader?,Never>()
+    var task: URLSessionDataTask!
+    @Published var data: Data? = nil
     
-    func load(url:String){
-        guard let imageUrl = URL(string: url) else { return }
-        
-        URLSession.shared.dataTask(with: imageUrl) { (data, response, error ) in
-            guard let data = data , error == nil else {
-                DispatchQueue.main.async {
-                    self.didChange.send(nil)
-                }
-                return
-            }
-            
-            self.downloadedImage = UIImage(data: data)
+    init(_ url: URL) {
+        task = URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
             DispatchQueue.main.async {
-                self.didChange.send(self)
+                self.data = data
             }
-        }
+        })
+        task.resume()
+    }
+    deinit {
+        task.cancel()
+    }
+}
+
+let placeholder = UIImage(systemName: "person.fill")!
+
+struct AsyncImage: View {
+    init(url: URL) {
+        self.imageLoader = Loader(url)
+    }
+    
+    @ObservedObject private var imageLoader: Loader
+    var image: UIImage? {
+        imageLoader.data.flatMap(UIImage.init)
+    }
+    
+    
+    var body: some View {
+        Image(uiImage: image ?? placeholder)
     }
 }
