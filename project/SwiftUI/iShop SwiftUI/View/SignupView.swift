@@ -18,11 +18,14 @@ struct SignupView: View {
     @State private var password : String = ""
     @State private var confirmpassword : String = ""
     @State var error : String = ""
+    
     @State private var showingImagePicker = false
     @State private var inputImage : UIImage?
     @State var profileImage : Image?
+    
     @State private var showingAlert = false
     @State var alertTitle : String = "Uh Oh 🙁"
+    
     @State private var showingActionSheet = false
     @State private var sourceType : UIImagePickerController.SourceType = .photoLibrary
 
